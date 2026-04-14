@@ -1,176 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucky Stranger — Creative Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #F4F2EA;
+      --bg-2:      #EAE5D8;
+      --bg-3:      #DED8C8;
+      --bg-4:      #D0C9B5;
+      --cream:     #2E1A0E;
+      --cream-2:   #5A3A28;
+      --cream-dim: #8A6A58;
+      --red:       #E91A41;
+      --amber:     #B85A14;
+      --teal:      #2A6860;
+      --border:    rgba(46,26,14,0.1);
+      --border-md: rgba(46,26,14,0.22);
+    }
 
-CREATIVE PRESENTATION — APRIL 2026
-Lucky Stranger
-Two creative directions. One decision. The goal today is to align on which lane to push forward and build out into a full brand system.
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #F4F2EA;
+      color: var(--cream);
+      font-family: 'Epilogue', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-SCROLL TO EXPLORE
-Prepared by Big Sis Creative Studio for Ali, Nan, Kelsey & Jose April 15, 2026
+    .display { font-family: 'Dela Gothic One', sans-serif; font-weight: 400; line-height: 0.92; letter-spacing: -0.02em; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-dim); }
+    em { font-style: italic; }
 
-BEFORE WE START
-Let's set expectations.
-✓
-WHAT THIS IS
-		Two distinct creative territories to explore and react to
-		First draft logo marks — enough signal to tell us if we're pointed right
-		Initial tagline directions for each concept
-		Our honest thinking on where to go and why
-		A conversation, not a reveal
-✕
-WHAT THIS ISN'T
-		Final logos — nothing here is ready to print or ship
-		A complete color system or full brand palette
-		Final taglines — language is directional, not locked
-		A hard decision you have to make today
-		The last time we'll show you options
-Everything you're about to see is intentionally at the "strong enough to react to, not precious enough to protect" stage. Your honest reaction in this room is worth more than a polished presentation you don't push back on.
+    /* Dot nav */
+    .dot-nav { position: fixed; right: 32px; top: 50%; transform: translateY(-50%); z-index: 200; display: flex; flex-direction: column; gap: 14px; align-items: flex-end; }
+    .dot-nav a { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .dot-nav .dnl { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--cream-2); opacity: 0; transform: translateX(8px); transition: opacity 0.2s, transform 0.2s; white-space: nowrap; }
+    .dot-nav a:hover .dnl { opacity: 1; transform: translateX(0); }
+    .dot-nav .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cream-dim); transition: background 0.25s, transform 0.25s; flex-shrink: 0; }
+    .dot-nav a:hover .dot, .dot-nav a.active .dot { background: var(--red); transform: scale(1.6); }
 
-TODAY'S AGENDA
-01
-Creative Direction A
-Moodboard, first draft mark, and tagline directions. We'll walk through the full picture before moving to the next concept.
-02
-Creative Direction B
-Same treatment — moodboard, mark, and language. Full concept before comparison.
-03
-Side by Side
-Visuals together, then voice and tone together. Two separate conversations in the same section.
-04
-Next Steps
-Where we go from today's conversation and what to expect from each other.
+    /* Reveal */
+    .rv { opacity: 0; transform: translateY(36px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .rv.in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.22s; } .d3 { transition-delay: 0.38s; } .d4 { transition-delay: 0.54s; }
 
-LUCKY — MOODBOARD
-Lucky
-Optimistic. Warm. Hand-painted. This direction leans into the unexpected good fortune that comes with being "lucky," which is a big part of your origin story. For those looking to see where the night takes them, this is the place to be. Utilitarian bones, dive bar DNA, a logo that looks like it's been above the door for twenty years and belongs there. It doesn't try to be cool. It just is.
-HAND-PAINTED SIGNAGE
-WARM & UTILITARIAN
-DIVE BAR DNA
-OPTIMISTIC
-MIDWEST ROOTS
-APPROACHABLE
-LEANS "LUCKY"
+    .sec-label { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; }
+    .sec-label-bar { width: 32px; height: 1px; background: var(--red); flex-shrink: 0; }
 
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 72px; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 10% 70%, rgba(184,90,20,0.07) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 85% 15%, rgba(233,26,65,0.05) 0%, transparent 55%); }
+    .hero-pre { display: flex; align-items: center; gap: 18px; margin-bottom: 52px; }
+    .hero-pre-bar { width: 36px; height: 1px; background: var(--red); }
+    .hero-h1 { font-size: clamp(88px, 15vw, 200px); color: var(--cream); }
+    .hero-h1 .accent { color: var(--red); }
+    .hero-sub { margin-top: 44px; max-width: 520px; font-size: 17px; font-weight: 400; line-height: 1.8; color: var(--cream-2); }
+    .hero-foot { position: absolute; bottom: 52px; left: 72px; right: 72px; display: flex; align-items: flex-end; justify-content: space-between; }
+    .scroll-hint { display: flex; align-items: center; gap: 14px; }
+    .scroll-hint span { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); }
+    .scroll-bar { width: 36px; height: 1px; background: var(--cream-dim); animation: sbar 2.2s ease-in-out infinite; }
+    @keyframes sbar { 0%,100%{width:18px;opacity:.35} 50%{width:36px;opacity:.9} }
+    .hero-attr p { font-size: 12px; color: var(--cream-dim); line-height: 1.9; text-align: right; }
 
-LUCKY — LOGO DIRECTION
-Lucky. First draft mark.
-01 — IN THE WORLD
+    /* SCOPE */
+    #scope { padding: 120px 72px; border-top: 1px solid var(--border); }
+    .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 900px; }
+    .scope-col { padding: 44px 48px; background: var(--bg-2); border: 1px solid var(--border); }
+    .scope-col-head { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .scope-icon { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; font-weight: 700; }
+    .scope-icon.yes { background: rgba(58,136,125,0.2); color: var(--teal); }
+    .scope-icon.no  { background: rgba(233,26,65,0.15); color: var(--red); }
+    .scope-col-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .is .scope-col-title { color: var(--teal); }
+    .isnt .scope-col-title { color: var(--red); }
+    .scope-list { list-style: none; }
+    .scope-list li { font-size: 15px; color: var(--cream-2); padding: 10px 0 10px 22px; border-bottom: 1px solid var(--border); line-height: 1.5; position: relative; }
+    .scope-list li:last-child { border-bottom: none; }
+    .is .scope-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px; }
+    .isnt .scope-list li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-size: 12px; }
+    .scope-note { margin-top: 44px; max-width: 720px; padding: 24px 28px; background: var(--bg-3); border-left: 3px solid var(--amber); }
+    .scope-note p { font-size: 15px; font-style: italic; font-weight: 300; color: var(--cream-2); line-height: 1.75; }
 
-02 — THE MARK
+    /* AGENDA */
+    #agenda { padding: 120px 72px; border-top: 1px solid var(--border); }
+    .agenda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 860px; }
+    .ag-item { background: var(--bg-2); border: 1px solid var(--border); padding: 36px 40px; transition: border-color 0.2s; box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+    .ag-item:hover { border-color: var(--border-md); }
+    .ag-num { font-family: 'Dela Gothic One', sans-serif; font-size: 52px; line-height: 1; margin-bottom: 14px; color: transparent; -webkit-text-stroke: 1px rgba(46,26,14,0.2); }
+    .ag-title { font-size: 16px; font-weight: 600; color: var(--cream); margin-bottom: 8px; }
+    .ag-desc { font-size: 14px; color: var(--cream-2); line-height: 1.65; }
 
-03 — THE SYSTEM
+    /* MOODBOARD */
+    .mb-section { padding: 130px 0; border-top: 1px solid var(--border); }
+    .mb-intro { display: grid; grid-template-columns: 40% 1fr; gap: 72px; padding: 0 72px; margin-bottom: 64px; align-items: start; }
+    .concept-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .ctag { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border: 1px solid; }
+    .mb-a .ctag { border-color: rgba(200,155,46,0.35); color: var(--amber); }
+    .mb-b .ctag { border-color: rgba(58,136,125,0.35); color: var(--teal); }
+    .concept-title { font-size: clamp(52px, 8vw, 108px); }
+    .mb-a .concept-title { color: var(--amber); }
+    .mb-b .concept-title { color: var(--teal); }
+    .concept-body { font-size: 16px; font-weight: 300; color: var(--cream-2); line-height: 1.8; }
+    .mb-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 2px; padding: 0 72px; }
+    .mb-img { background: var(--bg-3); border: 1px dashed var(--border-md); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .mb-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .mb-img::before { content: 'FPO'; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; color: var(--cream-dim); opacity: 0.5; z-index: 1; }
+    .mb-img .cap { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.6)); font-size: 11px; color: var(--cream-2); opacity: 0; transition: opacity 0.2s; z-index: 2; }
+    .mb-img:hover .cap { opacity: 1; }
+    .span2c { grid-column: span 2; } .span2r { grid-row: span 2; }
 
+    /* Moodboard single full image */
+    .mb-full { padding: 0 72px; }
+    .mb-full img { width: 100%; display: block; box-shadow: 0 8px 48px rgba(0,0,0,0.4); }
 
-LUCKY — TAGLINE DIRECTIONS
-01
-Fortune favors the thirsty.
-02
-Right place. Right time.
-03
-Take your shot.
-04
-See what happens.
-05
-High spirits, low expectations.
+    /* LOGO SOLO */
+    .logo-solo { padding: 130px 0; border-top: 1px solid var(--border); }
+    .logo-solo-inner { padding: 0 72px; }
 
-STRANGER — MOODBOARD
-Stranger
-Mid-century refined. Quietly knowing. This direction focuses on the "stranger" — the person at the end of the bar who feels familiar, but you can't quite place. Someone you can trust. The space is intriguing and intentional, with a visual expression that has nostalgic charm. This stranger is mysterious in the best possible way.
-MID-CENTURY REFINED
-MYSTERIOUS
-INTELLECTUAL
-CONSIDERED
-NOIR-ADJACENT
-UNDERSTATED
-LEANS "STRANGER"
+    .logo-beat { margin-bottom: 64px; }
+    .beat-label { margin-bottom: 16px; display: block; }
 
+    .logo-hero-img {
+      aspect-ratio: 4/3;
+      background: var(--bg-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+    }
+    .logo-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-STRANGER — LOGO DIRECTION
-Stranger. First draft mark.
-01 — IN THE WORLD
+    .logo-system-img { width: 100%; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.35); }
+    .logo-system-img img { width: 100%; display: block; }
 
-02 — THE MARK
+    .logo-mark-swatch { background: #EAE5D8; padding: 48px; display: flex; align-items: center; justify-content: center; width: 100%; box-shadow: 0 4px 24px rgba(46,26,14,0.1); }
+    .logo-mark-swatch img { width: 70%; max-width: 900px; height: auto; display: block; }
+    .logo-canvas { background: transparent; margin: 48px 0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 0; }
+    .logo-canvas img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 60px; }
+    .logo-notes-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+    .logo-note-card { background: var(--bg-2); border: 1px solid var(--border); padding: 24px 28px; box-shadow: 0 2px 8px rgba(46,26,14,0.08); }
+    .logo-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 10px; }
+    .logo-note-text { font-size: 14px; color: var(--cream-2); line-height: 1.55; }
 
-03 — THE SYSTEM
+    /* TAGLINES */
+    .tagline-block { padding: 80px 72px 130px; border-top: 1px solid var(--border); }
+    .tl-intro { max-width: 560px; font-size: 15px; font-weight: 300; color: var(--cream-2); line-height: 1.75; margin-bottom: 48px; }
+    .tl-grid { display: flex; flex-direction: column; gap: 2px; }
+    .tl-item { display: flex; align-items: baseline; gap: 28px; padding: 22px 28px; background: var(--bg-2); border: 1px solid var(--border); transition: border-color 0.2s, background 0.2s; }
+    .tl-item:hover { background: var(--bg-3); border-color: var(--border-md); }
+    .tl-num { font-family: 'Dela Gothic One', sans-serif; font-size: 20px; flex-shrink: 0; line-height: 1; }
+    .tl-a .tl-num { color: var(--amber); } .tl-b .tl-num { color: var(--teal); }
+    .tl-line { font-size: 20px; font-weight: 600; color: var(--cream); line-height: 1.3; }
+    .fpo-tag { font-style: normal; font-size: 14px; font-weight: 400; color: var(--cream-dim); }
 
+    /* COMPARE */
+    #compare { padding: 130px 0; border-top: 1px solid var(--border); }
+    .compare-header { padding: 0 72px; margin-bottom: 72px; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 0 72px; }
+    .cmp-col { background: var(--bg-2); border: 1px solid var(--border); padding: 52px; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+    .cmp-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .cmp-name { font-family: 'Dela Gothic One', sans-serif; font-size: 22px; }
+    .cmp-a .cmp-name { color: var(--amber); } .cmp-b .cmp-name { color: var(--teal); }
+    .cmp-img { margin-bottom: 32px; overflow: hidden; box-shadow: 0 4px 20px rgba(46,26,14,0.15); }
+    .cmp-img img { width: 100%; height: auto; display: block; object-fit: cover; }
+    .cmp-attributes { list-style: none; }
+    .cmp-attributes li { font-size: 14px; color: var(--cream-2); padding: 10px 0 10px 22px; border-bottom: 1px solid var(--border); line-height: 1.5; position: relative; }
+    .cmp-attributes li:last-child { border-bottom: none; }
+    .cmp-attributes li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-size: 12px; }
 
-STRANGER — TAGLINE DIRECTIONS
-01
-Lost & found.
-02
-Quality booze. Questionable outcomes.
-03
-Drinks & Discretion.
-04
-Cold drinks. Low lights. OK people.
-05
-AC / Cable TV / Ice Cold Drinks.
+    /* Voice/tone compare */
+    .compare-voice { padding: 80px 72px 0; }
+    .cv-intro { font-size: 16px; font-weight: 300; color: var(--cream-2); margin-bottom: 48px; max-width: 480px; }
+    .cv-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; }
+    .cv-divider { background: var(--border-md); }
+    .cv-col { padding: 0 48px; }
+    .cv-col:first-child { padding-left: 0; }
+    .cv-col:last-child { padding-right: 0; }
+    .cv-col-head { padding-bottom: 24px; margin-bottom: 4px; border-bottom: 1px solid var(--border); }
+    .cv-col-name { font-family: 'Dela Gothic One', sans-serif; font-size: 18px; }
+    .cv-a .cv-col-name { color: var(--amber); }
+    .cv-b .cv-col-name { color: var(--teal); }
+    .cv-line { display: flex; align-items: baseline; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .cv-line:last-child { border-bottom: none; }
+    .cv-num { font-family: 'Dela Gothic One', sans-serif; font-size: 16px; flex-shrink: 0; line-height: 1; }
+    .cv-a .cv-num { color: var(--amber); }
+    .cv-b .cv-num { color: var(--teal); }
+    .cv-text { font-size: 18px; font-weight: 500; color: var(--cream); line-height: 1.4; }
 
-SIDE BY SIDE
-Now let's put them together.
-Lucky
-CONCEPT A
+    @media (max-width: 860px) {
+      .compare-voice { padding: 60px 28px 0; }
+      .cv-grid { grid-template-columns: 1fr; }
+      .cv-divider { display: none; }
+      .cv-col { padding: 0; margin-bottom: 40px; }
+    }
 
-		Warm, optimistic, utilitarian
-		Hand-painted signage energy
-		Feels immediately familiar
-		Leans into luck as the anchor
-		Accessible and approachable
-Stranger
-CONCEPT B
+    /* NEXT STEPS */
+    #next { padding: 130px 72px; border-top: 1px solid var(--border); }
+    .next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 960px; margin-top: 64px; }
+    .ns-item { background: var(--bg-2); border: 1px solid var(--border); padding: 36px 36px 40px; transition: border-color 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .ns-item:hover { border-color: var(--border-md); }
+    .ns-step { font-family: 'Dela Gothic One', sans-serif; font-size: 44px; color: transparent; -webkit-text-stroke: 1px rgba(46,26,14,0.2); line-height: 1; margin-bottom: 20px; }
+    .ns-title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 10px; }
+    .ns-desc { font-size: 14px; color: var(--cream-2); line-height: 1.65; }
+    .ns-owner { display: inline-block; margin-top: 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border-md); color: var(--cream-2); }
+    .ns-owner.bs  { border-color: rgba(233,26,65,0.4); color: var(--red); }
+    .ns-owner.ls  { border-color: rgba(212,116,58,0.4); color: var(--amber); }
+    .ns-owner.all { border-color: rgba(58,136,125,0.4); color: var(--teal); }
 
-		Mid-century refined, quietly knowing
-		Considered, intriguing, slightly unknowable
-		Rewards a second look
-		Leans into mystery as the anchor
-		Aspirational without being cold
+    /* FOOTER */
+    #footer { padding: 60px 72px 40px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 28px; }
+    .ft-top { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .ft-bs-logo img { width: 56px; height: 56px; display: block; }
+    .ft-meta p { font-size: 12px; color: var(--cream-2); line-height: 1.9; text-align: right; }
+    .ft-meta a { color: var(--red); text-decoration: none; }
+    .ft-legal { width: 100%; border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .ft-legal p { font-size: 11px; color: var(--cream-dim); letter-spacing: 0.06em; }
+    .ft-confidential { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); padding: 4px 10px; border: 1px solid var(--border-md); }
 
-VOICE & TONE
-Same bar. Different register. How each direction wants to talk.
-Lucky
-01
-Fortune favors the thirsty.
-02
-Right place. Right time.
-03
-Take your shot.
-04
-See what happens.
-05
-High spirits, low expectations.
-Stranger
-01
-Lost & found.
-02
-Quality booze. Questionable outcomes.
-03
-Drinks & Discretion.
-04
-Cold drinks. Low lights. OK people.
-05
-AC / Cable TV / Ice Cold Drinks.
+    @media (max-width: 860px) {
+      #hero, #scope, #agenda, #discuss, #next, #footer { padding-left: 28px; padding-right: 28px; }
+      .hero-h1 { font-size: 64px; }
+      .hero-foot { left: 28px; right: 28px; }
+      .scope-grid, .agenda-grid, .mb-intro, .compare-grid, .next-grid, .logo-notes-row { grid-template-columns: 1fr; }
+      .mb-grid { grid-template-columns: 1fr 1fr; padding: 0 28px; }
+      .mb-intro, .mb-full, .logo-solo-inner, .tagline-block, .compare-header { padding-left: 28px; padding-right: 28px; }
+      .compare-grid { padding: 0 28px; }
+      .dot-nav { display: none; }
+      .span2c, .span2r { grid-column: span 1; grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
 
-NEXT STEPS
-Next steps.
-01
-You digest and reflect
-Take a day or two. Let today settle. Gut reactions right after a presentation aren't always the final word — and that's okay.
-LUCKY STRANGER
-02
-Share your feedback
-Reactions on each direction — what resonated, what didn't, and any questions that came up. More specific, the better.
-LUCKY STRANGER
-03
-We synthesize and push forward
-Based on your feedback, we refine the chosen direction — tightening the logo, narrowing the tagline, beginning to explore color and type as a full system.
-BIG SIS
-04
-Presentation 2 — final direction
-Refined logo, selected tagline, color and type system, and a clear picture of what the Lucky Stranger brand looks and sounds like going forward.
-BIG SIS + LUCKY STRANGER
-05
-Brand rollout begins
-Once the core identity is locked, we move into application — signage, menus, digital presence, merchandise, and the Lucky Stranger Disco sublabel. That conversation starts as soon as direction is confirmed.
-BIG SIS + LUCKY STRANGER
+<nav class="dot-nav" aria-label="Page sections">
+  <a href="#hero">     <span class="dnl">Intro</span>        <span class="dot"></span></a>
+  <a href="#scope">    <span class="dnl">Scope</span>        <span class="dot"></span></a>
+  <a href="#agenda">   <span class="dnl">Today</span>        <span class="dot"></span></a>
+  <a href="#concept-a"><span class="dnl">Concept A</span>    <span class="dot"></span></a>
+  <a href="#logo-a">   <span class="dnl">Logo A</span>       <span class="dot"></span></a>
+  <a href="#concept-b"><span class="dnl">Concept B</span>    <span class="dot"></span></a>
+  <a href="#logo-b">   <span class="dnl">Logo B</span>       <span class="dot"></span></a>
+  <a href="#compare">  <span class="dnl">Compare</span>      <span class="dot"></span></a>
+  <a href="#next">     <span class="dnl">Next Steps</span>   <span class="dot"></span></a>
+</nav>
 
-Lucky Stranger — Birmingham, AL April 15, 2026 · bigsiscreativestudio.com
-CONFIDENTIAL
-© 2026 Big Sis Creative Studio, LLC. All rights reserved.
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-pre rv"><div class="hero-pre-bar"></div><span class="eyebrow">Creative Presentation — April 2026</span></div>
+  <h1 class="display hero-h1 rv d1">Lucky<br><span class="accent">Stranger</span></h1>
+  <p class="hero-sub rv d2">Two creative directions. One decision. The goal today is to align on which lane to push forward and build out into a full brand system.</p>
+  <div class="hero-foot">
+    <div class="scroll-hint rv d3"><div class="scroll-bar"></div><span>Scroll to explore</span></div>
+    <div class="hero-attr rv d3"><p>Prepared by Big Sis Creative Studio<br>for Ali, Nan, Kelsey &amp; Jose<br>April 15, 2026</p></div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section id="scope">
+  <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Before We Start</span></div>
+  <h2 class="display rv d1" style="font-size:clamp(40px,6vw,72px);margin-bottom:56px;">Let's set<br>expectations.</h2>
+  <div class="scope-grid">
+    <div class="scope-col is rv d1">
+      <div class="scope-col-head"><div class="scope-icon yes">✓</div><span class="scope-col-title">What this is</span></div>
+      <ul class="scope-list">
+        <li>Two distinct creative territories to explore and react to</li>
+        <li>First draft logo marks — enough signal to tell us if we're pointed right</li>
+        <li>Initial tagline directions for each concept</li>
+        <li>Our honest thinking on where to go and why</li>
+        <li>A conversation, not a reveal</li>
+      </ul>
+    </div>
+    <div class="scope-col isnt rv d2">
+      <div class="scope-col-head"><div class="scope-icon no">✕</div><span class="scope-col-title">What this isn't</span></div>
+      <ul class="scope-list">
+        <li>Final logos — nothing here is ready to print or ship</li>
+        <li>A complete color system or full brand palette</li>
+        <li>Final taglines — language is directional, not locked</li>
+        <li>A hard decision you have to make today</li>
+        <li>The last time we'll show you options</li>
+      </ul>
+    </div>
+  </div>
+  <div class="scope-note rv d3">
+    <p>Everything you're about to see is intentionally at the "strong enough to react to, not precious enough to protect" stage. Your honest reaction in this room is worth more than a polished presentation you don't push back on.</p>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Today's Agenda</span></div>
+  <div class="agenda-grid">
+    <div class="ag-item rv d1"><div class="ag-num">01</div><div class="ag-title">Creative Direction A</div><p class="ag-desc">Moodboard, first draft mark, and tagline directions. We'll walk through the full picture before moving to the next concept.</p></div>
+    <div class="ag-item rv d2"><div class="ag-num">02</div><div class="ag-title">Creative Direction B</div><p class="ag-desc">Same treatment — moodboard, mark, and language. Full concept before comparison.</p></div>
+    <div class="ag-item rv d3"><div class="ag-num">03</div><div class="ag-title">Side by Side</div><p class="ag-desc">Visuals together, then voice and tone together. Two separate conversations in the same section.</p></div>
+    <div class="ag-item rv d4"><div class="ag-num">04</div><div class="ag-title">Next Steps</div><p class="ag-desc">Where we go from today's conversation and what to expect from each other.</p></div>
+  </div>
+</section>
+
+<!-- CONCEPT A — MOODBOARD -->
+<section id="concept-a" class="mb-section mb-a">
+  <div class="mb-intro">
+    <div>
+      <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Lucky — Moodboard</span></div>
+      <h2 class="display concept-title rv d1">Lucky</h2>
+    </div>
+    <div class="rv d2">
+      <p class="concept-body">Optimistic. Warm. Hand-painted. This direction leans into the unexpected good fortune that comes with being "lucky," which is a big part of your origin story. For those looking to see where the night takes them, this is the place to be. Utilitarian bones, dive bar DNA, a logo that looks like it's been above the door for twenty years and belongs there. It doesn't try to be cool. It just is.</p>
+      <div class="concept-tag-row">
+        <span class="ctag">Hand-painted signage</span><span class="ctag">Warm &amp; utilitarian</span><span class="ctag">Dive bar DNA</span><span class="ctag">Optimistic</span><span class="ctag">Midwest roots</span><span class="ctag">Approachable</span><span class="ctag">Leans "Lucky"</span>
+      </div>
+    </div>
+  </div>
+  <div class="mb-full rv d2">
+    <img src="mb-a.jpg" alt="Concept A moodboard — optimistic, accessible, utilitarian">
+  </div>
+</section>
+
+<!-- LOGO A — SOLO -->
+<section id="logo-a" class="logo-solo">
+  <div class="logo-solo-inner">
+    <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Lucky — Logo Direction</span></div>
+    <h2 class="display rv d1" style="font-size:clamp(28px,4vw,48px);">Lucky. First draft mark.</h2>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">01 — In the world</div>
+      <div class="logo-hero-img">
+        <img src="logo-a-matchbook.jpg" alt="Lucky matchbook mockup">
+      </div>
+    </div>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">02 — The mark</div>
+      <div class="logo-canvas">
+        <div class="logo-mark-swatch">
+          <img src="logo-a-mark.jpg?v=3" alt="Lucky wordmark">
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">03 — The system</div>
+      <div class="logo-system-img">
+        <img src="logo-a-system.jpg" alt="Lucky logo system and variations">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINES A -->
+<div id="taglines-a" class="tagline-block tl-a">
+  <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Lucky — Tagline Directions</span></div>
+  <div class="tl-grid">
+    <div class="tl-item tl-a rv"><div class="tl-num">01</div><div><p class="tl-line">Fortune favors the thirsty.</p></div></div>
+    <div class="tl-item tl-a rv d1"><div class="tl-num">02</div><div><p class="tl-line">Right place. Right time.</p></div></div>
+    <div class="tl-item tl-a rv d2"><div class="tl-num">03</div><div><p class="tl-line">Take your shot.</p></div></div>
+    <div class="tl-item tl-a rv d3"><div class="tl-num">04</div><div><p class="tl-line">See what happens.</p></div></div>
+    <div class="tl-item tl-a rv d4"><div class="tl-num">05</div><div><p class="tl-line">High spirits, low expectations.</p></div></div>
+  </div>
+</div>
+
+<!-- CONCEPT B — MOODBOARD -->
+<section id="concept-b" class="mb-section mb-b">
+  <div class="mb-intro">
+    <div>
+      <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Stranger — Moodboard</span></div>
+      <h2 class="display concept-title rv d1">Stranger</h2>
+    </div>
+    <div class="rv d2">
+      <p class="concept-body">Mid-century refined. Quietly knowing. This direction focuses on the "stranger" — the person at the end of the bar who feels familiar, but you can't quite place. Someone you can trust. The space is intriguing and intentional, with a visual expression that has nostalgic charm. This stranger is mysterious in the best possible way.</p>
+      <div class="concept-tag-row">
+        <span class="ctag">Mid-century refined</span><span class="ctag">Mysterious</span><span class="ctag">Intellectual</span><span class="ctag">Considered</span><span class="ctag">Noir-adjacent</span><span class="ctag">Understated</span><span class="ctag">Leans "Stranger"</span>
+      </div>
+    </div>
+  </div>
+  <div class="mb-full rv d2">
+    <img src="mb-b.jpg" alt="Concept B moodboard — mysterious, lil' glam, more refined">
+  </div>
+</section>
+
+<!-- LOGO B — SOLO -->
+<section id="logo-b" class="logo-solo">
+  <div class="logo-solo-inner">
+    <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Stranger — Logo Direction</span></div>
+    <h2 class="display rv d1" style="font-size:clamp(28px,4vw,48px);">Stranger. First draft mark.</h2>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">01 — In the world</div>
+      <div class="logo-hero-img">
+        <img src="logo-b-matchbook.jpg" alt="Stranger matchbook mockup">
+      </div>
+    </div>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">02 — The mark</div>
+      <div class="logo-canvas">
+        <div class="logo-mark-swatch">
+          <img src="logo-b-mark.jpg?v=3" alt="Stranger wordmark">
+        </div>
+      </div>
+    </div>
+
+    <div class="logo-beat rv d2">
+      <div class="beat-label eyebrow">03 — The system</div>
+      <div class="logo-system-img">
+        <img src="logo-b-system.jpg" alt="Stranger logo system and variations">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINES B -->
+<div id="taglines-b" class="tagline-block tl-b">
+  <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Stranger — Tagline Directions</span></div>
+  <div class="tl-grid">
+    <div class="tl-item tl-b rv"><div class="tl-num">01</div><div><p class="tl-line">Lost &amp; found.</p></div></div>
+    <div class="tl-item tl-b rv d1"><div class="tl-num">02</div><div><p class="tl-line">Quality booze. Questionable outcomes.</p></div></div>
+    <div class="tl-item tl-b rv d2"><div class="tl-num">03</div><div><p class="tl-line">Drinks &amp; Discretion.</p></div></div>
+    <div class="tl-item tl-b rv d3"><div class="tl-num">04</div><div><p class="tl-line">Cold drinks. Low lights. OK people.</p></div></div>
+    <div class="tl-item tl-b rv d4"><div class="tl-num">05</div><div><p class="tl-line">AC / Cable TV / Ice Cold Drinks.</p></div></div>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<section id="compare">
+  <div class="compare-header">
+    <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Side by Side</span></div>
+    <h2 class="display rv d1" style="font-size:clamp(40px,6vw,72px);">Now let's put<br>them together.</h2>
+  </div>
+
+  <!-- Visual comparison -->
+  <div class="compare-grid rv d1">
+    <div class="cmp-col cmp-a">
+      <div class="cmp-head"><span class="cmp-name">Lucky</span><span class="eyebrow">Concept A</span></div>
+      <div class="cmp-img"><img src="logo-a-matchbook.jpg" alt="Lucky"></div>
+      <ul class="cmp-attributes">
+        <li>Warm, optimistic, utilitarian</li>
+        <li>Hand-painted signage energy</li>
+        <li>Feels immediately familiar</li>
+        <li>Leans into luck as the anchor</li>
+        <li>Accessible and approachable</li>
+      </ul>
+    </div>
+    <div class="cmp-col cmp-b">
+      <div class="cmp-head"><span class="cmp-name">Stranger</span><span class="eyebrow">Concept B</span></div>
+      <div class="cmp-img"><img src="logo-b-matchbook.jpg" alt="Stranger"></div>
+      <ul class="cmp-attributes">
+        <li>Mid-century refined, quietly knowing</li>
+        <li>Considered, intriguing, slightly unknowable</li>
+        <li>Rewards a second look</li>
+        <li>Leans into mystery as the anchor</li>
+        <li>Aspirational without being cold</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Voice / tone comparison -->
+  <div class="compare-voice rv d2">
+    <div class="cv-header">
+      <div class="sec-label" style="margin-bottom:20px;"><div class="sec-label-bar"></div><span class="eyebrow">Voice &amp; Tone</span></div>
+      <p class="cv-intro">Same bar. Different register. How each direction wants to talk.</p>
+    </div>
+    <div class="cv-grid">
+      <div class="cv-col cv-a">
+        <div class="cv-col-head"><span class="cv-col-name">Lucky</span></div>
+        <div class="cv-lines">
+          <div class="cv-line"><span class="cv-num">01</span><span class="cv-text">Fortune favors the thirsty.</span></div>
+          <div class="cv-line"><span class="cv-num">02</span><span class="cv-text">Right place. Right time.</span></div>
+          <div class="cv-line"><span class="cv-num">03</span><span class="cv-text">Take your shot.</span></div>
+          <div class="cv-line"><span class="cv-num">04</span><span class="cv-text">See what happens.</span></div>
+          <div class="cv-line"><span class="cv-num">05</span><span class="cv-text">High spirits, low expectations.</span></div>
+        </div>
+      </div>
+      <div class="cv-divider"></div>
+      <div class="cv-col cv-b">
+        <div class="cv-col-head"><span class="cv-col-name">Stranger</span></div>
+        <div class="cv-lines">
+          <div class="cv-line"><span class="cv-num">01</span><span class="cv-text">Lost &amp; found.</span></div>
+          <div class="cv-line"><span class="cv-num">02</span><span class="cv-text">Quality booze. Questionable outcomes.</span></div>
+          <div class="cv-line"><span class="cv-num">03</span><span class="cv-text">Drinks &amp; Discretion.</span></div>
+          <div class="cv-line"><span class="cv-num">04</span><span class="cv-text">Cold drinks. Low lights. OK people.</span></div>
+          <div class="cv-line"><span class="cv-num">05</span><span class="cv-text">AC / Cable TV / Ice Cold Drinks.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="next">
+  <div class="sec-label rv"><div class="sec-label-bar"></div><span class="eyebrow">Next Steps</span></div>
+  <h2 class="display rv d1" style="font-size:clamp(40px,6vw,72px);">Next steps.</h2>
+  <div class="next-grid">
+    <div class="ns-item rv d1">
+      <div class="ns-step">01</div>
+      <div class="ns-title">You digest and reflect</div>
+      <p class="ns-desc">Take a day or two. Let today settle. Gut reactions right after a presentation aren't always the final word — and that's okay.</p>
+      <span class="ns-owner ls">Lucky Stranger</span>
+    </div>
+    <div class="ns-item rv d2">
+      <div class="ns-step">02</div>
+      <div class="ns-title">Share your feedback</div>
+      <p class="ns-desc">Reactions on each direction — what resonated, what didn't, and any questions that came up. More specific, the better.</p>
+      <span class="ns-owner ls">Lucky Stranger</span>
+    </div>
+    <div class="ns-item rv d3">
+      <div class="ns-step">03</div>
+      <div class="ns-title">We synthesize and push forward</div>
+      <p class="ns-desc">Based on your feedback, we refine the chosen direction — tightening the logo, narrowing the tagline, beginning to explore color and type as a full system.</p>
+      <span class="ns-owner bs">Big Sis</span>
+    </div>
+    <div class="ns-item rv d1" style="grid-column:span 1;">
+      <div class="ns-step">04</div>
+      <div class="ns-title">Presentation 2 — final direction</div>
+      <p class="ns-desc">Refined logo, selected tagline, color and type system, and a clear picture of what the Lucky Stranger brand looks and sounds like going forward.</p>
+      <span class="ns-owner all">Big Sis + Lucky Stranger</span>
+    </div>
+    <div class="ns-item rv d2" style="grid-column:span 2;">
+      <div class="ns-step">05</div>
+      <div class="ns-title">Brand rollout begins</div>
+      <p class="ns-desc">Once the core identity is locked, we move into application — signage, menus, digital presence, merchandise, and the Lucky Stranger Disco sublabel. That conversation starts as soon as direction is confirmed.</p>
+      <span class="ns-owner all">Big Sis + Lucky Stranger</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="ft-top">
+    <div class="ft-bs-logo rv">
+      <img src="bigsis-logo.png" alt="Big Sis Creative Studio">
+    </div>
+    <div class="ft-meta rv d1">
+      <p>Lucky Stranger — Birmingham, AL<br>April 15, 2026 · <a href="https://bigsiscreativestudio.com">bigsiscreativestudio.com</a></p>
+    </div>
+  </div>
+  <div class="ft-legal">
+    <p class="ft-confidential">Confidential</p>
+    <p>© 2026 Big Sis Creative Studio, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const revEls = document.querySelectorAll('.rv');
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
+  revEls.forEach(el => revObs.observe(el));
+  requestAnimationFrame(() => {
+    revEls.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.95) el.classList.add('in');
+    });
+  });
+  const sections = document.querySelectorAll('section[id], footer[id], div[id]');
+  const dots = document.querySelectorAll('.dot-nav a');
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) dots.forEach(d => d.classList.toggle('active', d.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => navObs.observe(s));
+</script>
+</body>
+</html>
