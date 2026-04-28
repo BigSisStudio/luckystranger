@@ -27,8 +27,8 @@
       --display: 'Dela Gothic One', sans-serif;
       --body:    'Epilogue', sans-serif;
 
-      --max: 960px;
-      --gap: 72px;
+      --max: 1280px;
+      --gap: 80px;
     }
 
     /* ─── RESET ──────────────────────────────────────────────── */
@@ -57,7 +57,7 @@
     .nav-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       height: 50px;
@@ -87,7 +87,7 @@
     .wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 24px;
     }
     section { padding: var(--gap) 0; }
     section + section { border-top: 1px solid var(--rule); }
@@ -115,33 +115,33 @@
 
     h1 {
       font-family: var(--display);
-      font-size: clamp(48px, 7vw, 88px);
-      line-height: 1.05;
+      font-size: clamp(72px, 11vw, 152px);
+      line-height: 1.0;
       color: var(--red);
     }
     h2 {
       font-family: var(--display);
-      font-size: clamp(26px, 4vw, 48px);
-      line-height: 1.05;
+      font-size: clamp(32px, 5vw, 64px);
+      line-height: 1.0;
       color: var(--text);
       margin-bottom: 16px;
     }
     h3 {
       font-family: var(--display);
-      font-size: clamp(16px, 2vw, 22px);
+      font-size: clamp(18px, 2.2vw, 26px);
       line-height: 1.1;
       color: var(--text);
       margin-bottom: 8px;
     }
     .body-copy {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.8;
       color: var(--text-dim);
-      max-width: 620px;
+      max-width: 680px;
     }
 
     /* ─── HERO ───────────────────────────────────────────────── */
-    #hero { padding-top: 80px; padding-bottom: 64px; }
+    #hero { padding-top: 100px; padding-bottom: 80px; }
     .hero-date-chip {
       display: inline-block;
       border: 1px solid var(--red);
@@ -162,13 +162,13 @@
       color: var(--text-dim);
       margin-bottom: 16px;
     }
-    #hero h1 { margin-bottom: 24px; }
+    #hero h1 { margin-bottom: 28px; }
     .hero-sub {
-      font-size: 17px;
+      font-size: 19px;
       line-height: 1.75;
       color: var(--text-dim);
-      max-width: 580px;
-      margin-bottom: 36px;
+      max-width: 700px;
+      margin-bottom: 40px;
     }
     .hero-meta {
       font-size: 12px;
@@ -285,7 +285,7 @@
       text-transform: uppercase;
       color: var(--text-dim);
     }
-    .img-fill { width: 100%; height: auto; display: block; }
+    .img-fill { width: 100%; height: auto; display: block; box-shadow: 0 8px 40px rgba(46,26,14,0.18), 0 2px 8px rgba(46,26,14,0.10); }
 
     /* Placeholder */
     .ph {
@@ -463,7 +463,7 @@
     .footer-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 24px;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -562,7 +562,7 @@
     .archive-toggle-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 18px 40px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -595,7 +595,7 @@
     .archive-banner {
       background: rgba(58,136,125,0.08);
       border-bottom: 1px solid var(--rule);
-      padding: 14px 40px;
+      padding: 14px 24px;
     }
     .archive-banner p {
       max-width: var(--max);
@@ -606,7 +606,7 @@
     }
 
     /* ─── P1 INNER CONTENT ───────────────────────────────────── */
-    .p1-wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .p1-wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
     .p1-section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
     .tagline-grid { margin-top: 20px; }
     .tagline-row {
@@ -993,21 +993,9 @@
     <div style="margin-top: 36px;">
       <p class="sub-label">Reference — interior direction (WIP from Hannah)</p>
       <div class="ph-grid-3">
-        <div class="ph ph-mid">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">interior-ref-1.jpg</p>
-          <p class="ph-note">Interior reference — WIP from Hannah</p>
-        </div>
-        <div class="ph ph-mid">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">interior-ref-2.jpg</p>
-          <p class="ph-note">Interior reference — WIP from Hannah</p>
-        </div>
-        <div class="ph ph-mid">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">interior-ref-3.jpg</p>
-          <p class="ph-note">Interior reference — WIP from Hannah</p>
-        </div>
+        <img class="img-fill" src="interior-ref-1.jpg" alt="Interior reference 1" />
+        <img class="img-fill" src="interior-ref-2.jpg" alt="Interior reference 2" />
+        <img class="img-fill" src="interior-ref-3.jpg" alt="Interior reference 3" />
       </div>
     </div>
 
