@@ -28,7 +28,7 @@
       --body:    'Epilogue', sans-serif;
 
       --max: 1280px;
-      --gap: 80px;
+      --gap: 100px;
     }
 
     /* ─── RESET ──────────────────────────────────────────────── */
@@ -144,7 +144,15 @@
     }
 
     /* ─── HERO ───────────────────────────────────────────────── */
-    #hero { padding-top: 100px; padding-bottom: 80px; }
+    #hero {
+      min-height: calc(100vh - 50px);
+      padding-top: 80px;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-top { flex: 1; }
     .hero-date-chip {
       display: inline-block;
       border: 1px solid var(--red);
@@ -165,19 +173,32 @@
       color: var(--text-dim);
       margin-bottom: 16px;
     }
-    #hero h1 { margin-bottom: 28px; }
+    #hero h1 {
+      font-size: clamp(88px, 14vw, 180px);
+      line-height: 0.95;
+      margin-bottom: 40px;
+    }
+    .h1-lucky   { color: var(--red); display: block; }
+    .h1-stranger { color: var(--brown); display: block; }
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+    }
     .hero-sub {
-      font-size: 19px;
+      font-size: 16px;
       line-height: 1.75;
       color: var(--text-dim);
-      max-width: 700px;
-      margin-bottom: 40px;
+      max-width: 480px;
     }
     .hero-meta {
       font-size: 12px;
       letter-spacing: .06em;
       color: var(--text-dimmer);
       line-height: 2;
+      text-align: right;
+      flex-shrink: 0;
     }
     .hero-meta strong { color: var(--text-dim); font-weight: 600; }
 
@@ -769,15 +790,22 @@
 
 <!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section id="hero">
-  <div class="wrap">
-    <div class="hero-date-chip">Presentation 02 — April 28, 2026</div>
-    <p class="hero-eyebrow">Creative Presentation</p>
-    <h1>Lucky Stranger</h1>
-    <p class="hero-sub">Revised creative direction based on your feedback. Today we're showing you where we landed on the visual direction and taglines, sharing initial color and font thinking, and exploring how the brand starts to live inside the space.</p>
-    <div class="hero-meta">
-      <strong>Prepared by</strong> Big Sis Creative Studio<br />
-      <strong>For</strong> Ali, Nan, Kelsey, Jose + Hannah<br />
-      April 28, 2026
+  <div class="wrap" style="height:100%;display:flex;flex-direction:column;justify-content:space-between;flex:1;">
+    <div class="hero-top">
+      <div class="hero-date-chip">Presentation 02 — April 28, 2026</div>
+      <p class="hero-eyebrow">Creative Presentation</p>
+      <h1>
+        <span class="h1-lucky">Lucky</span>
+        <span class="h1-stranger">Stranger</span>
+      </h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-sub">Revised creative direction based on your feedback. Today we're showing you where we landed on the visual direction and taglines, sharing initial color and font thinking, and exploring how the brand starts to live inside the space.</p>
+      <div class="hero-meta">
+        <strong>Prepared by</strong> Big Sis Creative Studio<br />
+        <strong>For</strong> Ali, Nan, Kelsey, Jose + Hannah<br />
+        April 28, 2026
+      </div>
     </div>
   </div>
 </section>
