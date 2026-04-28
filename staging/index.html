@@ -115,12 +115,14 @@
 
     h1 {
       font-family: var(--display);
+      font-weight: 400;
       font-size: clamp(72px, 11vw, 152px);
       line-height: 1.0;
       color: var(--red);
     }
     h2 {
       font-family: var(--display);
+      font-weight: 400;
       font-size: clamp(32px, 5vw, 64px);
       line-height: 1.0;
       color: var(--text);
@@ -128,6 +130,7 @@
     }
     h3 {
       font-family: var(--display);
+      font-weight: 400;
       font-size: clamp(18px, 2.2vw, 26px);
       line-height: 1.1;
       color: var(--text);
@@ -261,7 +264,7 @@
       text-align: right;
       padding-top: 4px;
     }
-    .ag-body h3 { font-size: 18px; margin-bottom: 6px; padding-top: 4px; }
+    .ag-body h3 { font-size: 18px; font-weight: 400; margin-bottom: 6px; padding-top: 4px; }
     .ag-body p  { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
 
     /* ─── IMAGE SEQUENCE ─────────────────────────────────────── */
@@ -380,7 +383,8 @@
       font-style: italic;
       text-transform: none;
       letter-spacing: .04em;
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 400;
     }
     .font-name-gin {
       letter-spacing: .3em;
@@ -388,6 +392,68 @@
     .font-name-sep {
       color: var(--text-dimmer);
       font-size: 14px;
+    }
+    .font-roles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 640px) { .font-roles { grid-template-columns: 1fr; } }
+    .font-role-item {
+      background: var(--bg-2);
+      padding: 24px;
+    }
+    .font-role-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 6px;
+    }
+    .font-role-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 10px;
+      letter-spacing: .02em;
+    }
+    .font-role-name.font-name-script {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: .02em;
+      text-transform: none;
+    }
+    .font-role-name.font-name-gin {
+      letter-spacing: .2em;
+    }
+    .font-role-desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+    .font-web-note {
+      background: var(--bg-3);
+      border-left: 3px solid var(--text-dimmer);
+      padding: 14px 18px;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .font-web-note-label {
+      display: block;
+      font-style: normal;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      margin-bottom: 6px;
     }
     .font-images {
       display: flex;
@@ -403,6 +469,12 @@
       margin-top: 14px;
     }
     @media (max-width: 640px) { .ph-grid-3 { grid-template-columns: 1fr; } }
+    .img-3-4 {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
     .interior-divider {
       display: flex;
       align-items: center;
@@ -443,7 +515,7 @@
       line-height: 1;
       color: var(--rule);
     }
-    .step-body h3 { font-size: 17px; margin-bottom: 4px; }
+    .step-body h3 { font-size: 17px; font-weight: 400; margin-bottom: 4px; }
     .step-body p  { font-size: 13px; color: var(--text-dim); }
     .step-owner {
       font-size: 9px;
@@ -470,7 +542,17 @@
       gap: 40px;
     }
     @media (max-width: 600px) { .footer-inner { flex-direction: column; gap: 24px; } }
-    .footer-logo img { height: 30px; display: block; }
+    .footer-logo img { height: 56px; display: block; margin-bottom: 12px; }
+    .footer-confidential {
+      display: inline-block;
+      border: 1px solid var(--rule);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-dimmer);
+      padding: 3px 10px;
+    }
     .footer-details { text-align: right; }
     @media (max-width: 600px) { .footer-details { text-align: left; } }
     .footer-line {
@@ -664,7 +746,7 @@
       border-bottom: 1px solid var(--rule);
     }
     .p1-step-num { font-family: var(--display); font-size: 28px; color: var(--rule); line-height: 1; }
-    .p1-step-body h3 { font-size: 15px; margin-bottom: 4px; }
+    .p1-step-body h3 { font-size: 15px; font-weight: 400; margin-bottom: 4px; }
     .p1-step-body p  { font-size: 13px; color: var(--text-dim); }
   </style>
 </head>
@@ -963,6 +1045,34 @@
       <span class="font-name-chip font-name-gin">GIN</span>
     </div>
 
+    <div class="font-roles">
+      <div class="font-role-item">
+        <p class="font-role-label">Signage / headlines</p>
+        <p class="font-role-name">Gill Sans Bold</p>
+        <p class="font-role-desc">The workhorse. Utilitarian with real weight — the kind of type you'd see stenciled above a bar or hand-painted on a roadside sign. Pulls off the tongue-in-cheek hotel signage register without trying too hard.</p>
+      </div>
+      <div class="font-role-item">
+        <p class="font-role-label">Script accent</p>
+        <p class="font-role-name font-name-script">Gibson Script</p>
+        <p class="font-role-desc">The handshake. A simple hand-drawn script for accent words — the kind that shows up next to the bold in vintage type pairings. Friendly without being precious. Used sparingly: a word, a phrase, never a paragraph.</p>
+      </div>
+      <div class="font-role-item">
+        <p class="font-role-label">Body copy</p>
+        <p class="font-role-name">Gill Sans Semibold &amp; Regular</p>
+        <p class="font-role-desc">Matches the sans in the signage DNA. Readable at menu scale, legible in low light, consistent with the overall register. The Semibold for labels and callouts; Regular for descriptions and longer reads.</p>
+      </div>
+      <div class="font-role-item">
+        <p class="font-role-label">Emphasis / accent</p>
+        <p class="font-role-name font-name-gin">GIN</p>
+        <p class="font-role-desc">The same face used for "Stranger" in the logo lockup. Used sparingly — a word that needs visual punch, a label that earns a second look. Not for running text. Not for signage. Just the moments that need it.</p>
+      </div>
+    </div>
+
+    <div class="font-web-note">
+      <span class="font-web-note-label">Note on web implementation</span>
+      These fonts aren't readily available as web fonts. Once the system is approved, we'll identify complementary Google Font pairings that capture the same register and can be cleanly implemented across the site and digital touchpoints.
+    </div>
+
     <div class="font-images">
       <div>
         <div class="img-label-row">
@@ -993,9 +1103,9 @@
     <div style="margin-top: 36px;">
       <p class="sub-label">Reference — interior direction (WIP from Hannah)</p>
       <div class="ph-grid-3">
-        <img class="img-fill" src="interior-ref-1.jpg" alt="Interior reference 1" />
-        <img class="img-fill" src="interior-ref-2.jpg" alt="Interior reference 2" />
-        <img class="img-fill" src="interior-ref-3.jpg" alt="Interior reference 3" />
+        <img class="img-fill img-3-4" src="interior-ref-1.jpg" alt="Interior reference 1" />
+        <img class="img-fill img-3-4" src="interior-ref-2.jpg" alt="Interior reference 2" />
+        <img class="img-fill img-3-4" src="interior-ref-3.jpg" alt="Interior reference 3" />
       </div>
     </div>
 
@@ -1008,21 +1118,9 @@
     <p class="sub-label">Brand extensions — how the marks live inside</p>
     <p class="body-copy" style="margin: 8px 0 16px;">Stenciled logos over found paintings. The cat mark on glass, walls, and signage. Brand as texture, not decoration.</p>
     <div class="ph-grid-3">
-      <div class="ph ph-mid">
-        <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-01.jpg</p>
-        <p class="ph-note">Logo stencil over thrift store painting</p>
-      </div>
-      <div class="ph ph-mid">
-        <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-02.jpg</p>
-        <p class="ph-note">Cat mark — wall / signage application</p>
-      </div>
-      <div class="ph ph-mid">
-        <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-03.jpg</p>
-        <p class="ph-note">Brand-in-room — additional application</p>
-      </div>
+      <img class="img-fill img-3-4" src="interior-brand-01.jpg" alt="Logo stencil over thrift store painting" />
+      <img class="img-fill img-3-4" src="interior-brand-02.jpg" alt="Cat mark wall and signage application" />
+      <img class="img-fill img-3-4" src="interior-brand-03.jpg" alt="Brand in room application" />
     </div>
   </div>
 </section>
@@ -1075,6 +1173,7 @@
   <div class="footer-inner">
     <div class="footer-logo">
       <img src="https://bigsisstudio.github.io/luckystranger/bigsis-logo.png" alt="Big Sis Creative Studio" />
+      <span class="footer-confidential">Confidential</span>
     </div>
     <div class="footer-details">
       <p class="footer-line">
@@ -1082,7 +1181,7 @@
         April 28, 2026 · <a href="https://bigsiscreativestudio.com">bigsiscreativestudio.com</a>
       </p>
       <p class="footer-small">
-        Confidential &nbsp;·&nbsp; © 2026 Big Sis Creative Studio, LLC. All rights reserved.
+        © 2026 Big Sis Creative Studio, LLC. All rights reserved.
       </p>
     </div>
   </div>
