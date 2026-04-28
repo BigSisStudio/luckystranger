@@ -117,7 +117,7 @@
       font-family: var(--display);
       font-size: clamp(48px, 7vw, 88px);
       line-height: 1.05;
-      color: var(--text);
+      color: var(--red);
     }
     h2 {
       font-family: var(--display);
@@ -358,90 +358,41 @@
     .color-val span { color: var(--text-dim); }
 
     /* ─── FONTS ──────────────────────────────────────────────── */
-    .font-earmark {
-      margin-top: 36px;
-      background: var(--bg-2);
-      padding: 28px;
-    }
-    .font-earmark-header {
+    .font-names-row {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .font-flag {
-      background: rgba(233,26,65,0.1);
-      border: 1px solid rgba(233,26,65,0.25);
-      color: var(--red);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-    }
-    .font-flag-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dim);
-    }
-    .font-benchmarks {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 24px;
+      margin: 28px 0 32px;
+      padding: 16px 20px;
+      background: var(--bg-2);
+      border-left: 3px solid var(--red);
     }
-    @media (max-width: 600px) { .font-benchmarks { grid-template-columns: 1fr; } }
-    .font-benchmark {
-      background: var(--bg-3);
-      padding: 14px;
-    }
-    .font-benchmark-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--text-dimmer);
-      margin-bottom: 6px;
-    }
-    .font-benchmark-q {
+    .font-name-chip {
       font-size: 12px;
-      color: var(--text-dim);
-      line-height: 1.6;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text);
     }
-    .font-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 6px;
-      margin-top: 20px;
+    .font-name-script {
+      font-family: Georgia, serif;
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: .04em;
+      font-size: 14px;
     }
-    @media (max-width: 700px) { .font-grid { grid-template-columns: repeat(2, 1fr); } }
-    .font-slot {
-      background: var(--bg-3);
-      border: 1px dashed rgba(46,26,14,0.15);
+    .font-name-gin {
+      letter-spacing: .3em;
+    }
+    .font-name-sep {
+      color: var(--text-dimmer);
+      font-size: 14px;
+    }
+    .font-images {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 28px 10px;
-      text-align: center;
-      min-height: 140px;
-    }
-    .font-slot-num {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--text-dimmer);
-    }
-    .font-slot-line { width: 20px; height: 1px; background: var(--rule); }
-    .font-slot-note { font-size: 10px; color: rgba(46,26,14,0.25); line-height: 1.5; }
-    .font-note {
-      margin-top: 16px;
-      font-size: 12px;
-      font-style: italic;
-      color: var(--text-dimmer);
-      line-height: 1.6;
+      gap: 10px;
     }
 
     /* ─── INTERIORS ──────────────────────────────────────────── */
@@ -906,33 +857,21 @@
           <span class="img-num">01</span>
           <span class="img-cap">In the world — matchbook</span>
         </div>
-        <div class="ph ph-tall">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">logo-2-matchbook.jpg</p>
-          <p class="ph-note">Revised logo on matchbook — in-situ application</p>
-        </div>
+        <img class="img-fill" src="LOGO-2-MATCHBOOK.jpg" alt="Lucky Stranger logo on matchbook" />
       </div>
       <div>
         <div class="img-label-row">
           <span class="img-num">02</span>
           <span class="img-cap">The mark — isolated</span>
         </div>
-        <div class="ph ph-mid">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">logo-2-mark.jpg</p>
-          <p class="ph-note">Logomark isolated on field</p>
-        </div>
+        <img class="img-fill" src="Logo-2-mark.jpg" alt="Lucky Stranger logomark" />
       </div>
       <div>
         <div class="img-label-row">
           <span class="img-num">03</span>
           <span class="img-cap">The system — variations and lockups</span>
         </div>
-        <div class="ph ph-mid">
-          <div class="ph-icon">↑</div>
-          <p class="ph-filename">logo-2-system.jpg</p>
-          <p class="ph-note">Logo system, alternate lockups, and usage variations</p>
-        </div>
+        <img class="img-fill" src="Logo-2-system.jpg" alt="Lucky Stranger logo system" />
       </div>
     </div>
   </div>
@@ -1012,62 +951,33 @@
     <div class="sec-bar"></div>
     <p class="label">Typography</p>
     <h2>The font system.</h2>
-    <p class="body-copy">Five typefaces, each doing a specific job. The showcase below is earmarked — images and final selections coming once the full system is confirmed.</p>
+    <p class="body-copy">Four typefaces, each doing a specific job — from headlines and signage down to menu copy and utility text. Below is how they perform together in context.</p>
 
-    <div class="font-earmark">
-      <div class="font-earmark-header">
-        <span class="font-flag">In Progress</span>
-        <span class="font-flag-title">Font selection — showcase images to be provided</span>
-      </div>
+    <div class="font-names-row">
+      <span class="font-name-chip">Gill Sans Bold</span>
+      <span class="font-name-sep">·</span>
+      <span class="font-name-chip">Gill Sans Semibold</span>
+      <span class="font-name-sep">·</span>
+      <span class="font-name-chip font-name-script">Gibson Script</span>
+      <span class="font-name-sep">·</span>
+      <span class="font-name-chip font-name-gin">GIN</span>
+    </div>
 
-      <div class="font-benchmarks">
-        <div class="font-benchmark">
-          <p class="font-benchmark-label">Primary display</p>
-          <p class="font-benchmark-q">What's the typeface that owns headlines and the wordmark? How does it set the register — formal, hand-drawn, utilitarian?</p>
+    <div class="font-images">
+      <div>
+        <div class="img-label-row">
+          <span class="img-num">01</span>
+          <span class="img-cap">System — taglines and applications</span>
         </div>
-        <div class="font-benchmark">
-          <p class="font-benchmark-label">Script / accent</p>
-          <p class="font-benchmark-q">Is there a script element? Where does it live — in the logo, in signage, in seasonal specials? What personality does it add?</p>
-        </div>
-        <div class="font-benchmark">
-          <p class="font-benchmark-label">Body / menu copy</p>
-          <p class="font-benchmark-q">What carries the readable content — menus, descriptions, interior signage? How does it sit next to the display face?</p>
-        </div>
-        <div class="font-benchmark">
-          <p class="font-benchmark-label">Utility / small print</p>
-          <p class="font-benchmark-q">Is there a workhorse face for labels, stamps, or secondary information? What's its relationship to the others?</p>
-        </div>
+        <img class="img-fill" src="Font_lockups.jpg" alt="Font system and tagline lockups" />
       </div>
-
-      <p class="label dim" style="margin-bottom: 10px;">Showcase — 5 typeface images</p>
-      <div class="font-grid">
-        <div class="font-slot">
-          <p class="font-slot-num">Font 01</p>
-          <div class="font-slot-line"></div>
-          <p class="font-slot-note">font-01.jpg</p>
+      <div>
+        <div class="img-label-row">
+          <span class="img-num">02</span>
+          <span class="img-cap">Extended — in-context detail</span>
         </div>
-        <div class="font-slot">
-          <p class="font-slot-num">Font 02</p>
-          <div class="font-slot-line"></div>
-          <p class="font-slot-note">font-02.jpg</p>
-        </div>
-        <div class="font-slot">
-          <p class="font-slot-num">Font 03</p>
-          <div class="font-slot-line"></div>
-          <p class="font-slot-note">font-03.jpg</p>
-        </div>
-        <div class="font-slot">
-          <p class="font-slot-num">Font 04</p>
-          <div class="font-slot-line"></div>
-          <p class="font-slot-note">font-04.jpg</p>
-        </div>
-        <div class="font-slot">
-          <p class="font-slot-num">Font 05</p>
-          <div class="font-slot-line"></div>
-          <p class="font-slot-note">font-05.jpg</p>
-        </div>
+        <img class="img-fill" src="Font_lockups2.jpg" alt="Font detail and extended applications" />
       </div>
-      <p class="font-note">Each image will showcase the selected typeface set in one of the approved taglines — showing character, weight, and how it occupies space at different scales.</p>
     </div>
   </div>
 </section>
@@ -1112,17 +1022,17 @@
     <div class="ph-grid-3">
       <div class="ph ph-mid">
         <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-1.jpg</p>
+        <p class="ph-filename">interior-brand-01.jpg</p>
         <p class="ph-note">Logo stencil over thrift store painting</p>
       </div>
       <div class="ph ph-mid">
         <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-2.jpg</p>
+        <p class="ph-filename">interior-brand-02.jpg</p>
         <p class="ph-note">Cat mark — wall / signage application</p>
       </div>
       <div class="ph ph-mid">
         <div class="ph-icon">↑</div>
-        <p class="ph-filename">interior-brand-3.jpg</p>
+        <p class="ph-filename">interior-brand-03.jpg</p>
         <p class="ph-note">Brand-in-room — additional application</p>
       </div>
     </div>
