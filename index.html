@@ -521,6 +521,36 @@
       margin-bottom: 6px;
     }
 
+    /* ─── REFINEMENTS ────────────────────────────────────────── */
+    .refinements-feedback {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 36px;
+    }
+    .refinement-item {
+      background: var(--bg-2);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (max-width: 640px) { .refinement-item { grid-template-columns: 1fr; gap: 6px; } }
+    .refinement-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      padding-top: 2px;
+    }
+    .refinement-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dim);
+    }
+
     /* ─── NEXT STEPS ─────────────────────────────────────────── */
     .steps-list { margin-top: 36px; }
     .step {
@@ -786,6 +816,7 @@
     <a href="#fonts">Fonts</a>
     <a href="#interiors">Interiors</a>
     <a href="#next">Next Steps</a>
+    <a href="#refinements">Refinements</a>
   </div>
 </nav>
 
@@ -1189,6 +1220,39 @@
         </div>
         <div class="step-owner">Big Sis</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REFINEMENTS ───────────────────────────────────────────── -->
+<section id="refinements">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <p class="label">Refinements</p>
+    <h2>Working the mark.</h2>
+    <p class="body-copy">Based on your feedback from Presentation 02, here's where we focused:</p>
+
+    <div class="refinements-feedback">
+      <div class="refinement-item">
+        <p class="refinement-label">The "L"</p>
+        <p class="refinement-body">Reworked to read clearly as "Lucky" — addressing the misread. Adjusted the entry stroke and cap form so the letterform is unambiguous at every scale.</p>
+      </div>
+      <div class="refinement-item">
+        <p class="refinement-label">Distress</p>
+        <p class="refinement-body">Exploring both a clean version and a distressed version. The texture can live in physical applications — signage, print, merch — while the clean version works for digital and any context that needs crispness.</p>
+      </div>
+      <div class="refinement-item">
+        <p class="refinement-label">Stranger weight</p>
+        <p class="refinement-body">"Stranger" has been brought up in visual weight so it holds its own alongside "Lucky" without competing for hero status. Still subordinate — just no longer getting lost.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <div class="img-label-row">
+        <span class="img-num">A–G</span>
+        <span class="img-cap">Logo iterations — options for review</span>
+      </div>
+      <img class="img-fill" src="LuckyStranger_Feedbackiterations.jpg" alt="Lucky Stranger logo refinement iterations A through G" />
     </div>
   </div>
 </section>
