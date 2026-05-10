@@ -346,6 +346,118 @@
     .arc-ref-lbl { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 5px; }
     .arc-ref-body { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
 
+    /* ─── DOWNLOADS ─────────────────────────────────────────── */
+    .dl-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;
+    }
+    @media (max-width: 800px) { .dl-grid { grid-template-columns: 1fr; } }
+    .dl-card {
+      background: var(--bg-dark); padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .dl-card-icon {
+      font-size: 28px; margin-bottom: 18px; line-height: 1;
+    }
+    .dl-card-type {
+      font-family: var(--fh); font-size: 9px; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 10px;
+    }
+    .dl-card-name {
+      font-family: var(--fh); font-weight: 700; font-size: 18px;
+      color: var(--text-inv); line-height: 1.2; margin-bottom: 10px;
+    }
+    .dl-card-desc {
+      font-size: 13px; color: var(--text-inv-mid); line-height: 1.65;
+      flex: 1; margin-bottom: 24px;
+    }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--fh); font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 11px 20px; border: 1px solid rgba(238,230,210,0.18);
+      color: var(--text-inv); background: transparent;
+      cursor: pointer; transition: background .2s, border-color .2s;
+      text-decoration: none; align-self: flex-start;
+    }
+    .dl-btn:hover { background: rgba(238,230,210,0.08); border-color: rgba(238,230,210,0.35); }
+    .dl-btn.soon {
+      color: var(--text-inv-mid); cursor: default; pointer-events: none;
+      border-color: rgba(238,230,210,0.08);
+    }
+    .dl-btn.soon::before { content: ''; }
+    .dl-note {
+      margin-top: 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6;
+      border-top: 1px solid var(--rule); padding-top: 20px;
+    }
+
+    /* ─── VOICE & TONE ───────────────────────────────────────── */
+    .vt-intro { font-size: 17px; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
+    .vt-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 52px;
+    }
+    @media (max-width: 800px) { .vt-split { grid-template-columns: 1fr; gap: 32px; } }
+    .vt-block-label {
+      font-family: var(--fh); font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 16px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--rule);
+    }
+    .vt-body { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
+    .vt-table {
+      width: 100%; border-collapse: collapse; margin-top: 48px; font-size: 14px;
+    }
+    .vt-table th {
+      font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text-dim); text-align: left; padding: 10px 16px;
+      border-bottom: 2px solid var(--red);
+    }
+    .vt-table th:first-child { border-right: 1px solid var(--rule); }
+    .vt-table td {
+      padding: 16px; border-bottom: 1px solid var(--rule); vertical-align: top;
+      line-height: 1.6;
+    }
+    .vt-table td:first-child {
+      border-right: 1px solid var(--rule); font-weight: 600; color: var(--text);
+    }
+    .vt-table td:last-child { color: var(--text-dim); }
+    .vt-table tr:last-child td { border-bottom: none; }
+    .vt-descriptor { font-size: 13px; color: var(--text-mid); display: block; font-weight: 400; margin-top: 2px; }
+    .vt-tones {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
+    }
+    @media (max-width: 800px) { .vt-tones { grid-template-columns: 1fr; } }
+    .vt-tone-card { background: var(--bg-2); padding: 24px; }
+    .vt-tone-name {
+      font-family: var(--fh); font-weight: 700; font-size: 11px;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 6px;
+    }
+    .vt-tone-context { font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 10px; }
+    .vt-tone-body { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+    .vt-tagline-block {
+      margin-top: 52px; border-top: 1px solid var(--rule); padding-top: 36px;
+    }
+    .vt-tagline-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px;
+    }
+    @media (max-width: 600px) { .vt-tagline-grid { grid-template-columns: 1fr; } }
+    .vt-tagline-card { background: var(--bg-dark); padding: 28px 32px; }
+    .vt-tagline-label {
+      font-size: 9px; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 12px;
+    }
+    .vt-tagline-value {
+      font-family: var(--fs); font-size: 30px; color: var(--text-inv); line-height: 1.2; margin-bottom: 14px;
+    }
+    .vt-tagline-rationale { font-size: 13px; color: var(--text-inv-mid); line-height: 1.65; }
+    .vt-usage-list {
+      list-style: none; margin-top: 16px;
+    }
+    .vt-usage-list li {
+      font-size: 13px; color: var(--text-inv-mid); padding: 3px 0; line-height: 1.55;
+    }
+    .vt-usage-list li::before { content: '→ '; color: var(--red); font-weight: 700; }
+
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 768px) {
       .hero { padding: 56px 0; }
@@ -363,9 +475,11 @@
   <div class="nav-inner">
     <span class="nav-project">Lucky Stranger / Brand Hub</span>
     <div class="nav-links">
+      <a href="#downloads">Downloads</a>
       <a href="#direction">Brand Direction</a>
       <a href="#colors">Colors</a>
       <a href="#typography">Typography</a>
+      <a href="#voice">Voice &amp; Tone</a>
       <a href="#next">Next Steps</a>
     </div>
   </div>
@@ -401,6 +515,42 @@
         Ali, Nan, Kelsey, Jose + Hannah
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─── DOWNLOADS ─────────────────────────────────────────────── -->
+<section id="downloads" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Brand Assets</div>
+    <h2 class="sec-h2">Download the brand files.</h2>
+    <p class="body-copy">Production-ready files for the Lucky Stranger identity system. Updated here as assets are finalized. Download what you need — use what's in these files, not screenshots from the hub.</p>
+
+    <div class="dl-grid">
+      <div class="dl-card">
+        <div class="dl-card-icon">⬡</div>
+        <div class="dl-card-type">Logo Package</div>
+        <div class="dl-card-name">Logo Files</div>
+        <div class="dl-card-desc">Finalized logo in all approved formats — primary, mark, horizontal. SVG, PNG, EPS. Color, white, and black versions included.</div>
+        <span class="dl-btn soon">Coming after approval</span>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-icon">▨</div>
+        <div class="dl-card-type">Brand Backgrounds</div>
+        <div class="dl-card-name">Brand Textures &amp; Backgrounds</div>
+        <div class="dl-card-desc">Brand-approved backgrounds, texture overlays, and pattern files for print and digital use. Organized by application.</div>
+        <span class="dl-btn soon">Coming soon</span>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-icon">⬜</div>
+        <div class="dl-card-type">Brand Guide</div>
+        <div class="dl-card-name">Brand Guidelines PDF</div>
+        <div class="dl-card-desc">The complete system in one document — logo, color, type, voice, and usage rules. The source of truth for anyone touching the brand.</div>
+        <span class="dl-btn soon">Coming soon</span>
+      </div>
+    </div>
+
+    <p class="dl-note">Files are added here as they're finalized. If you need something specific before it's posted, reach out to Big Sis directly.</p>
   </div>
 </section>
 
@@ -589,6 +739,110 @@
   </div>
 </section>
 
+<!-- ─── VOICE & TONE ───────────────────────────────────────────── -->
+<section id="voice" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Messaging System</div>
+    <h2 class="sec-h2">How Lucky Stranger talks.</h2>
+    <p class="vt-intro">Voice is personality — it doesn't change. Tone is mood — it shifts with the moment. Lucky Stranger has one voice. The tone adapts to what's happening at the bar.</p>
+
+    <div class="vt-split">
+      <div>
+        <div class="vt-block-label">The Voice</div>
+        <p class="vt-body">Lucky Stranger sounds like a bartender who's seen everything and is genuinely glad to see you walk in. Matter-of-fact and welcoming, without being eager. Comfortable with whatever the day brings.</p>
+        <p class="vt-body" style="margin-top: 16px;">The voice behind everything we write leans into the good time we promise — without having to promise it out loud.</p>
+      </div>
+      <div>
+        <div class="vt-block-label">Voice vs. Tone</div>
+        <p class="vt-body">Voice is the consistent personality across every touchpoint — signage, menus, social, conversation. Tone is how that personality reads in a given context. Same person, different room.</p>
+        <p class="vt-body" style="margin-top: 16px;">The test: does it sound like something that would actually be said at the bar? If not, pull it back.</p>
+      </div>
+    </div>
+
+    <table class="vt-table">
+      <thead>
+        <tr>
+          <th>We are</th>
+          <th>We are not</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Inviting</strong><span class="vt-descriptor">Everyone feels like a regular, even on night one.</span></td>
+          <td>Indifferent</td>
+        </tr>
+        <tr>
+          <td><strong>Understated</strong><span class="vt-descriptor">Efficient and focused, without unnecessary fluff or try-hard energy.</span></td>
+          <td>Quiet</td>
+        </tr>
+        <tr>
+          <td><strong>Confident</strong><span class="vt-descriptor">Strong belief in ourselves, without trying to be cool.</span></td>
+          <td>Arrogant</td>
+        </tr>
+        <tr>
+          <td><strong>Optimistic</strong><span class="vt-descriptor">Good fortune is always on the horizon. We buy into that.</span></td>
+          <td>Naive</td>
+        </tr>
+        <tr>
+          <td><strong>Wry</strong><span class="vt-descriptor">There's a wink in there — sometimes more obvious than others.</span></td>
+          <td>Sarcastic</td>
+        </tr>
+        <tr>
+          <td><strong>Honest</strong><span class="vt-descriptor">We mean what we say. Said respectfully.</span></td>
+          <td>Blunt</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="vt-tones">
+      <div class="vt-tone-card">
+        <div class="vt-tone-name">Day-to-day</div>
+        <div class="vt-tone-context">The regular making conversation.</div>
+        <p class="vt-tone-body">Easy, approachable, a little playful. Not performing. Not pushing. Just the kind of thing you'd hear from someone who's at home behind that bar.</p>
+      </div>
+      <div class="vt-tone-card">
+        <div class="vt-tone-name">Promotional</div>
+        <div class="vt-tone-context">Good fortune's on the horizon.</div>
+        <p class="vt-tone-body">Confident and direct. No hard sell. Point toward the good time — let people decide to show up. The bar doesn't beg. It invites.</p>
+      </div>
+      <div class="vt-tone-card">
+        <div class="vt-tone-name">Functional</div>
+        <div class="vt-tone-context">Let the information do the work.</div>
+        <p class="vt-tone-body">Hours, menus, signage — plain-spoken and utilitarian. No editorializing. The cleaner, the better. Trust that the brand context already does the talking.</p>
+      </div>
+    </div>
+
+    <div class="vt-tagline-block">
+      <div class="sec-label">Tagline system</div>
+      <div class="vt-tagline-grid">
+        <div class="vt-tagline-card">
+          <div class="vt-tagline-label">Main bar — primary tagline</div>
+          <div class="vt-tagline-value">Bet on a good time.</div>
+          <p class="vt-tagline-rationale">A low-stakes invitation. Confident, warm, optimistic. Whatever the night has in store, you're in the right place to see what good fortune comes your way.</p>
+          <ul class="vt-usage-list">
+            <li>Signage, napkins &amp; coasters</li>
+            <li>Menus and matchboxes</li>
+            <li>Merch</li>
+            <li>In long-form copy: "You can bet on a good time every time you step through the doors."</li>
+          </ul>
+        </div>
+        <div class="vt-tagline-card">
+          <div class="vt-tagline-label">Back bar — secondary tagline</div>
+          <div class="vt-tagline-value">Drinks &amp; Discretion.</div>
+          <p class="vt-tagline-rationale">The back bar has its own energy — quieter, more deliberate. This tagline lives there. Not in the main rotation, but ready for the right moment.</p>
+          <ul class="vt-usage-list">
+            <li>Back bar signage and menus</li>
+            <li>Specific print applications</li>
+            <li>Nothing discarded — saved for the right context</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ─── NEXT STEPS ────────────────────────────────────────────── -->
 <section id="next" style="background: var(--bg);">
   <div class="wrap">
@@ -617,7 +871,7 @@
         <tr>
           <td>→ Build brand tone and voice guidelines — how Lucky Stranger talks and what it says</td>
           <td><span class="owner-chip">Big Sis</span></td>
-          <td>In parallel</td>
+          <td>WIP — in hub</td>
         </tr>
         <tr>
           <td>→ Begin interior and exterior signage development with Hannah</td>
