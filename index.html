@@ -188,16 +188,23 @@
     .ref-note-body { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
 
     /* ─── COLORS ─────────────────────────────────────────────── */
+    .color-group-label {
+      font-family: var(--fh); font-weight: 700; font-size: 11px;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);
+      margin-top: 32px; margin-bottom: 12px;
+    }
     .color-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px;
+      display: grid; gap: 16px; margin-top: 0;
     }
-    @media (max-width: 900px) {
-      .color-grid { grid-template-columns: repeat(3, 1fr); }
+    .color-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .color-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 700px) {
+      .color-grid-2, .color-grid-3 { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 560px) {
-      .color-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 400px) {
+      .color-grid-2, .color-grid-3 { grid-template-columns: 1fr; }
     }
-    .color-swatch { height: 160px; width: 100%; }
+    .color-swatch { height: 140px; width: 100%; }
     .color-data { padding: 16px 0 0; }
     .color-name { font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 10px; }
     .color-val { font-size: 11px; color: var(--text-dim); line-height: 1.7; display: flex; justify-content: space-between; gap: 8px; }
@@ -723,7 +730,7 @@
 
     <!-- LOGO RULES -->
     <div class="logo-rules-block">
-      <div class="sec-label" style="margin-top: 64px;">Logo Rules — FPO</div>
+      <div class="sec-label" style="margin-top: 64px;">Logo Rules</div>
       <div class="rules-cols">
         <div class="rules-col">
           <div class="rules-group-label">Base logo</div>
@@ -836,7 +843,8 @@
     <h2 class="sec-h2">The palette.</h2>
     <p class="body-copy">Five colors. Deep, warm, a little rough around the edges, and versatile. The range aligns with the vibe of the space — nothing here is accidental.</p>
 
-    <div class="color-grid">
+    <div class="color-group-label">Primary</div>
+    <div class="color-grid color-grid-2">
       <div class="color-card">
         <div class="color-swatch" style="background:#E71D31;"></div>
         <div class="color-data">
@@ -845,18 +853,7 @@
           <div class="color-val">RGB <span>231, 29, 49</span></div>
           <div class="color-val">HSB <span>354°  87%  91%</span></div>
           <div class="color-val">CMYK <span>3  99  88  0</span></div>
-          <p class="color-usage">Primary brand color. Signage, dominant accents, hero applications.</p>
-        </div>
-      </div>
-      <div class="color-card">
-        <div class="color-swatch" style="background:#9F1C32;"></div>
-        <div class="color-data">
-          <p class="color-name">Cherry</p>
-          <div class="color-val">HEX <span>#9F1C32</span></div>
-          <div class="color-val">RGB <span>159, 28, 50</span></div>
-          <div class="color-val">HSB <span>350°  82%  62%</span></div>
-          <div class="color-val">CMYK <span>25  100  79  20</span></div>
-          <p class="color-usage">Secondary red. Depth, shadow, richness alongside Lucky Strike.</p>
+          <p class="color-usage">The lead. Signage, logo, dominant accents, hero applications.</p>
         </div>
       </div>
       <div class="color-card">
@@ -867,7 +864,22 @@
           <div class="color-val">RGB <span>24, 60, 69</span></div>
           <div class="color-val">HSB <span>192°  65%  27%</span></div>
           <div class="color-val">CMYK <span>89  62  55  46</span></div>
-          <p class="color-usage">Primary dark ground. Hero sections, dark backgrounds, footers.</p>
+          <p class="color-usage">Primary dark ground. Dark backgrounds, footers, cat mark applications.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group-label" style="margin-top: 40px;">Secondary</div>
+    <div class="color-grid color-grid-3">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#9F1C32;"></div>
+        <div class="color-data">
+          <p class="color-name">Cherry</p>
+          <div class="color-val">HEX <span>#9F1C32</span></div>
+          <div class="color-val">RGB <span>159, 28, 50</span></div>
+          <div class="color-val">HSB <span>350°  82%  62%</span></div>
+          <div class="color-val">CMYK <span>25  100  79  20</span></div>
+          <p class="color-usage">Depth and richness. Extended logo lockups, accents alongside Lucky Strike.</p>
         </div>
       </div>
       <div class="color-card">
@@ -878,7 +890,7 @@
           <div class="color-val">RGB <span>238, 230, 210</span></div>
           <div class="color-val">HSB <span>43°  12%  93%</span></div>
           <div class="color-val">CMYK <span>6  7  17  0</span></div>
-          <p class="color-usage">Primary light ground. Paper, body backgrounds, reversed text on dark.</p>
+          <p class="color-usage">Light ground. Paper, body backgrounds, reversed text on dark.</p>
         </div>
       </div>
       <div class="color-card">
