@@ -472,6 +472,43 @@
     }
     .vt-usage-list li::before { content: '→ '; color: var(--red); font-weight: 700; }
 
+    /* ─── LOGO RULES ─────────────────────────────────────────── */
+    .logo-rules-block { margin-top: 16px; }
+    .rules-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px;
+    }
+    @media (max-width: 700px) { .rules-cols { grid-template-columns: 1fr; } }
+    .rules-group-label {
+      font-family: var(--fh); font-weight: 700; font-size: 11px;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 12px;
+    }
+    .rules-list {
+      list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;
+    }
+    .rules-list li {
+      font-size: 13px; line-height: 1.65; color: var(--text-mid); padding-left: 16px; position: relative;
+    }
+    .rules-list li::before { content: '→'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+    .diagram-block { margin-top: 40px; }
+    .diagram-img {
+      display: block; max-width: 560px; width: 100%; height: auto; margin-top: 16px;
+      border: 1px solid var(--rule);
+    }
+    .diagram-caption {
+      font-size: 12px; color: var(--text-dim); margin-top: 10px; max-width: 560px; line-height: 1.5;
+    }
+
+    /* ─── CAT TILES ──────────────────────────────────────────── */
+    .cat-tile {
+      background: transparent !important;
+      padding: 16px 24px;
+    }
+    .cat-tile img { max-width: 180px; }
+    .cat-dl-note {
+      font-size: 13px; color: var(--text-mid); margin-top: 20px;
+    }
+
     /* ─── LOGO SYSTEM ────────────────────────────────────────── */
     .logo-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px;
@@ -684,6 +721,42 @@
       </div>
     </div>
 
+    <!-- LOGO RULES -->
+    <div class="logo-rules-block">
+      <div class="sec-label" style="margin-top: 64px;">Logo Rules — FPO</div>
+      <div class="rules-cols">
+        <div class="rules-col">
+          <div class="rules-group-label">Base logo</div>
+          <ul class="rules-list">
+            <li>One color, always. Lucky and Stranger are the same color in every application. Never split between two colors.</li>
+            <li>Clear space. Maintain ~3/16" margin around the widest and tallest points at all times.</li>
+            <li>Never break the lockup. STRANGER nests within the L and Y descenders by design. Do not reposition, scale, rotate, or adjust independently.</li>
+            <li>Minimum size. STRANGER should never render below 3/4" (print) or 72px at 72dpi. Below this threshold, use the horizontal lockup or cat icon.</li>
+            <li>Visual centering required. The marquee script creates optical asymmetry — always center by eye, never by auto-alignment.</li>
+            <li>Filled, never outlined. Outlined versions are not approved for any use.</li>
+            <li>Black is for partners only. Not an approved in-house production color.</li>
+          </ul>
+        </div>
+        <div class="rules-col">
+          <div class="rules-group-label">Extended logos</div>
+          <ul class="rules-list">
+            <li>Less is more. Never more than 2 extensions on the logo. Approved combos only.</li>
+            <li>2-color lockups: Lucky script and STRANGER each take one approved color. Cat mark, ESTD, and tagline text follow the secondary color.</li>
+            <li>Cat is ALWAYS Midnight — never within a logo lockup on a dark background.</li>
+            <li>Cat mark position is fixed. It sits above the Lucky script at a defined scale. Do not reposition, resize independently, or detach it.</li>
+            <li>ESTD always precedes the year. Never display the year alone. Always reads "ESTD [LOGO] YEAR" as a unit.</li>
+            <li>Tagline only appears in the Year + Tag configuration. "BET ON A GOOD TIME" is not a standalone extension.</li>
+            <li>Red and Midnight in large areas create optical vibration. Never place Midnight on red backgrounds or red on Midnight/blue backgrounds. Exception: cat mark, ESTD, and year text.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="diagram-block">
+        <div class="rules-group-label">Visual center reference</div>
+        <img src="LS_logoDiagram.png" alt="Lucky Stranger logo — visual center and spacing diagram" class="diagram-img" />
+        <p class="diagram-caption">The marquee script creates optical asymmetry. Use this diagram as the reference for centering — never auto-align.</p>
+      </div>
+    </div>
+
     <!-- EXTENDED LOGOS -->
     <div class="logo-subsection">
       <div class="sec-label" style="margin-top: 56px;">Extended Iterations</div>
@@ -692,9 +765,9 @@
           <img src="LS_Cat_Yearlogo_red_midnight.svg" alt="Lucky Stranger — Cat + Year, red and midnight" />
           <div class="logo-tile-label">Cat + Year · Red / Midnight</div>
         </div>
-        <div class="logo-tile" style="background: #183C45;">
+        <div class="logo-tile" style="background: #F4F2EA;">
           <img src="LS_Yearlogo_red.svg" alt="Lucky Stranger — Year logo, red" />
-          <div class="logo-tile-label">Year logo · Red on Midnight</div>
+          <div class="logo-tile-label">Year logo · Red on Smoke</div>
         </div>
         <div class="logo-tile" style="background: #FFFFFF;">
           <img src="LS_Year_Taglogo_midnight_cherry.svg" alt="Lucky Stranger — Year + Tag, midnight and cherry" />
@@ -711,9 +784,9 @@
           <img src="LS_horizontal_midnight.svg" alt="Lucky Stranger — Horizontal, midnight" />
           <div class="logo-tile-label">Horizontal · Midnight on Smoke</div>
         </div>
-        <div class="logo-tile logo-tile-wide" style="background: #183C45;">
+        <div class="logo-tile logo-tile-wide" style="background: #F4F2EA;">
           <img src="LS_horizontal_tag_red.svg" alt="Lucky Stranger — Horizontal with tag, red" />
-          <div class="logo-tile-label">Horizontal + Tag · Red on Midnight</div>
+          <div class="logo-tile-label">Horizontal + Tag · Red on Smoke</div>
         </div>
       </div>
     </div>
@@ -739,21 +812,19 @@
     <div class="sec-bar"></div>
     <div class="sec-label">Logomark</div>
     <h2 class="sec-h2">The cat.</h2>
-    <p class="body-copy">The peek cat is the brand's standalone icon — three variations based on eye treatment and context. Use the isolated cat mark where the full wordmark isn't needed: favicons, social avatars, merch stamps, sticker applications.</p>
-    <div class="logo-grid logo-grid-3" style="margin-top: 32px;">
-      <div class="logo-tile logo-tile-cat" style="background: #E71D31;">
-        <img src="LS_Cat_curve_eyes.svg" alt="Lucky Stranger peek cat — curved eyes" />
-        <div class="logo-tile-label" style="color: rgba(255,255,255,0.5);">Curved eyes</div>
+    <p class="body-copy">Three peek cat variations — isolated mark for use when the full wordmark isn't needed: favicons, social avatars, merch stamps, sticker applications.</p>
+    <div class="logo-grid logo-grid-3 cat-grid" style="margin-top: 32px;">
+      <div class="logo-tile logo-tile-cat cat-tile">
+        <img src="LS_Cat_curve_eyes.svg" alt="Lucky Stranger peek cat — variation 1" />
       </div>
-      <div class="logo-tile logo-tile-cat" style="background: #E71D31;">
-        <img src="LS_Cat_flat_eyes.svg" alt="Lucky Stranger peek cat — flat eyes" />
-        <div class="logo-tile-label" style="color: rgba(255,255,255,0.5);">Flat eyes</div>
+      <div class="logo-tile logo-tile-cat cat-tile">
+        <img src="LS_Cat_flat_eyes.svg" alt="Lucky Stranger peek cat — variation 2" />
       </div>
-      <div class="logo-tile logo-tile-cat" style="background: #EEE6D2;">
-        <img src="LS_CatLogo_midnight.svg" alt="Lucky Stranger cat logo — midnight" />
-        <div class="logo-tile-label">Cat logo · Midnight on Smoke</div>
+      <div class="logo-tile logo-tile-cat cat-tile">
+        <img src="LS_Cat_curveline_eyes.svg" alt="Lucky Stranger peek cat — with line" />
       </div>
     </div>
+    <p class="cat-dl-note">→ <a href="https://drive.google.com/drive/folders/102LVUfisDQZ_Y1qh03MWTFx6QXmExZPT?usp=sharing" target="_blank" rel="noopener" class="inline-link">Download all cat mark variations</a> — includes all colorways, formats, and eye treatments</p>
   </div>
 </section>
 
