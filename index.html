@@ -95,7 +95,7 @@
 
     /* ─── HERO ────────────────────────────────────────────────── */
     .hero {
-      background-image: url('matchbook_mockup.jpeg');
+      background-image: url('woodpaneling.webp');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -109,10 +109,10 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(24,60,69,0.10) 0%,
-        rgba(24,60,69,0.25) 40%,
-        rgba(24,60,69,0.75) 72%,
-        rgba(24,60,69,0.95) 100%
+        rgba(15,25,20,0.08) 0%,
+        rgba(15,25,20,0.15) 45%,
+        rgba(15,25,20,0.72) 75%,
+        rgba(15,25,20,0.94) 100%
       );
       z-index: 0;
     }
@@ -125,14 +125,11 @@
       font-family: var(--fh); font-size: 11px; font-weight: 600;
       letter-spacing: .2em; text-transform: uppercase; color: var(--text-inv-mid);
     }
-    .hero-h1 { font-family: var(--fh); font-weight: 700; line-height: 1.0; margin-bottom: 32px; }
-    .hero-lucky {
-      display: block; font-size: clamp(64px, 11vw, 128px);
-      color: var(--red); letter-spacing: -.02em;
-    }
-    .hero-stranger {
-      display: block; font-size: clamp(64px, 11vw, 128px);
-      color: var(--text-inv); letter-spacing: -.02em;
+    .hero-logo {
+      display: block;
+      width: clamp(260px, 40vw, 520px);
+      height: auto;
+      margin-bottom: 28px;
     }
     .hero-sub {
       font-family: var(--fs); font-size: clamp(22px, 4vw, 38px);
@@ -508,10 +505,7 @@
       <div class="hero-badge-dot"></div>
       <div class="hero-badge-text">Lucky Stranger · Birmingham, AL</div>
     </div>
-    <h1 class="hero-h1">
-      <span class="hero-lucky">Lucky</span>
-      <span class="hero-stranger">Stranger</span>
-    </h1>
+    <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger" class="hero-logo">
     <div class="hero-sub">Brand Identity System</div>
     <div class="hero-meta-row">
       <div class="hero-meta-item">
