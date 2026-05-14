@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Barlow = Gill Sans proxy. Dancing Script = Gibson Script proxy. -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Cabin:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
   <style>
     /* ─── LUCKY STRANGER TOKENS ──────────────────────────────── */
     :root {
@@ -30,7 +30,7 @@
 
       --max: 1200px;
       --gap: 96px;
-      --fh: 'Barlow', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --fh: 'Cabin', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
       --fb: 'Barlow', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
       --fs: 'Dancing Script', cursive;
     }
@@ -99,9 +99,9 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      min-height: calc(100vh - 56px);
+      min-height: 68vh;
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 80px 0;
+      padding: 64px 0;
       position: relative;
     }
     .hero::before {
@@ -132,8 +132,9 @@
       margin-bottom: 28px;
     }
     .hero-sub {
-      font-family: var(--fs); font-size: clamp(22px, 4vw, 38px);
-      color: rgba(238,230,210,0.35); margin-bottom: 52px;
+      font-family: var(--fh); font-size: 13px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-inv-mid); margin-bottom: 40px;
     }
     .hero-meta-row {
       display: flex; align-items: flex-start; gap: 48px; flex-wrap: wrap;
@@ -471,6 +472,66 @@
     }
     .vt-usage-list li::before { content: '→ '; color: var(--red); font-weight: 700; }
 
+    /* ─── LOGO SYSTEM ────────────────────────────────────────── */
+    .logo-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px;
+    }
+    @media (max-width: 900px) { .logo-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .logo-grid { grid-template-columns: 1fr; } }
+    .logo-tile {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 32px 24px 16px;
+      border-radius: 2px;
+    }
+    .logo-tile img {
+      width: 100%; max-width: 200px; height: auto; display: block;
+    }
+    .logo-tile-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(128,128,128,0.6);
+      text-align: center; margin-top: 16px;
+    }
+    .logo-placeholder-row {
+      display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;
+    }
+    .asset-placeholder {
+      flex: 1; min-width: 220px; min-height: 120px;
+      border: 2px dashed var(--rule);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 32px 24px; text-align: center;
+    }
+    .asset-placeholder.wide { min-height: 80px; }
+    .asset-placeholder-label {
+      font-family: var(--fh); font-size: 13px; font-weight: 700;
+      color: var(--text-mid); margin-top: 12px;
+    }
+    .asset-placeholder-sub {
+      font-size: 11px; color: var(--text-dim); margin-top: 4px;
+    }
+    .coming-chip {
+      display: inline-block; background: var(--cherry);
+      color: #fff; font-size: 9px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 3px 10px;
+    }
+    .inline-link {
+      color: var(--red); text-decoration: none; font-size: 14px;
+      font-weight: 700; font-family: var(--fh);
+    }
+    .inline-link:hover { text-decoration: underline; }
+
+    /* ─── BACKGROUNDS ────────────────────────────────────────── */
+    .bg-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;
+    }
+    @media (max-width: 700px) { .bg-grid { grid-template-columns: 1fr; } }
+    .bg-tile { display: flex; flex-direction: column; }
+    .bg-preview { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .bg-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .bg-meta { padding: 12px 0 0; }
+    .bg-name { font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); }
+    .bg-use { font-size: 12px; color: var(--text-dim); margin-top: 3px; letter-spacing: .04em; }
+
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 768px) {
       .hero { padding: 56px 0; }
@@ -489,11 +550,12 @@
     <span class="nav-project">Lucky Stranger / Brand Hub</span>
     <div class="nav-links">
       <a href="#downloads">Downloads</a>
-      <a href="#direction">Brand Direction</a>
-      <a href="#colors">Colors</a>
-      <a href="#typography">Typography</a>
-      <a href="#voice">Voice &amp; Tone</a>
-      <a href="#next">Next Steps</a>
+      <a href="#logos">Logos</a>
+      <a href="#colors">Color</a>
+      <a href="#typography">Fonts</a>
+      <a href="#voice">Tone &amp; Voice</a>
+      <a href="#backgrounds">Backgrounds</a>
+      <a href="#social">Social</a>
     </div>
   </div>
 </nav>
@@ -514,7 +576,7 @@
       </div>
       <div class="hero-meta-item">
         <strong>Hub updated</strong>
-        May 09, 2026
+        May 14, 2026
       </div>
       <div class="hero-meta-item">
         <strong>Prepared by</strong>
@@ -542,7 +604,7 @@
         <div class="dl-card-type">Logo Package</div>
         <div class="dl-card-name">Logo Files</div>
         <div class="dl-card-desc">Finalized logo in all approved formats — primary, mark, horizontal. SVG, PNG, EPS. Color, white, and black versions included.</div>
-        <span class="dl-btn soon">Coming after approval</span>
+        <a class="dl-btn" href="https://drive.google.com/drive/folders/11WufyPifL0QBGaOP6oQm4Lf1tGVD5Zv4?usp=share_link" target="_blank" rel="noopener">Download logos ↗</a>
       </div>
       <div class="dl-card">
         <div class="dl-card-icon">▨</div>
@@ -564,64 +626,88 @@
   </div>
 </section>
 
-<!-- ─── BRAND DIRECTION ───────────────────────────────────────── -->
-<section id="direction" style="background: var(--bg);">
+<!-- ─── LOGO SYSTEM ───────────────────────────────────────────── -->
+<section id="logos" style="background: var(--bg);">
   <div class="wrap">
     <div class="sec-bar"></div>
-    <div class="sec-label">Creative Direction</div>
-    <h2 class="sec-h2">Lucky + Stranger.</h2>
-    <p class="body-copy">A marriage of the warmth, fluidity, and accessibility of Lucky with the mystery and subtle confidence of Stranger. Lucky Stranger is a bar that feels like you've been there before — even if you haven't. The brand identity was built with that spirit in mind: Midwest dive bar DNA, planted in Birmingham.</p>
+    <div class="sec-label">Logo System</div>
+    <h2 class="sec-h2">The mark.</h2>
+    <p class="body-copy">The Lucky Stranger identity is built on one mark — the stacked wordmark with integrated cat element. The system expands from that anchor into extended lockups, horizontal layouts, and badge formats. Use what fits the context. Don't improvise.</p>
+    <p class="body-copy" style="margin-top: -8px;"><a href="#downloads" class="inline-link">→ Download the full logo package</a></p>
 
-    <div class="img-seq">
-      <div>
-        <div class="img-num">01 — In the world</div>
-        <div class="img-cap">Matchbook application</div>
-        <img class="img-fill" src="LOGO-2-MATCHBOOK.jpg" alt="Lucky Stranger logo on matchbook" />
-      </div>
-      <div>
-        <div class="img-num">02 — The mark</div>
-        <div class="img-cap">Isolated logomark</div>
-        <img class="img-fill" src="Logo-2-mark.jpg" alt="Lucky Stranger logomark" />
-      </div>
-      <div>
-        <div class="img-num">03 — The system</div>
-        <div class="img-cap">Variations and lockups</div>
-        <img class="img-fill" src="Logo-2-system.jpg" alt="Lucky Stranger logo system" />
-      </div>
-    </div>
-
-    <div class="taglines-block">
-      <div class="sec-label">Approved tagline directions</div>
-      <div class="tagline-pair">
-        <div class="tagline-card">
-          <div class="tagline-card-label">Main bar</div>
-          <div class="tagline-card-value">Bet on a good time.</div>
+    <!-- PRIMARY LOGOS -->
+    <div class="logo-subsection">
+      <div class="sec-label" style="margin-top: 40px;">Primary — Base Logo</div>
+      <div class="logo-grid">
+        <div class="logo-tile" style="background: #FFFFFF;">
+          <img src="LS_baselogo_red.svg" alt="Lucky Stranger — Red on White" />
+          <div class="logo-tile-label">Lucky Strike on Bleach</div>
         </div>
-        <div class="tagline-card">
-          <div class="tagline-card-label">Back bar</div>
-          <div class="tagline-card-value">Drinks &amp; Discretion.</div>
+        <div class="logo-tile" style="background: #EEE6D2;">
+          <img src="LS_baselogo_midnight.svg" alt="Lucky Stranger — Midnight on Smoke" />
+          <div class="logo-tile-label">Midnight on Cigarette Smoke</div>
+        </div>
+        <div class="logo-tile" style="background: #183C45;">
+          <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger — Smoke on Midnight" />
+          <div class="logo-tile-label">Cigarette Smoke on Midnight</div>
+        </div>
+        <div class="logo-tile" style="background: #E71D31;">
+          <img src="LS_baselogo_white.svg" alt="Lucky Stranger — White on Red" />
+          <div class="logo-tile-label">Bleach on Lucky Strike</div>
         </div>
       </div>
     </div>
 
-    <div class="refinements-strip">
-      <div class="sec-label">Logo refinements — 5.6.26</div>
-      <div class="refinements-notes">
-        <div>
-          <div class="ref-note-label">The "L"</div>
-          <div class="ref-note-body">Options worked up to read clearly as "Lucky" — addressing the misread. Option A is the Presentation 02 reference.</div>
-        </div>
-        <div>
-          <div class="ref-note-label">Distress</div>
-          <div class="ref-note-body">Clean + textured versions in development. Texture for physical applications (signage, print, merch); clean for digital.</div>
-        </div>
-        <div>
-          <div class="ref-note-label">Stranger weight</div>
-          <div class="ref-note-body">"Stranger" brought up in visual weight so it holds its own alongside "Lucky" without competing for hero status.</div>
+    <!-- EXTENDED LOGOS -->
+    <div class="logo-subsection">
+      <div class="sec-label" style="margin-top: 56px;">Extended Iterations</div>
+      <div class="logo-placeholder-row">
+        <div class="asset-placeholder">
+          <div class="asset-placeholder-label">Extended logo files coming</div>
+          <div class="asset-placeholder-sub">Upload files → they'll populate here</div>
         </div>
       </div>
-      <div class="img-num" style="margin-bottom: 8px;">A–G — Logo iterations for review</div>
-      <img class="img-fill" src="LuckyStranger_Feedbackiterations.jpg" alt="Lucky Stranger logo refinement iterations A through G" />
+    </div>
+
+    <!-- HORIZONTAL LOGOS -->
+    <div class="logo-subsection">
+      <div class="sec-label" style="margin-top: 56px;">Horizontal</div>
+      <div class="logo-placeholder-row">
+        <div class="asset-placeholder wide">
+          <div class="asset-placeholder-label">Horizontal logo files coming</div>
+          <div class="asset-placeholder-sub">Upload files → they'll populate here</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="logo-subsection">
+      <div class="sec-label" style="margin-top: 56px;">Badges</div>
+      <div class="logo-placeholder-row">
+        <div class="asset-placeholder soon-chip">
+          <span class="coming-chip">IN PROGRESS</span>
+          <div class="asset-placeholder-label">Badge / medallion lockups</div>
+          <div class="asset-placeholder-sub">In development — coming once primary logo is finalized</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CAT ICON ──────────────────────────────────────────────── -->
+<section id="caticon" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Logomark</div>
+    <h2 class="sec-h2">The cat.</h2>
+    <p class="body-copy">The cat mark is the brand's standalone icon — usable on its own when the full wordmark isn't needed. Favicons, social avatars, merch stamps, sticker applications. The eyes are the tell.</p>
+    <div class="logo-placeholder-row" style="margin-top: 32px;">
+      <div class="asset-placeholder soon-chip">
+        <span class="coming-chip">FILES COMING</span>
+        <div class="asset-placeholder-label">Cat icon — isolated mark</div>
+        <div class="asset-placeholder-sub">Upload isolated cat mark files → they'll populate here</div>
+      </div>
     </div>
   </div>
 </section>
@@ -749,11 +835,11 @@
   </div>
 </section>
 
-<!-- ─── VOICE & TONE ───────────────────────────────────────────── -->
+<!-- ─── TONE & VOICE ───────────────────────────────────────────── -->
 <section id="voice" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar"></div>
-    <div class="sec-label">Messaging System</div>
+    <div class="sec-label">Tone &amp; Voice</div>
     <h2 class="sec-h2">How Lucky Stranger talks.</h2>
     <p class="vt-intro">Voice is personality — it doesn't change. Tone is mood — it shifts with the moment. Lucky Stranger has one voice. The tone adapts to what's happening at the bar.</p>
 
@@ -853,48 +939,102 @@
   </div>
 </section>
 
-<!-- ─── NEXT STEPS ────────────────────────────────────────────── -->
-<section id="next" style="background: var(--bg);">
+<!-- ─── BACKGROUNDS ───────────────────────────────────────────── -->
+<section id="backgrounds" style="background: var(--bg);">
   <div class="wrap">
     <div class="sec-bar"></div>
-    <div class="sec-label">Next Steps</div>
-    <h2 class="sec-h2">Where we go from here.</h2>
-    <table class="steps-table">
-      <thead>
-        <tr>
-          <th>Action</th>
-          <th>Owner</th>
-          <th>Timeline</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>→ Lock the logo — approve final mark from refinements A–G</td>
-          <td><span class="owner-chip">LS + Big Sis</span></td>
-          <td>Next review</td>
-        </tr>
-        <tr>
-          <td>→ Finalize production-ready files — color versions, file formats, usage specs</td>
-          <td><span class="owner-chip">Big Sis</span></td>
-          <td>Post approval</td>
-        </tr>
-        <tr>
-          <td>→ Build brand tone and voice guidelines — how Lucky Stranger talks and what it says</td>
-          <td><span class="owner-chip">Big Sis</span></td>
-          <td>WIP — in hub</td>
-        </tr>
-        <tr>
-          <td>→ Begin interior and exterior signage development with Hannah</td>
-          <td><span class="owner-chip">Big Sis + Hannah</span></td>
-          <td>Post logo lock</td>
-        </tr>
-        <tr>
-          <td>→ Lucky Stranger Disco sub-brand — once core identity is locked</td>
-          <td><span class="owner-chip">Big Sis</span></td>
-          <td>Phase 2</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="sec-label">Brand Backgrounds</div>
+    <h2 class="sec-h2">Texture and field.</h2>
+    <p class="body-copy">Approved backgrounds for print, digital, and environmental use. Wood and step-and-repeat are the two foundational field options. Don't use off-brand textures or stock patterns — use these.</p>
+
+    <div class="bg-grid">
+      <div class="bg-tile">
+        <div class="bg-preview">
+          <img src="woodpaneling.webp" alt="Wood paneling texture" />
+        </div>
+        <div class="bg-meta">
+          <div class="bg-name">Wood paneling</div>
+          <div class="bg-use">Environmental / print / dark-mode digital</div>
+        </div>
+      </div>
+      <div class="bg-tile">
+        <div class="bg-preview">
+          <img src="LuckyStranger_StepandRepeat.webp" alt="Lucky Stranger step and repeat" />
+        </div>
+        <div class="bg-meta">
+          <div class="bg-name">Step and repeat</div>
+          <div class="bg-use">Events / photo moments / media walls</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CUPS ──────────────────────────────────────────────────── -->
+<section id="cups" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Merchandise</div>
+    <h2 class="sec-h2">Cups.</h2>
+    <p class="body-copy">Branded drinkware applications. Files and mockups will live here once production-ready assets are finalized.</p>
+    <div class="logo-placeholder-row" style="margin-top: 32px;">
+      <div class="asset-placeholder soon-chip">
+        <span class="coming-chip">FILES COMING</span>
+        <div class="asset-placeholder-label">Cup applications</div>
+        <div class="asset-placeholder-sub">Upload cup mockups and print-ready files → they'll populate here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
+<section id="signage" style="background: var(--bg-3);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Environmental</div>
+    <h2 class="sec-h2">Signage.</h2>
+    <p class="body-copy">Interior and exterior signage specifications and mockups. Developed in collaboration with Hannah on interior design. Files and approved proofs will live here as they're finalized.</p>
+    <div class="logo-placeholder-row" style="margin-top: 32px;">
+      <div class="asset-placeholder soon-chip">
+        <span class="coming-chip">IN DEVELOPMENT</span>
+        <div class="asset-placeholder-label">Signage applications</div>
+        <div class="asset-placeholder-sub">Signage files and mockups → will populate here as proofs are approved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MERCH ─────────────────────────────────────────────────── -->
+<section id="merch" style="background: var(--bg);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Merchandise</div>
+    <h2 class="sec-h2">Merch.</h2>
+    <p class="body-copy">Branded merchandise — apparel, accessories, print goods. Approved applications live here once production specs are locked.</p>
+    <div class="logo-placeholder-row" style="margin-top: 32px;">
+      <div class="asset-placeholder soon-chip">
+        <span class="coming-chip">FILES COMING</span>
+        <div class="asset-placeholder-label">Merch applications</div>
+        <div class="asset-placeholder-sub">Upload merch mockups and production specs → they'll populate here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL MEDIA ──────────────────────────────────────────── -->
+<section id="social" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar"></div>
+    <div class="sec-label">Social Media</div>
+    <h2 class="sec-h2">Social profiles.</h2>
+    <p class="body-copy">Approved profile images, avatar crops, and cover assets for social platforms. Use what's here — don't crop the full wordmark for a square format without using the designated profile mark.</p>
+    <div class="logo-placeholder-row" style="margin-top: 32px;">
+      <div class="asset-placeholder soon-chip">
+        <span class="coming-chip">FILES COMING</span>
+        <div class="asset-placeholder-label">Social profile assets</div>
+        <div class="asset-placeholder-sub">Upload profile images and social-specific crops → they'll populate here</div>
+      </div>
+    </div>
   </div>
 </section>
 
