@@ -476,8 +476,15 @@
     .logo-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px;
     }
-    @media (max-width: 900px) { .logo-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .logo-grid { grid-template-columns: 1fr; } }
+    .logo-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .logo-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) {
+      .logo-grid { grid-template-columns: repeat(2, 1fr); }
+      .logo-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .logo-grid, .logo-grid-3, .logo-grid-2 { grid-template-columns: 1fr; }
+    }
     .logo-tile {
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; padding: 32px 24px 16px;
@@ -486,6 +493,10 @@
     .logo-tile img {
       width: 100%; max-width: 200px; height: auto; display: block;
     }
+    .logo-tile-wide { padding: 32px 40px 20px; }
+    .logo-tile-wide img { max-width: 100%; }
+    .logo-tile-cat { padding: 28px 20px; }
+    .logo-tile-cat img { max-width: 150px; }
     .logo-tile-label {
       font-size: 10px; font-weight: 700; letter-spacing: .12em;
       text-transform: uppercase; color: rgba(128,128,128,0.6);
@@ -676,10 +687,18 @@
     <!-- EXTENDED LOGOS -->
     <div class="logo-subsection">
       <div class="sec-label" style="margin-top: 56px;">Extended Iterations</div>
-      <div class="logo-placeholder-row">
-        <div class="asset-placeholder">
-          <div class="asset-placeholder-label">Extended logo files coming</div>
-          <div class="asset-placeholder-sub">Upload files → they'll populate here</div>
+      <div class="logo-grid logo-grid-3">
+        <div class="logo-tile" style="background: #EEE6D2;">
+          <img src="LS_Cat_Yearlogo_red_midnight.svg" alt="Lucky Stranger — Cat + Year, red and midnight" />
+          <div class="logo-tile-label">Cat + Year · Red / Midnight</div>
+        </div>
+        <div class="logo-tile" style="background: #183C45;">
+          <img src="LS_Yearlogo_red.svg" alt="Lucky Stranger — Year logo, red" />
+          <div class="logo-tile-label">Year logo · Red on Midnight</div>
+        </div>
+        <div class="logo-tile" style="background: #FFFFFF;">
+          <img src="LS_Year_Taglogo_midnight_cherry.svg" alt="Lucky Stranger — Year + Tag, midnight and cherry" />
+          <div class="logo-tile-label">Year + Tag · Midnight / Cherry</div>
         </div>
       </div>
     </div>
@@ -687,10 +706,14 @@
     <!-- HORIZONTAL LOGOS -->
     <div class="logo-subsection">
       <div class="sec-label" style="margin-top: 56px;">Horizontal</div>
-      <div class="logo-placeholder-row">
-        <div class="asset-placeholder wide">
-          <div class="asset-placeholder-label">Horizontal logo files coming</div>
-          <div class="asset-placeholder-sub">Upload files → they'll populate here</div>
+      <div class="logo-grid logo-grid-2">
+        <div class="logo-tile logo-tile-wide" style="background: #EEE6D2;">
+          <img src="LS_horizontal_midnight.svg" alt="Lucky Stranger — Horizontal, midnight" />
+          <div class="logo-tile-label">Horizontal · Midnight on Smoke</div>
+        </div>
+        <div class="logo-tile logo-tile-wide" style="background: #183C45;">
+          <img src="LS_horizontal_tag_red.svg" alt="Lucky Stranger — Horizontal with tag, red" />
+          <div class="logo-tile-label">Horizontal + Tag · Red on Midnight</div>
         </div>
       </div>
     </div>
@@ -716,12 +739,19 @@
     <div class="sec-bar"></div>
     <div class="sec-label">Logomark</div>
     <h2 class="sec-h2">The cat.</h2>
-    <p class="body-copy">The cat mark is the brand's standalone icon — usable on its own when the full wordmark isn't needed. Favicons, social avatars, merch stamps, sticker applications. The eyes are the tell.</p>
-    <div class="logo-placeholder-row" style="margin-top: 32px;">
-      <div class="asset-placeholder soon-chip">
-        <span class="coming-chip">FILES COMING</span>
-        <div class="asset-placeholder-label">Cat icon — isolated mark</div>
-        <div class="asset-placeholder-sub">Upload isolated cat mark files → they'll populate here</div>
+    <p class="body-copy">The peek cat is the brand's standalone icon — three variations based on eye treatment and context. Use the isolated cat mark where the full wordmark isn't needed: favicons, social avatars, merch stamps, sticker applications.</p>
+    <div class="logo-grid logo-grid-3" style="margin-top: 32px;">
+      <div class="logo-tile logo-tile-cat" style="background: #E71D31;">
+        <img src="LS_Cat_curve_eyes.svg" alt="Lucky Stranger peek cat — curved eyes" />
+        <div class="logo-tile-label" style="color: rgba(255,255,255,0.5);">Curved eyes</div>
+      </div>
+      <div class="logo-tile logo-tile-cat" style="background: #E71D31;">
+        <img src="LS_Cat_flat_eyes.svg" alt="Lucky Stranger peek cat — flat eyes" />
+        <div class="logo-tile-label" style="color: rgba(255,255,255,0.5);">Flat eyes</div>
+      </div>
+      <div class="logo-tile logo-tile-cat" style="background: #EEE6D2;">
+        <img src="LS_CatLogo_midnight.svg" alt="Lucky Stranger cat logo — midnight" />
+        <div class="logo-tile-label">Cat logo · Midnight on Smoke</div>
       </div>
     </div>
   </div>
