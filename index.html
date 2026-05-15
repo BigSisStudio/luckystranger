@@ -131,6 +131,11 @@
       height: auto;
       margin-bottom: 28px;
     }
+    .hero-sub {
+      font-family: var(--fh); font-size: 13px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-inv-mid); margin-bottom: 20px;
+    }
     .hero-desc {
       font-family: var(--fb); font-size: 15px; line-height: 1.6;
       color: var(--text-inv-mid); max-width: 560px; margin-bottom: 12px;
@@ -139,13 +144,9 @@
       color: var(--text-inv); text-decoration: underline; text-underline-offset: 3px;
     }
     .hero-desc a:hover { color: #fff; }
-      font-family: var(--fh); font-size: 13px; font-weight: 700;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: var(--text-inv-mid); margin-bottom: 40px;
-    }
     .hero-meta-row {
       display: flex; align-items: flex-start; gap: 48px; flex-wrap: wrap;
-      border-top: 1px solid var(--rule-inv); padding-top: 24px;
+      border-top: 1px solid var(--rule-inv); padding-top: 24px; margin-top: 32px;
     }
     .hero-meta-item { font-size: 13px; color: var(--text-inv-mid); line-height: 1.5; }
     .hero-meta-item strong {
@@ -234,8 +235,8 @@
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px;
     }
     @media (max-width: 700px) { .font-roles { grid-template-columns: 1fr; } }
+    /* No accent border-top on Gill Sans Bold card — red line removed */
     .font-role-card { background: var(--bg); padding: 28px; border-top: 3px solid var(--rule); }
-    .font-role-card.accent { border-top-color: var(--red); }
     .font-role-eyebrow {
       font-size: 10px; font-weight: 600; letter-spacing: .16em;
       text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
@@ -386,11 +387,6 @@
     .dl-card-icon {
       font-size: 28px; margin-bottom: 18px; line-height: 1;
     }
-    .dl-card-type {
-      font-family: var(--fh); font-size: 9px; font-weight: 700;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: var(--red); margin-bottom: 10px;
-    }
     .dl-card-name {
       font-family: var(--fh); font-weight: 700; font-size: 18px;
       color: var(--text-inv); line-height: 1.2; margin-bottom: 10px;
@@ -415,16 +411,24 @@
     }
     .dl-btn.soon::before { content: ''; }
     .dl-note {
-      margin-top: 24px; font-size: 13px; color: var(--text-dim); line-height: 1.6;
-      border-top: 1px solid var(--rule); padding-top: 20px;
+      margin-top: 16px; font-size: 13px; color: var(--text-dim); line-height: 1.6;
     }
 
     /* ─── VOICE & TONE ───────────────────────────────────────── */
+    .vt-callout {
+      font-size: 15px; color: var(--text-mid); max-width: 680px;
+      line-height: 1.7; margin-bottom: 32px;
+      border-left: 3px solid var(--red); padding-left: 20px;
+    }
+    .vt-section-label {
+      font-family: var(--fh); font-size: 13px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 20px; margin-top: 48px;
+    }
     .vt-intro { font-size: 17px; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
     .vt-split {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 52px;
+      display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 32px;
     }
-    @media (max-width: 800px) { .vt-split { grid-template-columns: 1fr; gap: 32px; } }
     .vt-block-label {
       font-family: var(--fh); font-size: 10px; font-weight: 700;
       letter-spacing: .18em; text-transform: uppercase;
@@ -447,10 +451,15 @@
     }
     .vt-table td:first-child {
       border-right: 1px solid var(--rule); font-weight: 600; color: var(--text);
+      width: 60%;
     }
     .vt-table td:last-child { color: var(--text-dim); }
     .vt-table tr:last-child td { border-bottom: none; }
     .vt-descriptor { font-size: 13px; color: var(--text-mid); display: block; font-weight: 400; margin-top: 2px; }
+    .vt-th-prominent {
+      font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text); padding: 10px 16px; border-bottom: 2px solid var(--red);
+    }
     .vt-tones {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
     }
@@ -466,9 +475,8 @@
       margin-top: 52px; border-top: 1px solid var(--rule); padding-top: 36px;
     }
     .vt-tagline-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px;
+      display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 24px;
     }
-    @media (max-width: 600px) { .vt-tagline-grid { grid-template-columns: 1fr; } }
     .vt-tagline-card { background: var(--bg-dark); padding: 28px 32px; }
     .vt-tagline-label {
       font-size: 9px; font-weight: 700; letter-spacing: .2em;
@@ -559,6 +567,10 @@
       text-transform: uppercase; color: var(--text-mid);
       text-align: center; margin-top: 16px;
     }
+    /* Midnight on Cigarette Smoke tile — thin border so it doesn't float */
+    .logo-tile-bordered {
+      outline: 1px solid #183C45;
+    }
     .logo-placeholder-row {
       display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;
     }
@@ -590,15 +602,15 @@
 
     /* ─── SOCIAL PROFILES ────────────────────────────────────── */
     .social-profile-grid {
-      display: flex; gap: 32px; flex-wrap: wrap; margin-top: 32px; align-items: flex-start;
+      display: flex; gap: 48px; flex-wrap: wrap; margin-top: 32px; align-items: flex-start;
     }
     .social-tile { display: flex; flex-direction: column; align-items: center; }
     .social-preview {
       width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 0 4px var(--rule);
+      background: var(--bg-3);
     }
-    .social-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .social-preview img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .social-meta { text-align: center; margin-top: 12px; }
     .social-name { font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text); }
     .social-use { font-size: 11px; color: var(--text-dim); margin-top: 3px; max-width: 140px; line-height: 1.4; }
@@ -633,7 +645,7 @@
     <span class="nav-project">Lucky Stranger / Brand Hub</span>
     <div class="nav-links">
       <a href="#downloads">Downloads</a>
-      <a href="#logos">Logos</a>
+      <a href="#logos">Logo System</a>
       <a href="#colors">Color</a>
       <a href="#typography">Fonts</a>
       <a href="#voice">Voice &amp; Tone</a>
@@ -653,7 +665,7 @@
     <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger" class="hero-logo">
     <div class="hero-sub">Brand Identity System</div>
     <p class="hero-desc">Everything you need to keep strong brand continuity is here: visuals to download, rules to follow, voice &amp; tone and more.</p>
-    <p class="hero-desc hero-desc--contact">Not sure if you're doing it right? Reach out to Big Sis at <a href="mailto:erin@bigsiscreativestudio.com">erin@bigsiscreativestudio.com</a> or <a href="mailto:jason@bigsiscreativestudio.com">jason@bigsiscreativestudio.com</a></p>
+    <p class="hero-desc">Not sure if you're doing it right? Reach out to Big Sis at <a href="mailto:erin@bigsiscreativestudio.com">erin@bigsiscreativestudio.com</a> or <a href="mailto:jason@bigsiscreativestudio.com">jason@bigsiscreativestudio.com</a></p>
     <div class="hero-meta-row">
       <div class="hero-meta-item">
         <strong>Status</strong>
@@ -677,33 +689,30 @@
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Brand Assets</div>
     <h2 class="sec-h2">Downloads</h2>
-    <p class="body-copy">Grab what you need. Production-ready files for the Lucky Stranger identity system — updated here as assets are finalized.</p>
+    <p class="body-copy">Grab what you need. All current, production-ready Lucky Stranger brand identity files can be accessed here.</p>
 
     <div class="dl-grid">
       <div class="dl-card">
         <div class="dl-card-icon">⬡</div>
-        <div class="dl-card-type">Logo Package</div>
-        <div class="dl-card-name">Logo Files</div>
-        <div class="dl-card-desc">Primary, mark, and horizontal lockups in SVG, PNG, and EPS. Color, white, and black versions included.</div>
-        <a class="dl-btn" href="https://drive.google.com/drive/folders/11WufyPifL0QBGaOP6oQm4Lf1tGVD5Zv4?usp=share_link" target="_blank" rel="noopener">Download logos ↗</a>
+        <div class="dl-card-name">Brand Identity Files</div>
+        <div class="dl-card-desc">Finalized logo and other visual elements in all approved formats, file-types and color versions.</div>
+        <a class="dl-btn" href="https://drive.google.com/drive/folders/18xArW4Occexk_HDgr2nM_c2uWVZRga0S" target="_blank" rel="noopener">Go to downloads ↗</a>
       </div>
       <div class="dl-card">
         <div class="dl-card-icon">▨</div>
-        <div class="dl-card-type">Brand Backgrounds</div>
         <div class="dl-card-name">Brand Textures &amp; Backgrounds</div>
         <div class="dl-card-desc">Brand-approved backgrounds, texture overlays, and pattern files for print and digital use. Organized by application.</div>
         <span class="dl-btn soon">Coming soon</span>
       </div>
       <div class="dl-card">
         <div class="dl-card-icon">⬜</div>
-        <div class="dl-card-type">Brand Guide</div>
         <div class="dl-card-name">Brand Guidelines PDF</div>
         <div class="dl-card-desc">The complete system in one document — logo, color, type, voice, and usage rules. The source of truth for anyone touching the brand.</div>
         <span class="dl-btn soon">Coming soon</span>
       </div>
     </div>
 
-    <p class="dl-note">More files added here as they're locked. Need something before it's posted? <a href="mailto:erin@bigsiscreativestudio.com" class="inline-link">Reach out to Big Sis directly.</a></p>
+    <p class="dl-note">Files are added here as they're finalized. If you need something specific before it's posted, reach out to Big Sis directly.</p>
   </div>
 </section>
 
@@ -713,28 +722,32 @@
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Logo System</div>
     <h2 class="sec-h2">The mark.</h2>
-    <p class="body-copy">The Lucky Stranger identity is built on one mark — the stacked wordmark with integrated cat element. The system expands from that anchor into extended lockups, horizontal layouts, and badge formats. Use what fits the context. Don't improvise.</p>
-    <p class="body-copy" style="margin-top: -8px;"><a href="#downloads" class="inline-link">→ Download the full logo package</a></p>
+    <p class="body-copy">The foundation of the Lucky Stranger identity is the hero stacked wordmark, which allows for seamless integration of other visual elements, including Avondale's new favorite black cat. The system expands into extended lockups, horizontal layouts and badge formats. Use what fits the context, and avoid improvising.</p>
+    <p class="body-copy" style="margin-top: 12px;"><a href="#downloads" class="inline-link">→ Download the full logo package</a></p>
 
     <!-- PRIMARY LOGOS -->
     <div class="logo-subsection">
-      <div class="sec-label" style="margin-top: 40px;">Primary — Base Logo</div>
-      <div class="logo-grid" role="list" aria-label="Base logo color variations">
+      <div class="sec-label" style="margin-top: 40px;">Primary Logo — Approved Color &amp; Background Combinations</div>
+      <!-- Row 1: Lucky Strike on Bleach + Bleach on Lucky Strike -->
+      <div class="logo-grid logo-grid-2" role="list" aria-label="Base logo color variations — bleach and lucky strike" style="margin-bottom: 12px;">
         <div class="logo-tile" style="background: #FFFFFF;" role="listitem">
           <img src="LS_baselogo_red.svg" alt="Lucky Stranger base logo, Lucky Strike red on white" />
           <div class="logo-tile-label" aria-label="Lucky Strike on Bleach">Lucky Strike on Bleach</div>
         </div>
-        <div class="logo-tile" style="background: #EEE6D2;" role="listitem">
+        <div class="logo-tile" style="background: #E71D31;" role="listitem">
+          <img src="LS_baselogo_white.svg" alt="Lucky Stranger base logo, white on Lucky Strike red" />
+          <div class="logo-tile-label logo-tile-label--inv" aria-label="Bleach on Lucky Strike">Bleach on Lucky Strike</div>
+        </div>
+      </div>
+      <!-- Row 2: Midnight on Cigarette Smoke + Cigarette Smoke on Midnight -->
+      <div class="logo-grid logo-grid-2" role="list" aria-label="Base logo color variations — midnight and cigarette smoke">
+        <div class="logo-tile logo-tile-bordered" style="background: #EEE6D2;" role="listitem">
           <img src="LS_baselogo_midnight.svg" alt="Lucky Stranger base logo, Midnight on Cigarette Smoke" />
           <div class="logo-tile-label" aria-label="Midnight on Cigarette Smoke">Midnight on Cigarette Smoke</div>
         </div>
         <div class="logo-tile" style="background: #183C45;" role="listitem">
           <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger base logo, Cigarette Smoke on Midnight" />
           <div class="logo-tile-label logo-tile-label--inv" aria-label="Cigarette Smoke on Midnight">Cigarette Smoke on Midnight</div>
-        </div>
-        <div class="logo-tile" style="background: #E71D31;" role="listitem">
-          <img src="LS_baselogo_white.svg" alt="Lucky Stranger base logo, white on Lucky Strike red" />
-          <div class="logo-tile-label logo-tile-label--inv" aria-label="Bleach on Lucky Strike">Bleach on Lucky Strike</div>
         </div>
       </div>
     </div>
@@ -754,13 +767,13 @@
       <div class="diagram-block">
         <div class="rules-group-label">Visual center reference</div>
         <img src="LS_logoDiagram.svg" alt="Lucky Stranger logo visual center and spacing diagram" class="diagram-img" />
-        <p class="diagram-caption">The marquee script creates optical asymmetry. Use this diagram as your centering reference — never auto-align.</p>
+        <p class="diagram-caption">The marquee script creates optical asymmetry. Use this diagram as your centering reference tool, because auto-centering tools will make the layout feel imbalanced.</p>
       </div>
     </div>
 
     <!-- EXTENDED LOGOS -->
     <div class="logo-subsection">
-      <div class="sec-label" style="margin-top: 64px;">Extended Iterations</div>
+      <div class="sec-label" style="margin-top: 64px;">Extended Iteration Examples</div>
       <div class="logo-grid logo-grid-3" role="list" aria-label="Extended logo variations">
         <div class="logo-tile" style="background: #EEE6D2;" role="listitem">
           <img src="LS_Cat_Yearlogo_red_midnight.svg" alt="Lucky Stranger extended logo with cat mark and year, Lucky Strike red and Midnight on Cigarette Smoke" />
@@ -793,7 +806,8 @@
 
     <!-- HORIZONTAL LOGOS -->
     <div class="logo-subsection">
-      <div class="sec-label" style="margin-top: 64px;">Horizontal</div>
+      <div class="sec-label" style="margin-top: 64px;">Horizontal Logos</div>
+      <p class="body-copy" style="margin-bottom: 24px;">The primary logo already has a horizontal shape, and should be used in most cases. These horizontal versions can be utilized when vertical space is extremely limited.</p>
       <div class="logo-grid logo-grid-2" role="list" aria-label="Horizontal logo variations">
         <div class="logo-tile logo-tile-wide" style="background: #EEE6D2;" role="listitem">
           <img src="LS_horizontal_midnight.svg" alt="Lucky Stranger horizontal logo, Midnight on Cigarette Smoke" />
@@ -826,8 +840,8 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Logomark</div>
-    <h2 class="sec-h2">The cat.</h2>
-    <p class="body-copy">Three peek cat variations — isolated mark for use when the full wordmark isn't needed: favicons, social avatars, merch stamps, sticker applications.</p>
+    <h2 class="sec-h2">(Name TBD), the cat.</h2>
+    <p class="body-copy">There are three peeking cat variations with multiple colorways, formats and eye treatments. They can be used as part of the wordmark lockup, or as an isolated mark when the context calls for it: favicons, social avatars, merch stamps, sticker applications, etc.</p>
     <div class="logo-grid logo-grid-3 cat-grid" style="margin-top: 32px;">
       <div class="logo-tile logo-tile-cat cat-tile">
         <img src="LS_Cat_curve_eyes.svg" alt="Lucky Stranger peek cat — variation 1" />
@@ -839,17 +853,17 @@
         <img src="LS_Cat_curveline_eyes.svg" alt="Lucky Stranger peek cat — with line" />
       </div>
     </div>
-    <p class="cat-dl-note">→ <a href="https://drive.google.com/drive/folders/102LVUfisDQZ_Y1qh03MWTFx6QXmExZPT?usp=sharing" target="_blank" rel="noopener" class="inline-link">Download all cat mark variations</a> — includes all colorways, formats, and eye treatments</p>
+    <p class="cat-dl-note">→ <a href="https://drive.google.com/drive/folders/102LVUfisDQZ_Y1qh03MWTFx6QXmExZPT?usp=sharing" target="_blank" rel="noopener" class="inline-link">Download all cat mark variations</a></p>
   </div>
 </section>
 
-<!-- ─── COLOR SYSTEM ──────────────────────────────────────────── -->
+<!-- ─── COLOR ──────────────────────────────────────────────────── -->
 <section id="colors" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Color System</div>
+    <div class="sec-label">Color</div>
     <h2 class="sec-h2">The palette.</h2>
-    <p class="body-copy">Five colors. Deep, warm, a little rough around the edges, and versatile. The range aligns with the vibe of the space — nothing here is accidental.</p>
+    <p class="body-copy">Five deep, warm, versatile colors that feel a little rough around the edges. The range intentionally aligns with the vibe of the space.</p>
 
     <div class="color-group-label">Primary</div>
     <div class="color-grid color-grid-2">
@@ -916,13 +930,13 @@
   </div>
 </section>
 
-<!-- ─── TYPOGRAPHY ────────────────────────────────────────────── -->
+<!-- ─── FONTS ─────────────────────────────────────────────────── -->
 <section id="typography" style="background: var(--bg-3);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Typography</div>
-    <h2 class="sec-h2">The font system.</h2>
-    <p class="body-copy">Four typefaces, each doing a specific job — from headlines and signage down to menu copy and utility text.</p>
+    <div class="sec-label">Fonts</div>
+    <h2 class="sec-h2">Typography</h2>
+    <p class="body-copy">From headlines and signage, down to menu copy and utility text, each of the four brand typefaces does a specific job.</p>
 
     <div class="font-proxy-note">
       <div class="font-proxy-dot"></div>
@@ -932,7 +946,8 @@
     </div>
 
     <div class="font-roles">
-      <div class="font-role-card accent">
+      <!-- No accent class on first card — red line removed per feedback -->
+      <div class="font-role-card">
         <div class="font-role-eyebrow">Signage / headlines</div>
         <div class="font-role-name">Gill Sans Bold</div>
         <div class="font-role-proxy">Web proxy: Barlow 700</div>
@@ -960,24 +975,23 @@
 
     <div class="font-images">
       <div>
-        <div class="img-num" style="margin-bottom: 8px;">01 — System: taglines and applications</div>
         <img class="img-fill" src="Font_lockups.jpg" alt="Font system and tagline lockups" />
       </div>
       <div>
-        <div class="img-num" style="margin-bottom: 8px;">02 — Extended: in-context detail</div>
         <img class="img-fill" src="Font_lockups2.jpg" alt="Font detail and extended applications" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── TONE & VOICE ───────────────────────────────────────────── -->
+<!-- ─── VOICE & TONE ───────────────────────────────────────────── -->
 <section id="voice" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Tone &amp; Voice</div>
-    <h2 class="sec-h2">How Lucky Stranger talks.</h2>
-    <p class="vt-intro">Voice is personality — it doesn't change. Tone is mood — it shifts with the moment. Lucky Stranger has one voice. The tone adapts to what's happening at the bar.</p>
+    <div class="sec-label">Voice &amp; Tone</div>
+    <p class="vt-callout">Voice = personality, tone = mood. Lucky Stranger's voice doesn't change, but the tone shifts depending on the moment. The test: does it sound like something that would actually be said at the bar? If not, pull it back.</p>
+
+    <div class="vt-section-label">Voice</div>
 
     <div class="vt-split">
       <div>
@@ -985,18 +999,13 @@
         <p class="vt-body">Lucky Stranger sounds like a bartender who's seen everything and is genuinely glad to see you walk in. Matter-of-fact and welcoming, without being eager. Comfortable with whatever the day brings.</p>
         <p class="vt-body" style="margin-top: 16px;">The voice behind everything we write leans into the good time we promise — without having to promise it out loud.</p>
       </div>
-      <div>
-        <div class="vt-block-label">Voice vs. Tone</div>
-        <p class="vt-body">Voice is the consistent personality across every touchpoint — signage, menus, social, conversation. Tone is how that personality reads in a given context. Same person, different room.</p>
-        <p class="vt-body" style="margin-top: 16px;">The test: does it sound like something that would actually be said at the bar? If not, pull it back.</p>
-      </div>
     </div>
 
     <table class="vt-table">
       <thead>
         <tr>
-          <th>We are</th>
-          <th>We are not</th>
+          <th class="vt-th-prominent">We are...</th>
+          <th>But not...</th>
         </tr>
       </thead>
       <tbody>
@@ -1027,6 +1036,8 @@
       </tbody>
     </table>
 
+    <div class="vt-section-label" style="margin-top: 56px;">Tone</div>
+
     <div class="vt-tones">
       <div class="vt-tone-card">
         <div class="vt-tone-name">Day-to-day</div>
@@ -1046,10 +1057,9 @@
     </div>
 
     <div class="vt-tagline-block">
-      <div class="sec-label">Tagline system</div>
+      <div class="sec-label">Tagline</div>
       <div class="vt-tagline-grid">
         <div class="vt-tagline-card">
-          <div class="vt-tagline-label">Main bar — primary tagline</div>
           <div class="vt-tagline-value">Bet on a good time.</div>
           <p class="vt-tagline-rationale">A low-stakes invitation. Confident, warm, optimistic. Whatever the night has in store, you're in the right place to see what good fortune comes your way.</p>
           <ul class="vt-usage-list">
@@ -1057,16 +1067,6 @@
             <li>Menus and matchboxes</li>
             <li>Merch</li>
             <li>In long-form copy: "You can bet on a good time every time you step through the doors."</li>
-          </ul>
-        </div>
-        <div class="vt-tagline-card">
-          <div class="vt-tagline-label">Back bar — secondary tagline</div>
-          <div class="vt-tagline-value">Drinks &amp; Discretion.</div>
-          <p class="vt-tagline-rationale">The back bar has its own energy — quieter, more deliberate. This tagline lives there. Not in the main rotation, but ready for the right moment.</p>
-          <ul class="vt-usage-list">
-            <li>Back bar signage and menus</li>
-            <li>Specific print applications</li>
-            <li>Nothing discarded — saved for the right context</li>
           </ul>
         </div>
       </div>
@@ -1079,9 +1079,9 @@
 <section id="backgrounds" style="background: var(--bg);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Brand Backgrounds</div>
-    <h2 class="sec-h2">Texture and field.</h2>
-    <p class="body-copy">Approved backgrounds for print, digital, and environmental use. Wood and step-and-repeat are the two foundational field options. Don't use off-brand textures or stock patterns — use these.</p>
+    <div class="sec-label">Backgrounds</div>
+    <h2 class="sec-h2">Texture and field</h2>
+    <p class="body-copy">Wood paneling and Step-and-repeat are the two approved options to use as foundational backgrounds. Use these for print, digital, and environmental instead of off-brand textures or stock patterns.</p>
 
     <div class="bg-grid">
       <div class="bg-tile">
@@ -1095,11 +1095,46 @@
       </div>
       <div class="bg-tile">
         <div class="bg-preview">
-          <img src="LS_stepandrepeat.jpg" alt="Lucky Stranger step and repeat" />
+          <img src="LS_stepandrepeat.jpg" alt="Lucky Stranger step-and-repeat" />
         </div>
         <div class="bg-meta">
-          <div class="bg-name">Step and repeat</div>
+          <div class="bg-name">Step-and-repeat</div>
           <div class="bg-use">Events / photo moments / media walls</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL ────────────────────────────────────────────────── -->
+<section id="social" style="background: var(--bg-3);">
+  <div class="wrap">
+    <div class="sec-bar" aria-hidden="true"></div>
+    <div class="sec-label">Social</div>
+    <h2 class="sec-h2">Social profiles</h2>
+    <p class="body-copy">Use these approved profile images for social platforms. They can be accessed through the downloads link.</p>
+
+    <p class="body-copy" style="margin-top: 28px; font-size: 15px; font-weight: 600; color: var(--text);">Primary — Solo Cat</p>
+    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">Shows better as an avatar at smaller sizes and offers more personality for the page. Use on Instagram, TikTok, Facebook.</p>
+
+    <p class="body-copy" style="margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text);">Secondary — Wordmark Square</p>
+    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">For platforms that support rectangular or larger profile formats. Do not crop the full wordmark yourself.</p>
+
+    <div class="social-profile-grid">
+      <div class="social-tile">
+        <div class="social-preview">
+          <img src="LS_Social_SoloCat.png" alt="Lucky Stranger social profile — solo cat" />
+        </div>
+        <div class="social-meta">
+          <div class="social-name">Solo Cat</div>
+        </div>
+      </div>
+      <div class="social-tile">
+        <div class="social-preview">
+          <img src="LS_Social.png" alt="Lucky Stranger social profile — wordmark square" />
+        </div>
+        <div class="social-meta">
+          <div class="social-name">Wordmark Square</div>
         </div>
       </div>
     </div>
@@ -1152,36 +1187,6 @@
         <span class="coming-chip">FILES COMING</span>
         <div class="asset-placeholder-label">Merch applications</div>
         <div class="asset-placeholder-sub">Upload merch mockups and production specs → they'll populate here</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SOCIAL MEDIA ──────────────────────────────────────────── -->
-<section id="social" style="background: var(--bg-2);">
-  <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Social Media</div>
-    <h2 class="sec-h2">Social profiles.</h2>
-    <p class="body-copy">Approved profile images for social platforms. Use these — don't crop the full wordmark yourself. The solo cat is the avatar; the wordmark square is for platforms that support rectangular or larger profile formats.</p>
-    <div class="social-profile-grid">
-      <div class="social-tile">
-        <div class="social-preview">
-          <img src="LS_Social_SoloCat.png" alt="Lucky Stranger social profile — cat mark" />
-        </div>
-        <div class="social-meta">
-          <div class="social-name">Cat mark</div>
-          <div class="social-use">Primary avatar — Instagram, TikTok, Facebook</div>
-        </div>
-      </div>
-      <div class="social-tile">
-        <div class="social-preview">
-          <img src="LS_Social.png" alt="Lucky Stranger social profile — wordmark" />
-        </div>
-        <div class="social-meta">
-          <div class="social-name">Wordmark</div>
-          <div class="social-use">Secondary / alternate profile crop</div>
-        </div>
       </div>
     </div>
   </div>
@@ -1285,7 +1290,7 @@
       <div class="arc-s" style="background: var(--bg-2);">
         <div class="arc-w">
           <div class="arc-lbl">Creative direction — Lucky + Stranger</div>
-          <div class="arc-g3">
+          <div class="arc-g3" style="margin-top: 12px;">
             <div>
               <div class="arc-lbl" style="margin-bottom: 8px;">01 — Matchbook</div>
               <img class="img-fill" src="LOGO-2-MATCHBOOK.jpg" alt="Lucky Stranger matchbook" loading="lazy" />
