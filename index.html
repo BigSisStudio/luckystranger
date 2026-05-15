@@ -479,6 +479,13 @@
     }
     .vt-usage-list li::before { content: '→ '; color: var(--red); font-weight: 700; }
 
+    .rules-list--single {
+      columns: 2; column-gap: 40px; margin-top: 16px;
+    }
+    @media (max-width: 700px) { .rules-list--single { columns: 1; } }
+    .logo-rules-block--secondary { border-top: 1px solid var(--rule); padding-top: 32px; }
+    .logo-tile-label--inv { color: rgba(255,255,255,0.7) !important; }
+
     /* ─── LOGO RULES ─────────────────────────────────────────── */
     .logo-rules-block { margin-top: 16px; }
     .rules-cols {
@@ -542,7 +549,7 @@
     .logo-tile-cat img { max-width: 150px; }
     .logo-tile-label {
       font-size: 10px; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: rgba(128,128,128,0.6);
+      text-transform: uppercase; color: var(--text-mid);
       text-align: center; margin-top: 16px;
     }
     .logo-placeholder-row {
@@ -614,7 +621,7 @@
 <body>
 
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
-<nav>
+<nav aria-label="Brand hub navigation">
   <div class="nav-inner">
     <span class="nav-project">Lucky Stranger / Brand Hub</span>
     <div class="nav-links">
@@ -662,7 +669,7 @@
 <!-- ─── DOWNLOADS ─────────────────────────────────────────────── -->
 <section id="downloads" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Brand Assets</div>
     <h2 class="sec-h2">Download the brand files.</h2>
     <p class="body-copy">Production-ready files for the Lucky Stranger identity system. Updated here as assets are finalized. Download what you need — use what's in these files, not screenshots from the hub.</p>
@@ -698,7 +705,7 @@
 <!-- ─── LOGO SYSTEM ───────────────────────────────────────────── -->
 <section id="logos" style="background: var(--bg);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Logo System</div>
     <h2 class="sec-h2">The mark.</h2>
     <p class="body-copy">The Lucky Stranger identity is built on one mark — the stacked wordmark with integrated cat element. The system expands from that anchor into extended lockups, horizontal layouts, and badge formats. Use what fits the context. Don't improvise.</p>
@@ -707,91 +714,88 @@
     <!-- PRIMARY LOGOS -->
     <div class="logo-subsection">
       <div class="sec-label" style="margin-top: 40px;">Primary — Base Logo</div>
-      <div class="logo-grid">
-        <div class="logo-tile" style="background: #FFFFFF;">
-          <img src="LS_baselogo_red.svg" alt="Lucky Stranger — Red on White" />
-          <div class="logo-tile-label">Lucky Strike on Bleach</div>
+      <div class="logo-grid" role="list" aria-label="Base logo color variations">
+        <div class="logo-tile" style="background: #FFFFFF;" role="listitem">
+          <img src="LS_baselogo_red.svg" alt="Lucky Stranger base logo, Lucky Strike red on white" />
+          <div class="logo-tile-label" aria-label="Lucky Strike on Bleach">Lucky Strike on Bleach</div>
         </div>
-        <div class="logo-tile" style="background: #EEE6D2;">
-          <img src="LS_baselogo_midnight.svg" alt="Lucky Stranger — Midnight on Smoke" />
-          <div class="logo-tile-label">Midnight on Cigarette Smoke</div>
+        <div class="logo-tile" style="background: #EEE6D2;" role="listitem">
+          <img src="LS_baselogo_midnight.svg" alt="Lucky Stranger base logo, Midnight on Cigarette Smoke" />
+          <div class="logo-tile-label" aria-label="Midnight on Cigarette Smoke">Midnight on Cigarette Smoke</div>
         </div>
-        <div class="logo-tile" style="background: #183C45;">
-          <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger — Smoke on Midnight" />
-          <div class="logo-tile-label">Cigarette Smoke on Midnight</div>
+        <div class="logo-tile" style="background: #183C45;" role="listitem">
+          <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger base logo, Cigarette Smoke on Midnight" />
+          <div class="logo-tile-label logo-tile-label--inv" aria-label="Cigarette Smoke on Midnight">Cigarette Smoke on Midnight</div>
         </div>
-        <div class="logo-tile" style="background: #E71D31;">
-          <img src="LS_baselogo_white.svg" alt="Lucky Stranger — White on Red" />
-          <div class="logo-tile-label">Bleach on Lucky Strike</div>
+        <div class="logo-tile" style="background: #E71D31;" role="listitem">
+          <img src="LS_baselogo_white.svg" alt="Lucky Stranger base logo, white on Lucky Strike red" />
+          <div class="logo-tile-label logo-tile-label--inv" aria-label="Bleach on Lucky Strike">Bleach on Lucky Strike</div>
         </div>
       </div>
     </div>
 
-    <!-- LOGO RULES -->
+    <!-- BASE LOGO RULES + DIAGRAM -->
     <div class="logo-rules-block">
       <div class="sec-label" style="margin-top: 64px;">Logo Rules</div>
-      <div class="rules-cols">
-        <div class="rules-col">
-          <div class="rules-group-label">Base logo</div>
-          <ul class="rules-list">
-            <li>One color, always. Lucky and Stranger are the same color in every application. Never split between two colors.</li>
-            <li>Clear space. Maintain ~3/16" margin around the widest and tallest points at all times.</li>
-            <li>Never break the lockup. STRANGER nests within the L and Y descenders by design. Do not reposition, scale, rotate, or adjust independently.</li>
-            <li>Minimum size. STRANGER should never render below 3/4" (print) or 72px at 72dpi. Below this threshold, use the horizontal lockup or cat icon.</li>
-            <li>Visual centering required. The marquee script creates optical asymmetry — always center by eye, never by auto-alignment.</li>
-            <li>Filled, never outlined. Outlined versions are not approved for any use.</li>
-            <li>Black is for partners only. Not an approved in-house production color.</li>
-          </ul>
-        </div>
-        <div class="rules-col">
-          <div class="rules-group-label">Extended logos</div>
-          <ul class="rules-list">
-            <li>Less is more. Never more than 2 extensions on the logo. Approved combos only.</li>
-            <li>2-color lockups: Lucky script and STRANGER each take one approved color. Cat mark, ESTD, and tagline text follow the secondary color.</li>
-            <li>Cat is ALWAYS Midnight — never within a logo lockup on a dark background.</li>
-            <li>Cat mark position is fixed. It sits above the Lucky script at a defined scale. Do not reposition, resize independently, or detach it.</li>
-            <li>ESTD always precedes the year. Never display the year alone. Always reads "ESTD [LOGO] YEAR" as a unit.</li>
-            <li>Tagline only appears in the Year + Tag configuration. "BET ON A GOOD TIME" is not a standalone extension.</li>
-            <li>Red and Midnight in large areas create optical vibration. Never place Midnight on red backgrounds or red on Midnight/blue backgrounds. Exception: cat mark, ESTD, and year text.</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="rules-list rules-list--single" aria-label="Base logo usage rules">
+        <li>One color, always. Lucky and Stranger are the same color in every application. Never split between two colors.</li>
+        <li>Clear space. Maintain ~3/16&quot; margin around the widest and tallest points at all times.</li>
+        <li>Never break the lockup. STRANGER nests within the L and Y descenders by design. Do not reposition, scale, rotate, or adjust independently.</li>
+        <li>Minimum size. STRANGER should never render below 3/4&quot; (print) or 72px at 72dpi. Below this threshold, use the horizontal lockup or cat icon.</li>
+        <li>Visual centering required. The marquee script creates optical asymmetry — always center by eye, never by auto-alignment.</li>
+        <li>Filled, never outlined. Outlined versions are not approved for any use.</li>
+        <li>Black is for partners only. Not an approved in-house production color.</li>
+      </ul>
       <div class="diagram-block">
         <div class="rules-group-label">Visual center reference</div>
-        <img src="LS_logoDiagram.png" alt="Lucky Stranger logo — visual center and spacing diagram" class="diagram-img" />
-        <p class="diagram-caption">The marquee script creates optical asymmetry. Use this diagram as the reference for centering — never auto-align.</p>
+        <img src="LS_logoDiagram.png" alt="Diagram showing visual center alignment for the Lucky Stranger logo, with pink guide lines marking the optical center of the marquee script" class="diagram-img" />
+        <p class="diagram-caption">The marquee script creates optical asymmetry. Use this diagram as your centering reference — never auto-align.</p>
       </div>
     </div>
 
     <!-- EXTENDED LOGOS -->
     <div class="logo-subsection">
-      <div class="sec-label" style="margin-top: 56px;">Extended Iterations</div>
-      <div class="logo-grid logo-grid-3">
-        <div class="logo-tile" style="background: #EEE6D2;">
-          <img src="LS_Cat_Yearlogo_red_midnight.svg" alt="Lucky Stranger — Cat + Year, red and midnight" />
+      <div class="sec-label" style="margin-top: 64px;">Extended Iterations</div>
+      <div class="logo-grid logo-grid-3" role="list" aria-label="Extended logo variations">
+        <div class="logo-tile" style="background: #EEE6D2;" role="listitem">
+          <img src="LS_Cat_Yearlogo_red_midnight.svg" alt="Lucky Stranger extended logo with cat mark and year, Lucky Strike red and Midnight on Cigarette Smoke" />
           <div class="logo-tile-label">Cat + Year · Red / Midnight</div>
         </div>
-        <div class="logo-tile" style="background: #F4F2EA;">
-          <img src="LS_Yearlogo_red.svg" alt="Lucky Stranger — Year logo, red" />
-          <div class="logo-tile-label">Year logo · Red on Smoke</div>
+        <div class="logo-tile" style="background: #F4F2EA;" role="listitem">
+          <img src="LS_Yearlogo_red.svg" alt="Lucky Stranger year logo, Lucky Strike red on Smoke" />
+          <div class="logo-tile-label">Year · Red on Smoke</div>
         </div>
-        <div class="logo-tile" style="background: #FFFFFF;">
-          <img src="LS_Year_Taglogo_midnight_cherry.svg" alt="Lucky Stranger — Year + Tag, midnight and cherry" />
+        <div class="logo-tile" style="background: #FFFFFF;" role="listitem">
+          <img src="LS_Year_Taglogo_midnight_cherry.svg" alt="Lucky Stranger year and tagline logo, Midnight and Cherry on white" />
           <div class="logo-tile-label">Year + Tag · Midnight / Cherry</div>
         </div>
       </div>
     </div>
 
+    <!-- EXTENDED LOGO RULES -->
+    <div class="logo-rules-block logo-rules-block--secondary">
+      <div class="sec-label" style="margin-top: 40px;">Extended Logo Rules</div>
+      <ul class="rules-list rules-list--single" aria-label="Extended logo usage rules">
+        <li>Less is more. Never more than 2 extensions on the logo. Approved combos only.</li>
+        <li>2-color lockups: Lucky script and STRANGER each take one approved color. Cat mark, ESTD, and tagline text follow the secondary color.</li>
+        <li>Cat is ALWAYS Midnight — never within a logo lockup on a dark background.</li>
+        <li>Cat mark position is fixed. It sits above the Lucky script at a defined scale. Do not reposition, resize independently, or detach it.</li>
+        <li>ESTD always precedes the year. Never display the year alone. Always reads &ldquo;ESTD [LOGO] YEAR&rdquo; as a unit.</li>
+        <li>Tagline only appears in the Year + Tag configuration. &ldquo;BET ON A GOOD TIME&rdquo; is not a standalone extension.</li>
+        <li>Red and Midnight in large areas create optical vibration. Never place Midnight on red backgrounds or red on Midnight/blue backgrounds. Exception: cat mark, ESTD, and year text.</li>
+      </ul>
+    </div>
+
     <!-- HORIZONTAL LOGOS -->
     <div class="logo-subsection">
-      <div class="sec-label" style="margin-top: 56px;">Horizontal</div>
-      <div class="logo-grid logo-grid-2">
-        <div class="logo-tile logo-tile-wide" style="background: #EEE6D2;">
-          <img src="LS_horizontal_midnight.svg" alt="Lucky Stranger — Horizontal, midnight" />
+      <div class="sec-label" style="margin-top: 64px;">Horizontal</div>
+      <div class="logo-grid logo-grid-2" role="list" aria-label="Horizontal logo variations">
+        <div class="logo-tile logo-tile-wide" style="background: #EEE6D2;" role="listitem">
+          <img src="LS_horizontal_midnight.svg" alt="Lucky Stranger horizontal logo, Midnight on Cigarette Smoke" />
           <div class="logo-tile-label">Horizontal · Midnight on Smoke</div>
         </div>
-        <div class="logo-tile logo-tile-wide" style="background: #F4F2EA;">
-          <img src="LS_horizontal_tag_red.svg" alt="Lucky Stranger — Horizontal with tag, red" />
+        <div class="logo-tile logo-tile-wide" style="background: #F4F2EA;" role="listitem">
+          <img src="LS_horizontal_tag_red.svg" alt="Lucky Stranger horizontal logo with tagline, Lucky Strike red on Smoke" />
           <div class="logo-tile-label">Horizontal + Tag · Red on Smoke</div>
         </div>
       </div>
@@ -801,8 +805,8 @@
     <div class="logo-subsection">
       <div class="sec-label" style="margin-top: 56px;">Badges</div>
       <div class="logo-placeholder-row">
-        <div class="asset-placeholder soon-chip">
-          <span class="coming-chip">IN PROGRESS</span>
+        <div class="asset-placeholder soon-chip" role="img" aria-label="Badge and medallion lockups — in progress">
+          <span class="coming-chip" aria-hidden="true">IN PROGRESS</span>
           <div class="asset-placeholder-label">Badge / medallion lockups</div>
           <div class="asset-placeholder-sub">In development — coming once primary logo is finalized</div>
         </div>
@@ -815,7 +819,7 @@
 <!-- ─── CAT ICON ──────────────────────────────────────────────── -->
 <section id="caticon" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Logomark</div>
     <h2 class="sec-h2">The cat.</h2>
     <p class="body-copy">Three peek cat variations — isolated mark for use when the full wordmark isn't needed: favicons, social avatars, merch stamps, sticker applications.</p>
@@ -837,7 +841,7 @@
 <!-- ─── COLOR SYSTEM ──────────────────────────────────────────── -->
 <section id="colors" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Color System</div>
     <h2 class="sec-h2">The palette.</h2>
     <p class="body-copy">Five colors. Deep, warm, a little rough around the edges, and versatile. The range aligns with the vibe of the space — nothing here is accidental.</p>
@@ -910,7 +914,7 @@
 <!-- ─── TYPOGRAPHY ────────────────────────────────────────────── -->
 <section id="typography" style="background: var(--bg-3);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Typography</div>
     <h2 class="sec-h2">The font system.</h2>
     <p class="body-copy">Four typefaces, each doing a specific job — from headlines and signage down to menu copy and utility text.</p>
@@ -965,7 +969,7 @@
 <!-- ─── TONE & VOICE ───────────────────────────────────────────── -->
 <section id="voice" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Tone &amp; Voice</div>
     <h2 class="sec-h2">How Lucky Stranger talks.</h2>
     <p class="vt-intro">Voice is personality — it doesn't change. Tone is mood — it shifts with the moment. Lucky Stranger has one voice. The tone adapts to what's happening at the bar.</p>
@@ -1069,7 +1073,7 @@
 <!-- ─── BACKGROUNDS ───────────────────────────────────────────── -->
 <section id="backgrounds" style="background: var(--bg);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Brand Backgrounds</div>
     <h2 class="sec-h2">Texture and field.</h2>
     <p class="body-copy">Approved backgrounds for print, digital, and environmental use. Wood and step-and-repeat are the two foundational field options. Don't use off-brand textures or stock patterns — use these.</p>
@@ -1100,7 +1104,7 @@
 <!-- ─── CUPS ──────────────────────────────────────────────────── -->
 <section id="cups" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Merchandise</div>
     <h2 class="sec-h2">Cups.</h2>
     <p class="body-copy">Branded drinkware applications. Files and mockups will live here once production-ready assets are finalized.</p>
@@ -1117,7 +1121,7 @@
 <!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
 <section id="signage" style="background: var(--bg-3);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Environmental</div>
     <h2 class="sec-h2">Signage.</h2>
     <p class="body-copy">Interior and exterior signage specifications and mockups. Developed in collaboration with Hannah on interior design. Files and approved proofs will live here as they're finalized.</p>
@@ -1134,7 +1138,7 @@
 <!-- ─── MERCH ─────────────────────────────────────────────────── -->
 <section id="merch" style="background: var(--bg);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Merchandise</div>
     <h2 class="sec-h2">Merch.</h2>
     <p class="body-copy">Branded merchandise — apparel, accessories, print goods. Approved applications live here once production specs are locked.</p>
@@ -1151,7 +1155,7 @@
 <!-- ─── SOCIAL MEDIA ──────────────────────────────────────────── -->
 <section id="social" style="background: var(--bg-2);">
   <div class="wrap">
-    <div class="sec-bar"></div>
+    <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Social Media</div>
     <h2 class="sec-h2">Social profiles.</h2>
     <p class="body-copy">Approved profile images for social platforms. Use these — don't crop the full wordmark yourself. The solo cat is the avatar; the wordmark square is for platforms that support rectangular or larger profile formats.</p>
