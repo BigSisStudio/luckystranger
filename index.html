@@ -99,7 +99,7 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      min-height: 68vh;
+      min-height: 80vh;
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 64px 0;
       position: relative;
@@ -137,8 +137,8 @@
       color: var(--text-inv-mid); margin-bottom: 20px;
     }
     .hero-desc {
-      font-family: var(--fb); font-size: 15px; line-height: 1.6;
-      color: var(--text-inv-mid); max-width: 560px; margin-bottom: 12px;
+      font-family: var(--fb); font-size: 13px; line-height: 1.6;
+      color: var(--text-inv-mid); max-width: 560px; margin-bottom: 0;
     }
     .hero-desc a {
       color: var(--text-inv); text-decoration: underline; text-underline-offset: 3px;
@@ -146,7 +146,7 @@
     .hero-desc a:hover { color: #fff; }
     .hero-meta-row {
       display: flex; align-items: flex-start; gap: 48px; flex-wrap: wrap;
-      border-top: 1px solid var(--rule-inv); padding-top: 24px; margin-top: 32px;
+      border-top: 1px solid var(--rule-inv); padding-top: 20px; margin-top: 24px;
     }
     .hero-meta-item { font-size: 13px; color: var(--text-inv-mid); line-height: 1.5; }
     .hero-meta-item strong {
@@ -421,27 +421,26 @@
       border-left: 3px solid var(--red); padding-left: 20px;
     }
     .vt-section-label {
-      font-family: var(--fh); font-size: 13px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--text); margin-bottom: 20px; margin-top: 48px;
+      font-family: var(--fh); font-size: clamp(32px, 5vw, 52px); font-weight: 700;
+      line-height: 1.05; color: var(--text); margin-bottom: 20px; margin-top: 64px;
     }
     .vt-intro { font-size: 17px; color: var(--text-mid); max-width: 680px; line-height: 1.75; }
     .vt-split {
-      display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 32px;
+      display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 24px;
     }
     .vt-block-label {
       font-family: var(--fh); font-size: 10px; font-weight: 700;
       letter-spacing: .18em; text-transform: uppercase;
       color: var(--text-dim); margin-bottom: 16px;
-      padding-bottom: 12px; border-bottom: 1px solid var(--rule);
+      padding-bottom: 12px;
     }
-    .vt-body { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
+    .vt-body { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
     .vt-table {
       width: 100%; border-collapse: collapse; margin-top: 48px; font-size: 14px;
     }
     .vt-table th {
-      font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--text-dim); text-align: left; padding: 10px 16px;
+      font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text); text-align: left; padding: 10px 16px;
       border-bottom: 2px solid var(--red);
     }
     .vt-table th:first-child { border-right: 1px solid var(--rule); }
@@ -453,7 +452,7 @@
       border-right: 1px solid var(--rule); font-weight: 600; color: var(--text);
       width: 60%;
     }
-    .vt-table td:last-child { color: var(--text-dim); }
+    .vt-table td:last-child { color: var(--text-mid); }
     .vt-table tr:last-child td { border-bottom: none; }
     .vt-descriptor { font-size: 13px; color: var(--text-mid); display: block; font-weight: 400; margin-top: 2px; }
     .vt-th-prominent {
@@ -461,7 +460,7 @@
       color: var(--text); padding: 10px 16px; border-bottom: 2px solid var(--red);
     }
     .vt-tones {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px;
     }
     @media (max-width: 800px) { .vt-tones { grid-template-columns: 1fr; } }
     .vt-tone-card { background: var(--bg-2); padding: 24px; }
@@ -664,8 +663,6 @@
     </div>
     <img src="LS_baselogo_smoke.svg" alt="Lucky Stranger" class="hero-logo">
     <div class="hero-sub">Brand Identity System</div>
-    <p class="hero-desc">Everything you need to keep strong brand continuity is here: visuals to download, rules to follow, voice &amp; tone and more.</p>
-    <p class="hero-desc">Not sure if you're doing it right? Reach out to Big Sis at <a href="mailto:erin@bigsiscreativestudio.com">erin@bigsiscreativestudio.com</a> or <a href="mailto:jason@bigsiscreativestudio.com">jason@bigsiscreativestudio.com</a></p>
     <div class="hero-meta-row">
       <div class="hero-meta-item">
         <strong>Status</strong>
@@ -680,6 +677,7 @@
         Big Sis Creative Studio
       </div>
     </div>
+    <p class="hero-desc" style="margin-top: 20px;">Everything you need to keep strong brand continuity is here: visuals to download, rules to follow, voice &amp; tone and more. Not sure if you're doing it right? Reach out to Big Sis at <a href="mailto:erin@bigsiscreativestudio.com">erin@bigsiscreativestudio.com</a> or <a href="mailto:jason@bigsiscreativestudio.com">jason@bigsiscreativestudio.com</a></p>
   </div>
 </section>
 
@@ -687,8 +685,8 @@
 <section id="downloads" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Brand Assets</div>
-    <h2 class="sec-h2">Downloads</h2>
+    <div class="sec-label">Downloads</div>
+    <h2 class="sec-h2">Brand Assets</h2>
     <p class="body-copy">Grab what you need. All current, production-ready Lucky Stranger brand identity files can be accessed here.</p>
 
     <div class="dl-grid">
@@ -701,13 +699,13 @@
       <div class="dl-card">
         <div class="dl-card-icon">▨</div>
         <div class="dl-card-name">Brand Textures &amp; Backgrounds</div>
-        <div class="dl-card-desc">Brand-approved backgrounds, texture overlays, and pattern files for print and digital use. Organized by application.</div>
+        <div class="dl-card-desc">Approved backgrounds, texture overlays, and patterns. For print and digital use, organized by application.</div>
         <span class="dl-btn soon">Coming soon</span>
       </div>
       <div class="dl-card">
         <div class="dl-card-icon">⬜</div>
         <div class="dl-card-name">Brand Guidelines PDF</div>
-        <div class="dl-card-desc">The complete system in one document — logo, color, type, voice, and usage rules. The source of truth for anyone touching the brand.</div>
+        <div class="dl-card-desc">A downloadable version, serving as a source of truth for anyone touching the Lucky Stranger brand.</div>
         <span class="dl-btn soon">Coming soon</span>
       </div>
     </div>
@@ -721,8 +719,8 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Logo System</div>
-    <h2 class="sec-h2">The mark.</h2>
-    <p class="body-copy">The foundation of the Lucky Stranger identity is the hero stacked wordmark, which allows for seamless integration of other visual elements, including Avondale's new favorite black cat. The system expands into extended lockups, horizontal layouts and badge formats. Use what fits the context, and avoid improvising.</p>
+    <h2 class="sec-h2">The mark</h2>
+    <p class="body-copy">The foundation of the Lucky Stranger identity is the hero stacked wordmark. It allows for seamless integration of other visual elements, including Avondale's new favorite black cat. The system expands into extended lockups, horizontal layouts and badge formats. Use what fits the context, and avoid improvising.</p>
     <p class="body-copy" style="margin-top: 12px;"><a href="#downloads" class="inline-link">→ Download the full logo package</a></p>
 
     <!-- PRIMARY LOGOS -->
@@ -791,8 +789,8 @@
     </div>
 
     <!-- EXTENDED LOGO RULES -->
-    <div class="logo-rules-block logo-rules-block--secondary">
-      <div class="sec-label" style="margin-top: 40px;">Extended Logo Rules</div>
+    <div class="logo-rules-block" style="margin-top: 32px;">
+      <div class="sec-label">Extended Logo Rules</div>
       <ul class="rules-list rules-list--single" aria-label="Extended logo usage rules">
         <li>Less is more. Never more than 2 extensions on the logo. Approved combos only.</li>
         <li>2-color lockups: Lucky script and STRANGER each take one approved color. Cat mark, ESTD, and tagline text follow the secondary color.</li>
@@ -836,11 +834,9 @@
 </section>
 
 <!-- ─── CAT ICON ──────────────────────────────────────────────── -->
-<section id="caticon" style="background: var(--bg-2);">
+<section id="caticon" style="background: var(--bg-2); padding-top: 48px;">
   <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Logomark</div>
-    <h2 class="sec-h2">(Name TBD), the cat.</h2>
+    <h2 class="sec-h2">(Name TBD), the cat</h2>
     <p class="body-copy">There are three peeking cat variations with multiple colorways, formats and eye treatments. They can be used as part of the wordmark lockup, or as an isolated mark when the context calls for it: favicons, social avatars, merch stamps, sticker applications, etc.</p>
     <div class="logo-grid logo-grid-3 cat-grid" style="margin-top: 32px;">
       <div class="logo-tile logo-tile-cat cat-tile">
@@ -862,7 +858,7 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Color</div>
-    <h2 class="sec-h2">The palette.</h2>
+    <h2 class="sec-h2">The palette</h2>
     <p class="body-copy">Five deep, warm, versatile colors that feel a little rough around the edges. The range intentionally aligns with the vibe of the space.</p>
 
     <div class="color-group-label">Primary</div>
@@ -989,22 +985,20 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Voice &amp; Tone</div>
-    <p class="vt-callout">Voice = personality, tone = mood. Lucky Stranger's voice doesn't change, but the tone shifts depending on the moment. The test: does it sound like something that would actually be said at the bar? If not, pull it back.</p>
+    <p class="vt-callout">Voice = personality, tone = mood. Lucky Stranger's voice doesn't change, but the tone shifts depending on the moment. The test: Does it sound like something that would actually be said at the bar? If not, pull it back.</p>
 
     <div class="vt-section-label">Voice</div>
 
     <div class="vt-split">
       <div>
-        <div class="vt-block-label">The Voice</div>
-        <p class="vt-body">Lucky Stranger sounds like a bartender who's seen everything and is genuinely glad to see you walk in. Matter-of-fact and welcoming, without being eager. Comfortable with whatever the day brings.</p>
-        <p class="vt-body" style="margin-top: 16px;">The voice behind everything we write leans into the good time we promise — without having to promise it out loud.</p>
+        <p class="vt-body">Lucky Stranger sounds like a bartender who's seen everything and is genuinely glad to see you walk in. Matter-of-fact and welcoming, without being eager. Comfortable with whatever the day brings. The voice behind everything we write leans into the good time we promise — without having to promise it out loud.</p>
       </div>
     </div>
 
     <table class="vt-table">
       <thead>
         <tr>
-          <th class="vt-th-prominent">We are...</th>
+          <th>We are...</th>
           <th>But not...</th>
         </tr>
       </thead>
@@ -1035,8 +1029,10 @@
         </tr>
       </tbody>
     </table>
+    <div style="height: 3px; background: var(--red); max-width: 100%; margin-top: 0;"></div>
 
-    <div class="vt-section-label" style="margin-top: 56px;">Tone</div>
+    <div class="vt-section-label">Tone</div>
+    <p class="vt-body" style="margin-bottom: 16px;">Lucky Stranger's voice remains consistent, but there's a different tone in different rooms. How the message comes out depends on what the situation calls for.</p>
 
     <div class="vt-tones">
       <div class="vt-tone-card">
@@ -1146,7 +1142,7 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Merchandise</div>
-    <h2 class="sec-h2">Cups.</h2>
+    <h2 class="sec-h2">Cups</h2>
     <p class="body-copy">Branded drinkware applications. Files and mockups will live here once production-ready assets are finalized.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
       <div class="asset-placeholder soon-chip">
@@ -1163,7 +1159,7 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Environmental</div>
-    <h2 class="sec-h2">Signage.</h2>
+    <h2 class="sec-h2">Signage</h2>
     <p class="body-copy">Interior and exterior signage specifications and mockups. Developed in collaboration with Hannah on interior design. Files and approved proofs will live here as they're finalized.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
       <div class="asset-placeholder soon-chip">
@@ -1180,7 +1176,7 @@
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Merchandise</div>
-    <h2 class="sec-h2">Merch.</h2>
+    <h2 class="sec-h2">Merch</h2>
     <p class="body-copy">Branded merchandise — apparel, accessories, print goods. Approved applications live here once production specs are locked.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
       <div class="asset-placeholder soon-chip">
