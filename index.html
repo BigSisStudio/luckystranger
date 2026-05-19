@@ -69,10 +69,14 @@
       font-family: var(--fh); font-size: 10px; font-weight: 600;
       letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim);
       padding: 0 20px; height: 56px; display: flex; align-items: center;
-      white-space: nowrap; border-right: 1px solid var(--rule);
+      white-space: nowrap; position: relative;
       transition: color .2s;
     }
-    .nav-links a:last-child { border-right: none; }
+    .nav-links a::after {
+      content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      height: 16px; width: 1px; background: var(--rule);
+    }
+    .nav-links a:last-child::after { display: none; }
     .nav-links a:hover, .nav-links a.active { color: var(--red); }
 
     /* ─── LAYOUT ─────────────────────────────────────────────── */
@@ -381,7 +385,7 @@
     }
     @media (max-width: 800px) { .dl-grid { grid-template-columns: 1fr; } }
     .dl-card {
-      background: var(--bg-dark); padding: 32px 28px;
+      background: var(--bg-dark); padding: 24px 28px;
       display: flex; flex-direction: column; gap: 0;
     }
     .dl-card-icon {
@@ -650,6 +654,7 @@
       <a href="#voice">Voice &amp; Tone</a>
       <a href="#backgrounds">Backgrounds</a>
       <a href="#social">Social</a>
+      <a href="#coming-soon">Coming Soon</a>
     </div>
   </div>
 </nav>
@@ -691,19 +696,16 @@
 
     <div class="dl-grid">
       <div class="dl-card">
-        <div class="dl-card-icon">⬡</div>
         <div class="dl-card-name">Brand Identity Files</div>
         <div class="dl-card-desc">Finalized logo and other visual elements in all approved formats, file-types and color versions.</div>
         <a class="dl-btn" href="https://drive.google.com/drive/folders/18xArW4Occexk_HDgr2nM_c2uWVZRga0S" target="_blank" rel="noopener">Go to downloads ↗</a>
       </div>
       <div class="dl-card">
-        <div class="dl-card-icon">▨</div>
         <div class="dl-card-name">Brand Textures &amp; Backgrounds</div>
         <div class="dl-card-desc">Approved backgrounds, texture overlays, and patterns. For print and digital use, organized by application.</div>
         <span class="dl-btn soon">Coming soon</span>
       </div>
       <div class="dl-card">
-        <div class="dl-card-icon">⬜</div>
         <div class="dl-card-name">Brand Guidelines PDF</div>
         <div class="dl-card-desc">A downloadable version, serving as a source of truth for anyone touching the Lucky Stranger brand.</div>
         <span class="dl-btn soon">Coming soon</span>
@@ -1141,7 +1143,7 @@
 <section id="cups" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Merchandise</div>
+    <div class="sec-label">Coming Soon</div>
     <h2 class="sec-h2">Cups</h2>
     <p class="body-copy">Branded drinkware applications. Files and mockups will live here once production-ready assets are finalized.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
@@ -1155,10 +1157,10 @@
 </section>
 
 <!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
-<section id="signage" style="background: var(--bg-3);">
+<section id="coming-soon" style="background: var(--bg-3);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Environmental</div>
+    <div class="sec-label">Coming Soon</div>
     <h2 class="sec-h2">Signage</h2>
     <p class="body-copy">Interior and exterior signage specifications and mockups. Developed in collaboration with Hannah on interior design. Files and approved proofs will live here as they're finalized.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
@@ -1175,7 +1177,7 @@
 <section id="merch" style="background: var(--bg);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Merchandise</div>
+    <div class="sec-label">Coming Soon</div>
     <h2 class="sec-h2">Merch</h2>
     <p class="body-copy">Branded merchandise — apparel, accessories, print goods. Approved applications live here once production specs are locked.</p>
     <div class="logo-placeholder-row" style="margin-top: 32px;">
