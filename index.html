@@ -638,7 +638,119 @@
       nav { height: 50px; }
       .nav-links a { height: 50px; padding: 0 14px; }
     }
-  </style>
+  /* ── MENU CONCEPTS ─────────────────────────────── */
+
+.concepts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.concept-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.concept-label {
+  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-midnight, #183C45);
+  opacity: 0.5;
+}
+
+.concept-hero {
+  width: 100%;
+  background: var(--color-smoke, #EEE6D2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.concept-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.scroll-hint {
+  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-midnight, #183C45);
+  opacity: 0.45;
+  margin: 0;
+}
+
+.concept-scroll-track {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.concept-scroll-track::-webkit-scrollbar {
+  height: 3px;
+}
+
+.concept-scroll-track::-webkit-scrollbar-thumb {
+  background: var(--color-midnight, #183C45);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.concept-scroll-img {
+  flex: 0 0 80%;
+  max-width: 80%;
+  height: auto;
+  scroll-snap-align: start;
+  display: block;
+  border-radius: 2px;
+}
+
+.concept-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.concept-bullets li {
+  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-midnight, #183C45);
+}
+
+.considerations-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-midnight, #183C45);
+  opacity: 0.9;
+}
+
+.considerations-block h3 {
+  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}</style>
 </head>
 <body>
 
@@ -1140,7 +1252,91 @@
 </section>
 
 <!-- ─── MENU ──────────────────────────────────────────────────── -->
-<section id="menu" style="background: var(--bg-2);">
+<!-- MENU CONCEPTS SECTION -->
+<section id="menu-concepts" class="section">
+  <div class="section-inner">
+
+    <h2>Menu concepts</h2>
+    <p class="section-intro">Take a look at each layout direction and think about which overall approach feels most like Lucky Stranger. We'll get into the details once we have a direction.</p>
+
+    <!-- 2x2 GRID -->
+    <div class="concepts-grid">
+
+      <!-- ROW 1, LEFT: CONCEPT 4 (multi-page) -->
+      <div class="concept-card">
+        <div class="concept-label">Concept 4</div>
+        <div class="concept-hero">
+          <img src="LS_MenuConcepts_p04.pdf" alt="Menu Concept 4 — hero" class="concept-img" />
+        </div>
+        <p class="scroll-hint">Scroll to explore →</p>
+        <div class="concept-scroll-track">
+          <img src="LS_MenuConcepts_p05.pdf" alt="Menu Concept 4 — page 2" class="concept-scroll-img" />
+          <img src="LS_MenuConcepts_p06.pdf" alt="Menu Concept 4 — page 3" class="concept-scroll-img" />
+          <img src="LS_MenuConcepts_p07.pdf" alt="Menu Concept 4 — page 4" class="concept-scroll-img" />
+          <img src="LS_MenuConcepts_p08.pdf" alt="Menu Concept 4 — page 5" class="concept-scroll-img" />
+          <img src="LS_MenuConcepts_p09.pdf" alt="Menu Concept 4 — page 6" class="concept-scroll-img" />
+        </div>
+        <ul class="concept-bullets">
+          <li>→ Placeholder copy — note about this concept's approach or strengths</li>
+          <li>→ Placeholder copy — note about layout, hierarchy, or tone</li>
+          <li>→ Placeholder copy — note about how this direction extends across pages</li>
+        </ul>
+      </div>
+
+      <!-- ROW 1, RIGHT: CONCEPT 1 (cream) -->
+      <div class="concept-card">
+        <div class="concept-label">Concept 1</div>
+        <div class="concept-hero">
+          <img src="LS_MenuConcepts_p01.pdf" alt="Menu Concept 1" class="concept-img" />
+        </div>
+        <ul class="concept-bullets">
+          <li>→ Placeholder copy — note about this concept's approach or strengths</li>
+          <li>→ Placeholder copy — note about layout, hierarchy, or tone</li>
+          <li>→ Placeholder copy — note about how this concept fits the brand</li>
+        </ul>
+      </div>
+
+      <!-- ROW 2, LEFT: CONCEPT 2 (pink) -->
+      <div class="concept-card">
+        <div class="concept-label">Concept 2</div>
+        <div class="concept-hero">
+          <img src="LS_MenuConcepts_p02.pdf" alt="Menu Concept 2" class="concept-img" />
+        </div>
+        <ul class="concept-bullets">
+          <li>→ Placeholder copy — note about this concept's approach or strengths</li>
+          <li>→ Placeholder copy — note about layout, hierarchy, or tone</li>
+          <li>→ Placeholder copy — note about how this concept fits the brand</li>
+        </ul>
+      </div>
+
+      <!-- ROW 2, RIGHT: CONCEPT 3 (pink) -->
+      <div class="concept-card">
+        <div class="concept-label">Concept 3</div>
+        <div class="concept-hero">
+          <img src="LS_MenuConcepts_p03.pdf" alt="Menu Concept 3" class="concept-img" />
+        </div>
+        <ul class="concept-bullets">
+          <li>→ Placeholder copy — note about this concept's approach or strengths</li>
+          <li>→ Placeholder copy — note about layout, hierarchy, or tone</li>
+          <li>→ Placeholder copy — note about how this concept fits the brand</li>
+        </ul>
+      </div>
+
+    </div><!-- end .concepts-grid -->
+
+    <!-- CONSIDERATIONS -->
+    <div class="considerations-block">
+      <h3>Considerations</h3>
+      <ul class="concept-bullets">
+        <li>→ Placeholder — a cross-cutting note that applies to all four concepts</li>
+        <li>→ Placeholder — a practical or production consideration worth flagging</li>
+        <li>→ Placeholder — a note about next steps or what we'll refine once a direction is chosen</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<!-- END MENU CONCEPTS SECTION --><section id="menu" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Coming Soon</div>
