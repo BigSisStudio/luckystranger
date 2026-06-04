@@ -1286,14 +1286,16 @@
       <!-- CONCEPT 3 -->
       <div>
         <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 3</div>
-        <img src="LS_MenuConcepts_p03.png" alt="Concept 3" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px;" />
+        <img id="c3img" src="LS_MenuConcepts_p03.png" alt="Concept 3" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px;" />
       </div>
 
       <!-- CONCEPT 4 -->
       <div>
         <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 4</div>
         <div style="position: relative;">
-          <img id="c4img" src="LS_MenuConcepts_p04.png" alt="Concept 4" style="width: 100%; height: auto; object-fit: cover; object-position: center; display: block; border-radius: 2px;" />
+          <div id="c4wrap" style="width: 100%; display: flex; align-items: flex-start; justify-content: center; overflow: hidden;">
+            <img id="c4img" src="LS_MenuConcepts_p04.png" alt="Concept 4" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 2px;" />
+          </div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
             <button onclick="c4prev()" style="background: none; border: 1px solid var(--rule); color: var(--text); font-size: 16px; padding: 4px 12px; cursor: pointer; border-radius: 2px;">←</button>
             <span id="c4counter" style="font-size: 12px; color: var(--text-dim);">1 / 6</span>
@@ -1307,6 +1309,7 @@
   </div>
 </section>
 <script>
+<script>
   var c4imgs = [
     'LS_MenuConcepts_p04.png',
     'LS_MenuConcepts_p05.png',
@@ -1316,6 +1319,18 @@
     'LS_MenuConcepts_p09.png'
   ];
   var c4idx = 0;
+
+  function setC4Height() {
+    var c3 = document.getElementById('c3img');
+    var c4wrap = document.getElementById('c4wrap');
+    if (c3 && c4wrap) {
+      c4wrap.style.height = c3.offsetHeight + 'px';
+    }
+  }
+
+  window.addEventListener('load', setC4Height);
+  window.addEventListener('resize', setC4Height);
+
   function c4next() {
     c4idx = (c4idx + 1) % c4imgs.length;
     document.getElementById('c4img').src = c4imgs[c4idx];
