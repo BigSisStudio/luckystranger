@@ -1237,42 +1237,57 @@
 <section id="menu" style="background: var(--bg-2);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">In Progress</div>
+    <div class="sec-label">Final</div>
     <h2 class="sec-h2">Menu</h2>
-    <p class="body-copy">Two revised directions below, incorporating your feedback. Red type flourishes carried into both options. The Pour Decision now has two slots — one permanent (Fuku Freeze), one rotating seasonal. Pick the layout that feels most Lucky Stranger.</p>
-    <p class="body-copy" style="margin-top: 16px;">Both designs are now sized at <strong>8.5" × 11"</strong> to fit these sleeves: <a href="https://www.webstaurantstore.com/choice-8-1-2-x-11-burgundy-2-view-one-pocket-menu-cover/1761PK8511BU.html" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a></p>
+    <p class="body-copy">Final selected direction, with two changes from the last round: "Fortune Favors the Thirsty" moved to sit between Wine and Dry Goods, and the AC / Cable TV / Ice Cold Drinks line swapped for a simple note to order at the bar.</p>
+    <p class="body-copy" style="margin-top: 16px;">Sized at <strong>8.5" × 11"</strong> to fit these sleeves: <a href="https://www.webstaurantstore.com/choice-8-1-2-x-11-burgundy-2-view-one-pocket-menu-cover/1761PK8511BU.html" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a></p>
 
-    <!-- REVISION 1 & REVISION 3 SIDE BY SIDE -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px; margin-top: 48px;">
+    <!-- FINAL MENU -->
+    <div style="max-width: 640px; margin-top: 48px;">
+      <img src="LS_Menu_FINAL-01.png" alt="Lucky Stranger final menu" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 4px 16px rgba(24,60,69,0.16), 0 1px 4px rgba(24,60,69,0.08);" />
+    </div>
 
-      <!-- REVISION 01 -->
-      <div>
-        <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option A</div>
-        <img src="LS_MenuRevisions-01.png" alt="Menu Revision Option A" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
-        <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Pour Decision as featured header block with two-drink split</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Fuku Freeze as permanent anchor; seasonal slot rotates</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour box holds its own section, top right</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Red type flourishes throughout; Fuku cat bottom center</li>
-        </ul>
+    <!-- PREVIOUS ROUND: OPTION A/B DRAWER -->
+    <div style="margin-top: 48px; border-top: 1px solid var(--rule);">
+      <button onclick="this.classList.toggle('menu-prevround-open'); this.nextElementSibling.classList.toggle('open'); this.querySelector('.menu-prevround-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+        <span>Previous round — Option A / Option B</span>
+        <span class="menu-prevround-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+      </button>
+      <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="menu-prevround-panel">
+        <p class="body-copy" style="padding-top: 8px; margin-bottom: 40px;">Two revised directions explored before landing on the final layout above.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px;">
+
+          <!-- REVISION 01 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option A</div>
+            <img src="LS_MenuRevisions-01.png" alt="Menu Revision Option A" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Pour Decision as featured header block with two-drink split</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Fuku Freeze as permanent anchor; seasonal slot rotates</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour box holds its own section, top right</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Red type flourishes throughout; Fuku cat bottom center</li>
+            </ul>
+          </div>
+
+          <!-- REVISION 03 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option B</div>
+            <img src="LS_MenuRevisions-03.png" alt="Menu Revision Option B" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ "Ice Cold Drinks / Now Flowing" illustration leads the featured block</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Just Visiting / Always On framing for seasonal vs. permanent</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour integrates mid-menu; Fuku cat peeks top center</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Cleaner grid, slightly less visual density</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-
-      <!-- REVISION 03 -->
-      <div>
-        <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option B</div>
-        <img src="LS_MenuRevisions-03.png" alt="Menu Revision Option B" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
-        <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ "Ice Cold Drinks / Now Flowing" illustration leads the featured block</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Just Visiting / Always On framing for seasonal vs. permanent</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour integrates mid-menu; Fuku cat peeks top center</li>
-          <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Cleaner grid, slightly less visual density</li>
-        </ul>
-      </div>
-
     </div>
 
     <!-- PREVIOUS CONCEPTS DRAWER -->
-    <div style="margin-top: 48px; border-top: 1px solid var(--rule);">
+    <div style="margin-top: 16px; border-top: 1px solid var(--rule);">
       <button onclick="this.classList.toggle('menu-prev-open'); this.nextElementSibling.classList.toggle('open'); this.querySelector('.menu-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
         <span>Previous Concepts</span>
         <span class="menu-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
@@ -1345,6 +1360,8 @@
 <style>
   .menu-prev-panel.open { max-height: 4000px !important; }
   .menu-prev-caret.open { transform: rotate(180deg); }
+  .menu-prevround-panel.open { max-height: 4000px !important; }
+  .menu-prevround-caret.open { transform: rotate(180deg); }
 </style>
 <script>
   var c4imgs = [
@@ -1747,13 +1764,13 @@
 
       <!-- Cream colorway -->
       <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Cream · Midnight print</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 40px;">
         <div>
-          <img src="Tee_Cream_Front_2x.png" alt="Cream tee front with Lucky Stranger logo" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <img src="Tee_Cream_Front_2x.png" alt="Cream tee front with Lucky Stranger logo" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
           <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
         </div>
         <div>
-          <img src="Tee_Cream_Back_2x.png" alt="Cream tee back — Talk to Strangers with building illustration" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <img src="Tee_Cream_Back_2x.png" alt="Cream tee back — Talk to Strangers with building illustration" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
           <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
         </div>
       </div>
@@ -1764,13 +1781,13 @@
 
       <!-- Black colorway -->
       <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Black · Cherry print</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 24px;">
         <div>
-          <img src="Tee_Black_Front_2x.png" alt="Black tee front with Lucky Stranger logo" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <img src="Tee_Black_Front_2x.png" alt="Black tee front with Lucky Stranger logo" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
           <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
         </div>
         <div>
-          <img src="Tee_Black_Back_2x.png" alt="Black tee back — Lucky Stranger BAR lockup and address" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <img src="Tee_Black_Back_2x.png" alt="Black tee back — Lucky Stranger BAR lockup and address" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
           <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
         </div>
       </div>
