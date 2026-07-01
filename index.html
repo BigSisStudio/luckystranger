@@ -762,7 +762,7 @@
     /* === Typography section (robust build) === */
     .ty-sub { font-family: var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size: clamp(24px,3.2vw,34px); color:var(--text); margin:60px 0 4px; }
     .ty-subnote { font-family: var(--fb); font-size:14px; color:var(--text-mid); margin-bottom:22px; max-width:620px; }
-    .ty-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; margin-top:22px; }
+    .ty-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:38px 22px; margin-top:24px; align-items:start; }
     .ty-card { background:#fff; display:flex; flex-direction:column; overflow:hidden; }
     .ty-spec { width:100%; height:auto; display:block; }
     .ty-card-body { padding:18px 20px 20px; display:flex; flex-direction:column; gap:5px; flex:1; }
@@ -771,7 +771,7 @@
     .ty-foundry { font-family:var(--fb); font-size:13px; color:var(--text-mid); line-height:1.6; flex:1; }
     .ty-btn { display:inline-block; margin-top:14px; align-self:flex-start; font-family:var(--fb); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text); text-decoration:none; border:1px solid var(--text); padding:9px 15px; transition:background .2s,color .2s; }
     .ty-btn:hover { background:var(--text); color:#fff; }
-    .ty-web { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; margin-top:22px; }
+    .ty-web { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:38px 22px; margin-top:24px; align-items:start; }
     .ty-webcard { background:#fff; padding:26px 24px; display:flex; flex-direction:column; }
     .ty-samp { color:var(--text); line-height:1.05; margin-bottom:16px; }
     .ty-weblabel { font-family:var(--fb); font-size:13px; color:var(--text-mid); line-height:1.6; margin-top:auto; }
@@ -791,6 +791,17 @@
     .ty-rules { margin-top:36px; }
     .ty-note { background:var(--bg-2); padding:26px 28px; margin-top:32px; }
     .ty-note .ty-fh { font-family:var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size:24px; color:var(--text); margin-bottom:10px; }
+    /* restructured type entries (v5) */
+    .ty-font { display:flex; flex-direction:column; }
+    .ty-plate { background:#fff; overflow:hidden; }
+    .ty-meta { display:flex; flex-direction:column; gap:2px; padding-top:14px; }
+    .ty-label { font-family:var(--fb); font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
+    .ty-desc { font-family:var(--fb); font-size:13.5px; color:var(--text-mid); line-height:1.6; margin:4px 0 0; }
+    .ty-lic { font-family:var(--fb); font-size:12.5px; color:var(--text-mid); line-height:1.6; margin:9px 0 0; }
+    .ty-desc a, .ty-lic a { color:var(--text); text-decoration:underline; text-underline-offset:2px; }
+    .ty-desc a:hover, .ty-lic a:hover { color:var(--red); }
+    .ty-font-web { display:flex; flex-direction:column; }
+    .ty-websamp { color:var(--text); line-height:1.1; min-height:54px; display:flex; align-items:flex-end; margin-bottom:2px; overflow-wrap:anywhere; }
 
   
     h3 { font-family: var(--fsub); text-transform: uppercase; letter-spacing: .06em; }
@@ -1102,56 +1113,56 @@
     <p class="body-copy">Two halves. The paid fonts that build everything off the website, and the free web fonts that carry the brand online. Use the font set for print, signage, merch, and ads. Use the web set for anything on a screen.</p>
 
     <h3 class="ty-sub">Font set</h3>
-    <p class="ty-subnote">For everything except the website: print, signage, merch, and ads (print and digital). Paid fonts, shown here as reference images since they can't be served on the web. License links are US pricing, in USD.</p>
+    <p class="ty-subnote">Print, signage, merch, and ads (print and digital). Everything but the website. These are paid fonts, shown here as reference images since they can't be served live on the web.</p>
     <div class="ty-grid">
 
-      <div class="ty-card">
-        <img class="ty-spec" src="GILL_Sans_Bold.png" alt="Gill Sans Bold specimen — Main Character">
-        <div class="ty-card-body">
-          <span class="ty-role">Main Character</span>
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="GILL_Sans_Bold.png" alt="Gill Sans Bold specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
           <span class="ty-name">Gill Sans Bold</span>
-          <span class="ty-foundry">Headlines, taglines, big statements. Monotype.</span>
-          <a class="ty-btn" href="https://www.myfonts.com/collections/gill-sans-font-monotype-imaging/" target="_blank" rel="noopener">License (USD) &rarr;</a>
+          <p class="ty-desc">Headlines, taglines, big statements, short, punchy or dead-pan lines.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription (as Gill Sans Nova) or through <a href="https://www.myfonts.com/products/pro-bold-gill-sans-mt-342888" target="_blank" rel="noopener">myfonts.com</a>.</p>
         </div>
       </div>
 
-      <div class="ty-card">
-        <img class="ty-spec" src="GillSans_reg.png" alt="Gill Sans Regular specimen — Designated copy driver">
-        <div class="ty-card-body">
-          <span class="ty-role">Designated copy driver</span>
-          <span class="ty-name">Gill Sans Regular + Italic</span>
-          <span class="ty-foundry">Body copy, captions, the fine print. Monotype.</span>
-          <a class="ty-btn" href="https://www.myfonts.com/collections/gill-sans-font-monotype-imaging/" target="_blank" rel="noopener">License (USD) &rarr;</a>
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="GillSans_reg.png" alt="Gill Sans Regular specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Gill Sans Regular</span>
+          <p class="ty-desc">Body copy, captions, the fine print. Italic where a line needs emphasis.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription (as Gill Sans Nova).</p>
         </div>
       </div>
 
-      <div class="ty-card">
-        <img class="ty-spec" src="Obviously.png" alt="Obviously Narrow Semibold specimen — Wing Man">
-        <div class="ty-card-body">
-          <span class="ty-role">Wing Man</span>
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="Obviously.png" alt="Obviously Narrow Semibold specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
           <span class="ty-name">Obviously Narrow Semibold</span>
-          <span class="ty-foundry">Subheads, ESTD 2026, detail type. OH no Type Co. Buy the single style, not the full $599 family.</span>
-          <a class="ty-btn" href="https://ohnotype.co/fonts/obviously" target="_blank" rel="noopener">License (USD) &rarr;</a>
+          <p class="ty-desc">Subheads, ESTD 2026, and detail type.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription or directly from <a href="https://ohnotype.co/fonts/obviously" target="_blank" rel="noopener">OH no Type Co</a> (select the Narrow Semibold style).</p>
         </div>
       </div>
 
-      <div class="ty-card">
-        <img class="ty-spec" src="Fabiola.png" alt="Fabiola Script specimen — Happy hour">
-        <div class="ty-card-body">
-          <span class="ty-role">Happy hour &middot; everyday script</span>
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="Fabiola.png" alt="Fabiola Script specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
           <span class="ty-name">Fabiola Script</span>
-          <span class="ty-foundry">The print workhorse script. Friendly, does most of the accent work. Sproviero Type.</span>
-          <a class="ty-btn" href="https://www.myfonts.com/collections/fabiola-font-lian-types/" target="_blank" rel="noopener">License (USD) &rarr;</a>
+          <p class="ty-desc">The everyday accent script. Friendly, and does most of the accent work.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription or through <a href="https://www.myfonts.com/products/script-fabiola-419197" target="_blank" rel="noopener">myfonts.com</a>.</p>
         </div>
       </div>
 
-      <div class="ty-card">
-        <img class="ty-spec" src="delfina.png" alt="Delfina Script specimen — Closing time sass">
-        <div class="ty-card-body">
-          <span class="ty-role">Closing time sass &middot; the rare drop</span>
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="delfina.png" alt="Delfina Script specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
           <span class="ty-name">Delfina Script</span>
-          <span class="ty-foundry">Red lip at the end of the bar. Use sparingly, for maximum effect. Dave Rowland Type. From about $40.</span>
-          <a class="ty-btn" href="https://daverowlandtype.com/font/delfina-script/" target="_blank" rel="noopener">License (USD) &rarr;</a>
+          <p class="ty-desc">The rare drop. A red lip at the end of the bar. Use sparingly, for maximum effect.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription.</p>
         </div>
       </div>
 
@@ -1162,38 +1173,9 @@
       <ul class="ty-list">
         <li>Everything Big Sis designs and hands you is yours. Logo, menus, signage, merch. Covered under our license.</li>
         <li>The font files don't transfer. A license is tied to us. That's every foundry, not a Big Sis rule.</li>
-        <li>If you want to set new type in these fonts yourself, you (or whoever you hire) buy your own license. Links are on each card, US pricing in USD.</li>
-        <li>The web set below is free. Pull it from Google Fonts, no license, no cost.</li>
+        <li>If you want to set new type in these fonts yourself, you (or whoever you hire) buy your own license. The links are with each font above.</li>
+        <li>The web set is free. Pull it from Google Fonts, no license, no cost.</li>
       </ul>
-    </div>
-
-    <h3 class="ty-sub">The web set</h3>
-    <p class="ty-subnote">The website alternatives. Free, open-source, and live on this page straight from Google Fonts. Use these for anything online.</p>
-    <div class="ty-web">
-
-      <div class="ty-webcard">
-        <div class="ty-samp" style="font-family:'Open Sans',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.03em; font-size:32px;">Cold Drinks</div>
-        <div class="ty-weblabel"><b>Headlines &mdash; Open Sans Extrabold</b>, all caps. The web stand-in for Gill Sans Bold.</div>
-      </div>
-
-      <div class="ty-webcard">
-        <div class="ty-samp" style="font-family:'Bebas Neue',sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:40px;">Low Lights</div>
-        <div class="ty-weblabel"><b>Subheads &mdash; Bebas Neue</b>, all caps. Secondary headings and section labels.</div>
-      </div>
-
-      <div class="ty-webcard">
-        <div class="ty-samp" style="font-family:'Open Sans',sans-serif; font-weight:400; text-transform:none; font-size:18px; line-height:1.5;">Order at the bar. <em>Please and thank you.</em></div>
-        <div class="ty-weblabel"><b>Body &mdash; Open Sans Regular</b>. Italic and bold where needed, never all caps. The web stand-in for Gill Sans Regular.</div>
-      </div>
-
-      <div class="ty-webcard">
-        <div class="ty-samp ty-ss" style="font-size:46px;">Happy hour</div>
-        <div style="font-family:var(--fb); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); margin:-6px 0 12px;">Go-to</div>
-        <div class="ty-samp ty-gv" style="font-size:34px; margin-bottom:2px;">Happy hour</div>
-        <div style="font-family:var(--fb); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:14px;">Alternative</div>
-        <div class="ty-weblabel"><b>Accent scripts &mdash; Style Script</b> is the go-to. <b>Great Vibes</b> is the alternative, for fancier moments. Same rules either way: one accent, never all caps, never letterspaced.</div>
-      </div>
-
     </div>
 
     <div class="ty-formula">
@@ -1207,7 +1189,8 @@
     </div>
 
     <div class="ty-rules">
-      <h3 class="ty-sub" style="margin-top:0;">The rules people break</h3>
+      <h3 class="ty-sub" style="margin-top:0;">Don't look like a lightweight</h3>
+      <p class="ty-subnote">Script fonts come with a few unspoken rules. Break them and you risk looking like a Temu "live laugh love" pillow.</p>
       <ul class="ty-list">
         <li><b>Don't stretch a script.</b> The letters are holding hands. Add spacing and the connectors float, attached to nothing. Leave it default or slightly tight.</li>
         <li><b>Don't set a script in all caps.</b> Lowercase or Title Case only.</li>
@@ -1215,6 +1198,62 @@
         <li><b>Don't use a script for body copy.</b> Accent words only.</li>
         <li><b>Go easy on the fancy one.</b> Style Script (web) and Fabiola (print) are the everyday. Delfina is the rare sass. Great Vibes is pinkies-up only.</li>
       </ul>
+    </div>
+
+    <h3 class="ty-sub">Web set</h3>
+    <p class="ty-subnote">The website alternatives. Free, open-source, and rendering live on this page straight from Google Fonts. Use these for the website only.</p>
+    <div class="ty-web">
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Open Sans',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.02em; font-size:30px;">Headlines</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Open Sans Extrabold</span>
+          <p class="ty-desc">All caps. The web stand-in for Gill Sans Bold.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Bebas Neue',sans-serif; text-transform:uppercase; letter-spacing:.03em; font-size:42px;">Subheads</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Bebas Neue</span>
+          <p class="ty-desc">All caps. Subheads and section labels. The web stand-in for Obviously.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Bebas+Neue" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Open Sans',sans-serif; font-weight:400; font-size:25px;">Body</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Open Sans Regular</span>
+          <p class="ty-desc">Body copy and captions. Italic and bold where needed, never all caps. The web stand-in for Gill Sans Regular.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp ty-ss" style="font-size:40px;">Script Accents</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Style Script</span>
+          <p class="ty-desc">The go-to accent script. The web stand-in for Fabiola.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Style+Script" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp ty-gv" style="font-size:38px;">Script Accent Alt</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Great Vibes</span>
+          <p class="ty-desc">The alternative, for fancier moments. Same script rules apply.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Great+Vibes" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
     </div>
 
   </div>
