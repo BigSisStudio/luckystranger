@@ -6,8 +6,8 @@
   <title>Lucky Stranger — Brand Identity Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Barlow = Gill Sans proxy. Dancing Script = Gibson Script proxy. -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Cabin:wght@600;700&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Style+Script&display=swap" rel="stylesheet">
+  <!-- Web set: Open Sans Extrabold = headlines (Gill Sans proxy). Bebas Neue = subheads. Barlow = body. Style Script = go-to accent script; Great Vibes = alternative. -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:wght@400;600;700;800&family=Style+Script&display=swap" rel="stylesheet">
   <style>
     /* ─── LUCKY STRANGER TOKENS ──────────────────────────────── */
     :root {
@@ -30,9 +30,11 @@
 
       --max: 1200px;
       --gap: 96px;
-      --fh: 'Cabin', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --fh: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --fsub: 'Bebas Neue', 'Gill Sans', Arial, sans-serif;
       --fb: 'Barlow', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
-      --fs: 'Dancing Script', cursive;
+      --fs: 'Style Script', cursive;
+      --fs2: 'Great Vibes', cursive;
     }
 
     /* ─── RESET ─────────────────────────────────────────────── */
@@ -90,8 +92,8 @@
       letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;
     }
     .sec-h2 {
-      font-family: var(--fh); font-weight: 700; font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.05; color: var(--text); margin-bottom: 20px;
+      font-family: var(--fh); font-weight: 800; text-transform: uppercase; letter-spacing: .03em; font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.07; color: var(--text); margin-bottom: 20px;
     }
     .body-copy {
       font-size: 17px; line-height: 1.75; color: var(--text-mid); max-width: 680px;
@@ -757,7 +759,7 @@
   }
 }
     /* === Typography section (robust build) === */
-    .ty-sub { font-family: var(--fh); font-weight:700; font-size: clamp(19px,2.6vw,26px); color:var(--text); margin:60px 0 4px; }
+    .ty-sub { font-family: var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size: clamp(24px,3.2vw,34px); color:var(--text); margin:60px 0 4px; }
     .ty-subnote { font-family: var(--fb); font-size:14px; color:var(--text-mid); margin-bottom:22px; max-width:620px; }
     .ty-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; margin-top:22px; }
     .ty-card { background:#fff; display:flex; flex-direction:column; overflow:hidden; }
@@ -777,7 +779,7 @@
     .ty-ss { font-family:'Style Script', cursive; }
     .ty-gv { font-family:'Great Vibes', cursive; }
     .ty-formula { background:var(--bg-dark); padding:34px 32px; margin-top:36px; }
-    .ty-formula .ty-fh { font-family:var(--fh); font-weight:700; font-size:clamp(19px,2.6vw,24px); color:var(--text-inv); margin-bottom:6px; }
+    .ty-formula .ty-fh { font-family:var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size:clamp(22px,3vw,30px); color:var(--text-inv); margin-bottom:8px; }
     .ty-formula .ty-lead { font-family:var(--fb); font-size:15px; color:var(--text-inv-mid); line-height:1.7; margin-bottom:16px; max-width:680px; }
     .ty-list { list-style:none; padding:0; margin:0; }
     .ty-list li { font-family:var(--fb); font-size:14px; line-height:1.7; padding:6px 0 6px 22px; position:relative; }
@@ -787,8 +789,10 @@
     .ty-formula .ty-list li b { color:var(--text-inv); }
     .ty-rules { margin-top:36px; }
     .ty-note { background:var(--bg-2); padding:26px 28px; margin-top:32px; }
-    .ty-note .ty-fh { font-family:var(--fh); font-weight:700; font-size:18px; color:var(--text); margin-bottom:10px; }
+    .ty-note .ty-fh { font-family:var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size:24px; color:var(--text); margin-bottom:10px; }
 
+  
+    h3 { font-family: var(--fsub); text-transform: uppercase; letter-spacing: .06em; }
   </style>
 </head>
 <body>
@@ -1163,28 +1167,25 @@
     </div>
 
     <h3 class="ty-sub">The web set</h3>
-    <p class="ty-subnote">Free, open-source, and live on this page straight from Google Fonts. Use these anywhere online.</p>
+    <p class="ty-subnote">The website alternatives. Free, open-source, and live on this page straight from Google Fonts. Use these for anything online.</p>
     <div class="ty-web">
 
       <div class="ty-webcard">
-        <div class="ty-samp ty-caps" style="font-size:34px;">Cold Drinks</div>
-        <div class="ty-weblabel"><b>Cabin</b> &mdash; web stand-in for Gill Sans, headlines and labels.</div>
+        <div class="ty-samp" style="font-family:'Open Sans',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.03em; font-size:32px;">Cold Drinks</div>
+        <div class="ty-weblabel"><b>Headlines &mdash; Open Sans Extrabold</b>, all caps. The web stand-in for Gill Sans Bold.</div>
       </div>
 
       <div class="ty-webcard">
-        <div class="ty-samp" style="font-family:var(--fb); font-size:17px; line-height:1.6;">Order at the bar. Please and thank you.</div>
-        <div class="ty-weblabel"><b>Barlow</b> &mdash; web stand-in for Gill Sans Regular, body copy.</div>
+        <div class="ty-samp" style="font-family:'Bebas Neue',sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:40px;">Low Lights</div>
+        <div class="ty-weblabel"><b>Subheads &mdash; Bebas Neue</b>, all caps. Secondary headings and section labels.</div>
       </div>
 
       <div class="ty-webcard">
-        <div class="ty-samp" style="font-size:30px;"><span class="ty-caps">Bet</span> <span class="ty-ss" style="font-size:40px;">on a</span> <span class="ty-caps">good time</span></div>
-        <div class="ty-samp" style="font-size:30px; margin-top:-4px;"><span class="ty-caps">Fortune</span> <span class="ty-ss" style="font-size:40px;">Favors</span></div>
-        <div class="ty-weblabel"><b>Style Script</b> &mdash; the everyday web script. One accent: a lowercase aside, or the Title-Case payoff word. Never all caps. Never letterspaced.</div>
-      </div>
-
-      <div class="ty-webcard">
-        <div class="ty-samp ty-gv" style="font-size:44px;">Pinkies up</div>
-        <div class="ty-weblabel"><b>Great Vibes</b> &mdash; secondary. The fancy, champagne moment only. Same restraint as everywhere else.</div>
+        <div class="ty-samp ty-ss" style="font-size:46px;">Happy hour</div>
+        <div style="font-family:var(--fb); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); margin:-6px 0 12px;">Go-to</div>
+        <div class="ty-samp ty-gv" style="font-size:34px; margin-bottom:2px;">Happy hour</div>
+        <div style="font-family:var(--fb); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:14px;">Alternative</div>
+        <div class="ty-weblabel"><b>Accent scripts &mdash; Style Script</b> is the go-to. <b>Great Vibes</b> is the alternative, for fancier moments. Same rules either way: one accent, never all caps, never letterspaced.</div>
       </div>
 
     </div>
