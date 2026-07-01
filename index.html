@@ -6,8 +6,8 @@
   <title>Lucky Stranger — Brand Identity Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Web set: Open Sans Extrabold = headlines (Gill Sans proxy). Bebas Neue = subheads. Barlow = body. Style Script = go-to accent script; Great Vibes = alternative. -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:wght@400;600;700;800&family=Style+Script&display=swap" rel="stylesheet">
+  <!-- Web set: Open Sans Extrabold = headlines (Gill Sans proxy). Bebas Neue = subheads. Open Sans Regular = body. Style Script = go-to accent script; Great Vibes = alternative. -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Style+Script&display=swap" rel="stylesheet">
   <style>
     /* ─── LUCKY STRANGER TOKENS ──────────────────────────────── */
     :root {
@@ -32,7 +32,8 @@
       --gap: 96px;
       --fh: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
       --fsub: 'Bebas Neue', 'Gill Sans', Arial, sans-serif;
-      --fb: 'Barlow', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --fb: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --font-sans: 'Open Sans', 'Gill Sans', Arial, sans-serif;
       --fs: 'Style Script', cursive;
       --fs2: 'Great Vibes', cursive;
     }
@@ -661,7 +662,7 @@
 }
 
 .concept-label {
-  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -684,7 +685,7 @@
 }
 
 .scroll-hint {
-  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: var(--color-midnight, #183C45);
@@ -731,7 +732,7 @@
 }
 
 .concept-bullets li {
-  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--color-midnight, #183C45);
@@ -745,7 +746,7 @@
 }
 
 .considerations-block h3 {
-  font-family: var(--font-sans, 'Barlow', sans-serif);
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -1098,10 +1099,10 @@
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Fonts</div>
     <h2 class="sec-h2">Typography</h2>
-    <p class="body-copy">Two halves. The licensed fonts that build the printed brand, and the free web fonts that carry it online. Use the licensed set for menus, signage, and merch. Use the web set for anything that lives on a screen.</p>
+    <p class="body-copy">Two halves. The paid fonts that build everything off the website, and the free web fonts that carry the brand online. Use the font set for print, signage, merch, and ads. Use the web set for anything on a screen.</p>
 
-    <h3 class="ty-sub">The licensed set</h3>
-    <p class="ty-subnote">Print, signage, merch. These are paid fonts shown here as reference images, since they can't be served on the web. License links are US pricing, in USD.</p>
+    <h3 class="ty-sub">Font set</h3>
+    <p class="ty-subnote">For everything except the website: print, signage, merch, and ads (print and digital). Paid fonts, shown here as reference images since they can't be served on the web. License links are US pricing, in USD.</p>
     <div class="ty-grid">
 
       <div class="ty-card">
@@ -1178,6 +1179,11 @@
       <div class="ty-webcard">
         <div class="ty-samp" style="font-family:'Bebas Neue',sans-serif; text-transform:uppercase; letter-spacing:.04em; font-size:40px;">Low Lights</div>
         <div class="ty-weblabel"><b>Subheads &mdash; Bebas Neue</b>, all caps. Secondary headings and section labels.</div>
+      </div>
+
+      <div class="ty-webcard">
+        <div class="ty-samp" style="font-family:'Open Sans',sans-serif; font-weight:400; text-transform:none; font-size:18px; line-height:1.5;">Order at the bar. <em>Please and thank you.</em></div>
+        <div class="ty-weblabel"><b>Body &mdash; Open Sans Regular</b>. Italic and bold where needed, never all caps. The web stand-in for Gill Sans Regular.</div>
       </div>
 
       <div class="ty-webcard">
