@@ -1474,6 +1474,10 @@
   .fm-list li { font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative; }
   .fm-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--red); }
   .fm-note { font-size: 12px; color: var(--text-mid); margin-top: 20px; }
+  .fm-callout { margin-top: 32px; max-width: 720px; border-left: 3px solid var(--cherry); background: var(--bg-2); padding: 18px 22px; }
+  .fm-callout-title { font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text); margin-bottom: 6px; }
+  .fm-callout p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+  .fm-small-note { font-size: 12.5px; font-style: italic; color: var(--text-mid); line-height: 1.55; margin-top: 14px; }
   .fm-more { margin-top: 56px; border: 1px dashed var(--text-mid); padding: 28px 24px; text-align: center; font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
 
   /* ─── MERCH: SUMMER DRAWER ────────────────────────────────── */
@@ -1533,13 +1537,13 @@
       </div>
       <span class="fm-chip">In review</span>
     </div>
-    <p class="body-copy" style="margin-top: 16px;">Screenprintable designs and patches. The larger designs are made to be printed directly on thrifted vintage shirts, sweatshirts and the like. A patch can&rsquo;t hold as much info, so the patches are truncated versions of that art and won&rsquo;t match the designs one for one.</p>
+    <p class="body-copy" style="margin-top: 16px;">This round is one design, adapted two ways: as a screenprint and as an embroidered patch. The options below are the directions to pick from. The larger designs are made to print on thrifted vintage shirts, sweatshirts and the like.</p>
 
     <!-- Sweatshirts -->
     <div class="fm-cat" id="fall-screenprints">
       <div class="fm-cat-label">Category 01</div>
       <div class="fm-cat-title">Screenprintable designs</div>
-      <p class="fm-cat-copy">Two designs, two different jobs. One leads with the brand, the other leads with the line. Shown mocked up on a sweatshirt back and a flannel back.</p>
+      <p class="fm-cat-copy">Two designs, two different jobs. One leads with the brand, the other leads with the line. Each is mocked up on a sweatshirt back and on a flannel back.</p>
       <div class="fm-grid">
         <div>
           <div class="fm-opt-label fm-top">Option A &middot; Brand forward</div>
@@ -1549,8 +1553,7 @@
           <ul class="fm-list fm-list-after">
             <li>Wordmark leads, with the martini and cigarette art tucked in behind it</li>
             <li>&ldquo;I&rsquo;ll be at&rdquo; eyebrow, with address, phone and city anchoring the bottom</li>
-            <li>Cream print, shown on a brown sweatshirt back as a mockup</li>
-            <li>Also mocked up on a flannel back (second image)</li>
+            <li>Larger design, built to print directly on the garment</li>
           </ul>
         </div>
         <div>
@@ -1561,10 +1564,14 @@
           <ul class="fm-list fm-list-after">
             <li>The line leads, with the martini, cigarette and an ashtray banner doing the talking</li>
             <li>Lucky Stranger drops to a smaller &ldquo;at Avondale&rsquo;s local&rdquo; sign-off, with address, phone and city</li>
-            <li>Same line as the back of koozie Combo B (see Summer 2026 Merch below)</li>
-            <li>Also mocked up on a flannel back (second image)</li>
+            <li>Larger design, built to print directly on the garment</li>
           </ul>
+          <p class="fm-small-note">Not locked in. The line can change if you&rsquo;d like something else, but we like the double meaning of &ldquo;High Spirits&rdquo; paired with the cigarette. &#x1F609;</p>
         </div>
+      </div>
+      <div class="fm-callout">
+        <div class="fm-callout-title">About the flannel</div>
+        <p>The flannel shows how a screenprinted design can adapt to an upcycled flannel or even a jacket, as a printed patch instead of a small embroidered one. The print vendor scales the same design to whatever the garment needs. Ink is cream in every mockup, but it can change to suit each vintage piece.</p>
       </div>
     </div>
 
@@ -1572,17 +1579,17 @@
     <div class="fm-cat" id="fall-patches">
       <div class="fm-cat-label">Category 02</div>
       <div class="fm-cat-title">Patches</div>
-      <p class="fm-cat-copy">Two options, both brand forward. The diamond is the Lucky Stranger design in miniature. The ashtray is its cousin. Each is mocked up on a fleece and a beanie.</p>
+      <p class="fm-cat-copy">Two options, both brand forward. The diamond is closest to the brand forward design above. The ashtray is its cousin. Each is mocked up on a fleece and a beanie.</p>
       <div class="fm-grid">
         <div>
           <div class="fm-opt-label fm-top">Option 01 &middot; Diamond</div>
-          <div class="fm-opt-title">Same art as the Lucky Stranger design</div>
+          <div class="fm-opt-title">Closest to the brand forward design</div>
           <img class="fm-shot" src="Merch_Patch_Diamond.jpg" alt="Embroidered diamond patch. Lucky Stranger wordmark with martini, cigarette and ashtray on red twill, Birmingham AL." width="1200" height="896" loading="lazy" decoding="async">
           <img class="fm-shot" src="Merch_Patch_Diamond_onFleece.jpg" alt="Diamond patch mocked up on a blue fleece chest and a gray beanie." width="1170" height="1170" loading="lazy" decoding="async">
           <ul class="fm-list fm-list-after">
-            <li>The Lucky Stranger design, cut down to fit a patch</li>
+            <li>Option A (Lucky Stranger), trimmed down to fit a patch</li>
             <li>Keeps the wordmark, martini, cigarette, ashtray and city. Address and phone drop off</li>
-            <li>Red twill ground, cream border and script, teal glass (as rendered)</li>
+            <li>Colorway can change. Red, cream and teal shown</li>
           </ul>
         </div>
         <div>
@@ -1597,10 +1604,18 @@
           </ul>
         </div>
       </div>
+      <div class="fm-callout">
+        <div class="fm-callout-title">Why the patches aren&rsquo;t a 1:1 match</div>
+        <ul class="fm-list" style="margin-top: 10px;">
+          <li>Size: a patch is a fraction of the print area, so the address, phone number and fine lettering would be too small to read</li>
+          <li>Embroidery limits: thread can&rsquo;t hold hairline strokes, tiny type or small details the way ink can, so the art gets simplified</li>
+          <li>Texture: the worn, distressed look of a screenprint doesn&rsquo;t translate to stitches</li>
+          <li>Color: every color is its own thread, so the palette stays tight</li>
+        </ul>
+      </div>
       <p class="fm-note">Patch close-ups are rendered previews, not stitched samples.</p>
     </div>
 
-    <div class="fm-more">More Fall 2026 designs land here as they&rsquo;re ready</div>
 
     <!-- ══ SUMMER 2026 (DRAWER) ══ -->
     <div class="fm-drawer">
