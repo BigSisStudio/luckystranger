@@ -821,10 +821,7 @@
       <a href="#voice">Voice &amp; Tone</a>
       <a href="#backgrounds">Backgrounds</a>
       <a href="#social">Social</a>
-      <a href="#menu">Menu</a>
-      <a href="#coming-soon">Signage</a>
-      <a href="#cups">Cups</a>
-      <a href="#merch">Merch</a>
+      <a href="#collateral" class="nav-collat">Collateral</a>
     </div>
   </div>
 </nav>
@@ -845,7 +842,7 @@
       </div>
       <div class="hero-meta-item">
         <strong>Hub updated</strong>
-        June 16, 2026
+        October 6, 2026
       </div>
       <div class="hero-meta-item">
         <strong>Prepared by</strong>
@@ -1423,6 +1420,489 @@
   </div>
 </section>
 
+
+<style>
+  /* ─── COLLATERAL BAND ─────────────────────────────────────── */
+  .collat { scroll-margin-top: 56px; }
+  .collat > section { scroll-margin-top: 112px; }
+  .collat-band {
+    position: sticky; top: 56px; z-index: 90;
+    background: var(--bg-dark); border-top: 3px solid var(--red);
+  }
+  .collat-band-inner {
+    max-width: var(--max); margin: 0 auto; padding: 0 32px; min-height: 52px;
+    display: flex; align-items: center; gap: 32px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .collat-band-inner::-webkit-scrollbar { display: none; }
+  .collat-title {
+    font-family: var(--fh); font-weight: 800; font-size: 20px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--text-inv); white-space: nowrap; flex-shrink: 0;
+    padding-right: 32px; border-right: 1px solid var(--rule-inv); line-height: 52px;
+  }
+  .collat-links { display: flex; align-items: center; }
+  .collat-links a {
+    font-family: var(--fh); font-size: 11px; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: rgba(238,230,210,0.84); white-space: nowrap;
+    height: 52px; padding: 0 18px; display: flex; align-items: center; gap: 8px;
+    transition: color .2s;
+  }
+  .collat-links a::before { content: '\2192'; color: var(--red); font-size: 13px; }
+  .collat-links a:hover, .collat-links a.active { color: var(--text-inv); }
+  .collat-links a:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .nav-links a.nav-collat { color: var(--text); font-weight: 800; border-left: 1px solid var(--rule); }
+  .nav-links a.nav-collat:hover, .nav-links a.nav-collat.active { color: var(--red); }
+
+  /* ─── MERCH: SEASONS ──────────────────────────────────────── */
+  .fm-season-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 56px; }
+  .fm-kicker { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--cherry); margin-bottom: 4px; }
+  .fm-season-title { font-family: var(--fsub); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: .04em; line-height: 1; color: var(--text); }
+  .fm-chip { font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--text-dim); color: var(--text-mid); padding: 3px 10px; border-radius: 2px; align-self: flex-end; margin-bottom: 4px; }
+  .fm-cat { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 36px; }
+  .fm-cat-label { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--cherry); margin-bottom: 8px; }
+  .fm-cat-title { font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text); margin-bottom: 10px; }
+  .fm-cat-copy { font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 640px; margin-bottom: 32px; }
+  .fm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .fm-opt-label { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); margin: 16px 0 4px; }
+  .fm-opt-title { font-family: var(--fh); font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 10px; }
+  .fm-shot { width: 100%; height: auto; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); }
+  .fm-shot + .fm-shot { margin-top: 16px; }
+  .fm-opt-label.fm-top { margin-top: 0; }
+  .fm-list-after { margin-top: 18px; }
+  .fm-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+  .fm-list li { font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative; }
+  .fm-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--red); }
+  .fm-note { font-size: 12px; color: var(--text-mid); margin-top: 20px; }
+  .fm-more { margin-top: 56px; border: 1px dashed var(--text-mid); padding: 28px 24px; text-align: center; font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
+
+  /* ─── MERCH: SUMMER DRAWER ────────────────────────────────── */
+  .fm-drawer { margin-top: 72px; border-top: 3px solid var(--red); background: var(--bg-2); }
+  .fm-drawer-btn { width: 100%; background: none; border: none; cursor: pointer; padding: 26px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; color: var(--text); font-family: var(--fh); }
+  .fm-drawer-btn:hover { background: var(--bg-3); }
+  .fm-drawer-btn:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .fm-drawer-left { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .fm-drawer-chip { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: var(--bg-dark); color: var(--text-inv); padding: 3px 10px; border-radius: 2px; align-self: center; }
+  .fm-drawer-title { font-weight: 800; font-size: 20px; letter-spacing: .05em; text-transform: uppercase; }
+  .fm-drawer-sub { font-size: 12px; color: var(--text-mid); letter-spacing: .04em; }
+  .fm-caret { font-size: 20px; color: var(--text-mid); transition: transform .35s ease; flex-shrink: 0; }
+  .fm-caret.open { transform: rotate(180deg); }
+  .fm-drawer-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s ease; }
+  .fm-drawer-panel.open { grid-template-rows: 1fr; }
+  .fm-drawer-inner { min-height: 0; overflow: hidden; visibility: hidden; padding: 0 24px; transition: visibility 0s .5s; }
+  .fm-drawer-panel.open .fm-drawer-inner { visibility: visible; transition-delay: 0s; padding-bottom: 40px; }
+  .fm-drawer-inner > div:first-child { margin-top: 8px !important; }
+
+  @media (max-width: 760px) {
+    .collat-band-inner { padding: 0 12px; gap: 8px; }
+    .collat-title { font-size: 14px; letter-spacing: .04em; padding-right: 10px; }
+    .collat-links a { padding: 0 7px; font-size: 10px; letter-spacing: .08em; }
+    .collat-links a::before { display: none; }
+    .fm-grid { grid-template-columns: 1fr; }
+    .fm-drawer-btn { padding: 22px 16px; }
+    .fm-drawer-inner { padding: 0 16px; }
+    .fm-drawer-sub { display: none; }
+  }
+</style>
+<!-- ═══════════════ COLLATERAL ═══════════════ -->
+<div class="collat" id="collateral">
+  <div class="collat-band">
+    <div class="collat-band-inner">
+      <h2 class="collat-title">Collateral</h2>
+      <div class="collat-links" role="navigation" aria-label="Collateral sections">
+        <a href="#merch">Merch</a>
+        <a href="#menu">Menu</a>
+        <a href="#signage">Signage</a>
+        <a href="#cups">Cups</a>
+      </div>
+    </div>
+  </div>
+
+<!-- ─── MERCH ─────────────────────────────────────────────────── -->
+<section id="merch" style="background: var(--bg);">
+  <div class="wrap">
+    <div class="sec-bar" aria-hidden="true"></div>
+    <div class="sec-label">Collateral &middot; Merch</div>
+    <h2 class="sec-h2">Branded Merchandise</h2>
+
+    <!-- ══ FALL 2026 ══ -->
+    <div class="fm-season-head">
+      <div>
+        <div class="fm-kicker">Current round</div>
+        <h3 class="fm-season-title">Fall 2026 Merch</h3>
+      </div>
+      <span class="fm-chip">In review</span>
+    </div>
+    <p class="body-copy" style="margin-top: 16px;">Sweatshirts and patches. The sweatshirts carry a larger design, screen printed directly on the garment. A patch can&rsquo;t hold as much info, so the patches are truncated versions of that art and won&rsquo;t match the shirts one for one.</p>
+
+    <!-- Sweatshirts -->
+    <div class="fm-cat" id="fall-sweatshirts">
+      <div class="fm-cat-label">Category 01</div>
+      <div class="fm-cat-title">Sweatshirts</div>
+      <p class="fm-cat-copy">Same sweatshirt, two different jobs. One leads with the brand, the other leads with the line.</p>
+      <div class="fm-grid">
+        <div>
+          <img class="fm-shot" src="Merch_Sweat_LuckyStranger.jpg" alt="Sweatshirt back mockup. Lucky Stranger wordmark with martini and cigarette art, address and phone below, in cream on brown." width="1400" height="1400" loading="lazy" decoding="async">
+          <div class="fm-opt-label">Option A &middot; Brand forward</div>
+          <div class="fm-opt-title">Lucky Stranger</div>
+          <ul class="fm-list">
+            <li>Wordmark leads, with the martini and cigarette art tucked in behind it</li>
+            <li>&ldquo;I&rsquo;ll be at&rdquo; eyebrow, with address, phone and city anchoring the bottom</li>
+            <li>Cream print on brown, as mocked up. Back print shown</li>
+          </ul>
+        </div>
+        <div>
+          <img class="fm-shot" src="Merch_Sweat_HighSpirits.jpg" alt="Sweatshirt back mockup. High Spirits, Low Expectations with martini, cigarette and ashtray art, Lucky Stranger sign-off and address below, in cream on brown." width="1400" height="1400" loading="lazy" decoding="async">
+          <div class="fm-opt-label">Option B &middot; Saying forward</div>
+          <div class="fm-opt-title">High Spirits, Low Expectations</div>
+          <ul class="fm-list">
+            <li>The line leads, with the martini, cigarette and an ashtray banner doing the talking</li>
+            <li>Lucky Stranger drops to a smaller &ldquo;at Avondale&rsquo;s local&rdquo; sign-off, with address, phone and city</li>
+            <li>Same line as the back of koozie Combo B (see Summer 2026 Merch below)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patches -->
+    <div class="fm-cat" id="fall-patches">
+      <div class="fm-cat-label">Category 02</div>
+      <div class="fm-cat-title">Patches</div>
+      <p class="fm-cat-copy">Two options, both brand forward. The diamond is the sweatshirt art in miniature. The ashtray is its cousin. Each is mocked up on a fleece and a beanie.</p>
+      <div class="fm-grid">
+        <div>
+          <div class="fm-opt-label fm-top">Option 01 &middot; Diamond</div>
+          <div class="fm-opt-title">Same art as the sweatshirt</div>
+          <img class="fm-shot" src="Merch_Patch_Diamond.jpg" alt="Embroidered diamond patch. Lucky Stranger wordmark with martini, cigarette and ashtray on red twill, Birmingham AL." width="1200" height="896" loading="lazy" decoding="async">
+          <img class="fm-shot" src="Merch_Patch_Diamond_onFleece.jpg" alt="Diamond patch mocked up on a blue fleece chest and a gray beanie." width="1170" height="1170" loading="lazy" decoding="async">
+          <ul class="fm-list fm-list-after">
+            <li>The Lucky Stranger sweatshirt art, cut down to fit a patch</li>
+            <li>Keeps the wordmark, martini, cigarette, ashtray and city. Address and phone drop off</li>
+            <li>Red twill ground, cream border and script, teal glass (as rendered)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="fm-opt-label fm-top">Option 02 &middot; Ashtray</div>
+          <div class="fm-opt-title">A cousin of the diamond</div>
+          <img class="fm-shot" src="Merch_Patch_Ashtray.jpg" alt="Embroidered oval patch shaped like an ashtray. Lucky Stranger wordmark with a cigarette stub, Birmingham AL." width="1200" height="896" loading="lazy" decoding="async">
+          <img class="fm-shot" src="Merch_Patch_Ashtray_onFleece.jpg" alt="Ashtray patch mocked up on a blue fleece chest and a gray beanie." width="1170" height="1170" loading="lazy" decoding="async">
+          <ul class="fm-list fm-list-after">
+            <li>Built around the ashtray alone, with the wordmark and a cigarette stub</li>
+            <li>City only. No address, no phone</li>
+            <li>Red ashtray shape, burgundy field, cream script (as rendered)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fm-note">Patch close-ups are rendered previews, not stitched samples.</p>
+    </div>
+
+    <div class="fm-more">More Fall 2026 designs land here as they&rsquo;re ready</div>
+
+    <!-- ══ SUMMER 2026 (DRAWER) ══ -->
+    <div class="fm-drawer">
+      <button class="fm-drawer-btn" type="button" aria-expanded="false" aria-controls="summerMerch" onclick="toggleDrawer(this)">
+        <span class="fm-drawer-left">
+          <span class="fm-drawer-chip">Round 01</span>
+          <span class="fm-drawer-title">Summer 2026 Merch</span>
+          <span class="fm-drawer-sub">Hats &middot; T-shirts &middot; Koozies</span>
+        </span>
+        <span class="fm-caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="fm-drawer-panel" id="summerMerch">
+        <div class="fm-drawer-inner">
+          <p class="body-copy" style="margin-top: 8px;">The first round: hats, t-shirts and koozies. Kept here for reference.</p>
+
+<!-- ── HATS ──────────────────────────────────────────────── -->
+    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
+      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 01</div>
+      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">High Profile Embroidered Hats</div>
+        <a href="https://ridgeandriver.com/products/oc560-osfm" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
+      </div>
+      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 32px;">Puff embroidery on script text. Lucky Stranger logo on the side panel — applies to all three options. Cream crown. Stock: Ridge &amp; River OC560.</p>
+
+      <!-- Hat grid — selected pair, no background cards, just drop shadow on images -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 620px;">
+
+        <div>
+          <img loading="lazy" decoding="async" src="Hat_Birmingham_2x.png" alt="Lucky Stranger, Birmingham AL" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Lucky Stranger, Birmingham AL</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
+          </ul>
+        </div>
+
+        <div>
+          <img loading="lazy" decoding="async" src="Hat_2x.png" alt="Getting Lucky in Avondale" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Getting Lucky in Avondale</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / camo bill</li>
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery · Fuku cat mark front</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Side panel detail -->
+      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; margin-top: 32px; background: var(--bg-2); padding: 24px; max-width: 620px;">
+        <img loading="lazy" decoding="async" src="Hat_Side_2x.png" alt="Lucky Stranger side logo detail" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 12px rgba(24,60,69,0.12));">
+        <div>
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Side panel — both hats</div>
+          <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0;">Lucky Stranger script logo embroidered on the left side panel in dark green. Applies to both hat options regardless of front design or bill color.</p>
+        </div>
+      </div>
+
+      <!-- ── PREVIOUS ROUND: HAT CONCEPTS — COLLAPSED DRAWER ── -->
+      <div style="margin-top: 40px; border-top: 1px solid var(--rule);">
+        <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.sign-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+          Previous round — hat concepts
+          <span class="sign-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+        </button>
+        <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="sign-prev-panel">
+          <div style="padding-bottom: 16px;">
+            <p style="font-family: var(--fb); font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 32px 0;">Three directions explored in the previous round, all sharing the same side-panel logo treatment.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+              <div>
+                <img loading="lazy" decoding="async" src="Hat_Old_FrequentStranger_2x.png" alt="The Frequent Stranger Society" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">The Frequent Stranger Society</div>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
+                </ul>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="Hat_2_2x.png" alt="We're Getting Lucky Tonight" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">We're Getting Lucky Tonight</div>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
+                </ul>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="Hat_1_2x.png" alt="Getting Lucky in Avondale — original version" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Getting Lucky in Avondale (original)</div>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / camo bill</li>
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery · Fuku cat mark front</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── T-SHIRTS ──────────────────────────────────────────── -->
+    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
+      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 02</div>
+      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">T-Shirts</div>
+        <a href="https://www.bellacanvas.com/product/3413/Unisex-Triblend-SS-Tee.html" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
+      </div>
+      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 20px;">Bella + Canvas 3413 tri-blend. Small Lucky Stranger logo on left chest front. Larger graphic on back. Two colorways, each with its own print color and back design.</p>
+
+      <!-- Screenprint vs DTG note -->
+      <div style="margin-bottom: 32px; border-left: 3px solid var(--cherry); padding: 16px 20px; background: var(--bg-2); max-width: 620px;">
+        <span style="font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text);">Print note:</span>
+        <span style="font-size: 13px; color: var(--text-mid); line-height: 1.65;"> If the ink should feel like it's sitting on top of the fabric rather than part of it, that's screen printing — not DTG. Flag this with the printer before ordering.</span>
+      </div>
+
+      <!-- Cream colorway -->
+      <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px;">Building Tee</div>
+      <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 14px;">Cream · Midnight print</div>
+      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 40px;">
+        <div>
+          <img loading="lazy" decoding="async" src="Tee_Cream_Front_2x.png" alt="Cream tee front with Lucky Stranger logo" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
+        </div>
+        <div>
+          <img loading="lazy" decoding="async" src="Tee_Cream_Back_2x.png" alt="Cream tee back — Talk to Strangers with building illustration" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
+        </div>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 4px;">
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger logo, midnight print</li>
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "Talk to Strangers" + building illustration + address</li>
+      </ul>
+
+      <!-- Building illustration — standalone reference -->
+      <div style="display: flex; align-items: flex-start; gap: 20px; background: var(--bg-2); padding: 20px; margin-bottom: 40px; max-width: 480px;">
+        <a href="Tee_Cream_BuildingArt_Reference_2x.png" target="_blank" rel="noopener" style="flex-shrink: 0; display: block;">
+          <img loading="lazy" decoding="async" src="Tee_Cream_BuildingArt_Reference_2x.png" alt="Building illustration — standalone reference" style="height: 200px; width: auto; object-fit: contain; display: block; cursor: zoom-in;">
+        </a>
+        <div>
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Reference — building illustration detail</div>
+          <p style="font-size: 13px; color: var(--text-mid); line-height: 1.6; margin: 0 0 10px;">A closer look at the looser, hand-drawn illustration style with more linework detail than reads at tee-back scale.</p>
+          <a href="Tee_Cream_BuildingArt_Reference_2x.png" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px;">Click to enlarge ↗</a>
+        </div>
+      </div>
+
+      <a href="https://drive.google.com/drive/folders/1u5pTvrKFHyzyAAnvVuc_0WlBEU-mIilB?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin-bottom: 12px;">
+        Download print-ready files ↗
+      </a>
+      <ul style="list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 4px;">
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Print-ready PDF + Adobe Illustrator (.ai)</li>
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Building illustration (.bmp) — standalone file, if the printer needs it separately</li>
+      </ul>
+
+      <!-- Black colorway -->
+      <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px;">B-A-R Tee</div>
+      <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 14px;">Black · Cherry print</div>
+      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 24px;">
+        <div>
+          <img loading="lazy" decoding="async" src="Tee_Black_Front_cherry_2x.jpg" alt="Black tee front with Lucky Stranger logo in cherry print" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
+        </div>
+        <div>
+          <img loading="lazy" decoding="async" src="Tee_Black_Back_cherry_2x.jpg" alt="Black tee back — Lucky Stranger BAR lockup and address in cherry print" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
+        </div>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger logo, cherry print</li>
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: Lucky Stranger BAR lockup + address — same mark as the koozie</li>
+      </ul>
+
+      <a href="https://drive.google.com/drive/folders/1iGKUXPa4ZXC78XUiCrBBOUtXrOtx2dae?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin: 20px 0 12px;">
+        Download print-ready files ↗
+      </a>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Print-ready PDF + Adobe Illustrator (.ai)</li>
+      </ul>
+
+      <!-- ── PREVIOUS ROUND: T-SHIRT COLORWAYS — COLLAPSED DRAWER ── -->
+      <div style="margin-top: 40px; border-top: 1px solid var(--rule);">
+        <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.sign-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+          Previous round — t-shirt colorways
+          <span class="sign-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+        </button>
+        <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="sign-prev-panel">
+          <div style="padding-bottom: 16px;">
+            <p style="font-family: var(--fb); font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 32px 0;">Three colorways explored in the previous round before narrowing to the cream and black combination above.</p>
+
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;">Front</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
+              <div>
+                <img loading="lazy" decoding="async" src="Blue_T_front_2x.png" alt="Dusty blue tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Dusty Blue</div>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="MaroonT_front_2x.png" alt="Maroon tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Maroon</div>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="OrangeT_front_2x.png" alt="Clay tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Clay</div>
+              </div>
+            </div>
+
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;">Back Options</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px;">
+
+              <div>
+                <img loading="lazy" decoding="async" src="Blue_T_back_2x.png" alt="Dusty blue tee back" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>"Talk to Strangers" + building</li>
+                </ul>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="maroonT_back_drinks_2x.png" alt="Maroon tee back" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Bar sign · AC / Cable TV / Ice Cold Drinks</li>
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>ESTD 2026 · 1-color print</li>
+                </ul>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="OrangeT_back_building_2x.png" alt="Clay tee back option A" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>"Bet on a Good Time" arch + building</li>
+                </ul>
+              </div>
+              <div>
+                <img loading="lazy" decoding="async" src="OrangeT_back_text_2x.png" alt="Clay tee back option B" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Avondale's Lucky Stranger type lockup</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── KOOZIES ──────────────────────────────────────────── -->
+    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
+      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 03</div>
+      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">Koozies</div>
+        <span style="font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: #183C45; color: #EEE6D2; padding: 3px 10px; border-radius: 2px;">Approved</span>
+        <a href="https://imprint.com/shop/products/blank-high-quality-collapsible-coolies" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
+      </div>
+      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 8px;">Two front designs, two back designs — mix and match, or run one combo on both sides. Navy is the recommended color; burgundy also works.</p>
+      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 20px;">Stock: <a href="https://imprint.com/shop/products/blank-high-quality-collapsible-coolies" target="_blank" rel="noopener" style="color: var(--red); text-decoration: underline; text-underline-offset: 3px;">collapsible neoprene</a> — confirmed direction.</p>
+
+      <a href="https://drive.google.com/drive/folders/187y4wqtNihoLjJx7iPoVd2MbBnQRo-8q?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin-bottom: 32px;">
+        Download print-ready files ↗
+      </a>
+
+      <!-- Two combos side by side — cream card bg, product photos on white -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+
+        <div style="background: var(--bg-2); padding: 24px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Combo A</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Front</div>
+              <img loading="lazy" decoding="async" src="Koozie_front_bar_2x.png" alt="Koozie front — Lucky Stranger BAR" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
+            </div>
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Back</div>
+              <img loading="lazy" decoding="async" src="Koozie_back_talk_2x.png" alt="Koozie back — Talk to Strangers" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
+            </div>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger BAR lockup + address</li>
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "Talk to Strangers" with Fuku</li>
+          </ul>
+        </div>
+
+        <div style="background: var(--bg-2); padding: 24px;">
+          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Combo B</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Front</div>
+              <img loading="lazy" decoding="async" src="Koozie_front_2x.png" alt="Koozie front — Lucky Stranger ESTD 2026" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
+            </div>
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Back</div>
+              <img loading="lazy" decoding="async" src="Koozie_back_2x.png" alt="Koozie back — High Spirits Low Expectations" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
+            </div>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger ESTD 2026 + address</li>
+            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "High Spirits, Low Expectations" with Fuku</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Mix and match note -->
+      <div style="margin-top: 20px; border-left: 3px solid var(--cherry); padding: 16px 20px; background: var(--bg-2);">
+        <span style="font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text);">Mix &amp; match note:</span>
+        <span style="font-size: 13px; color: var(--text-mid); line-height: 1.65;"> Front and back designs are independent — any front pairs with any back. Confirm preferred combo(s) before production.</span>
+      </div>
+
+    </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ─── MENU ──────────────────────────────────────────────────── -->
 <section id="menu" style="background: var(--bg-2);">
   <div class="wrap">
@@ -1597,7 +2077,8 @@
 </script>
 
 <!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
-<section id="coming-soon" style="background: var(--bg-3);">
+<section id="signage" style="background: var(--bg-3);">
+  <a id="coming-soon" aria-hidden="true"></a>
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Signage</div>
@@ -1863,300 +2344,8 @@
   }
 </style>
 
-<!-- ─── MERCH ─────────────────────────────────────────────────── -->
-<section id="merch" style="background: var(--bg);">
-  <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Merch</div>
-    <h2 class="sec-h2">Branded Merchandise</h2>
-    <p class="body-copy">Three categories. Options in each. These are mockups for review — production specs and quantities TBD once direction is confirmed.</p>
 
-    <!-- ── HATS ──────────────────────────────────────────────── -->
-    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
-      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 01</div>
-      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
-        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">High Profile Embroidered Hats</div>
-        <a href="https://ridgeandriver.com/products/oc560-osfm" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
-      </div>
-      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 32px;">Puff embroidery on script text. Lucky Stranger logo on the side panel — applies to all three options. Cream crown. Stock: Ridge &amp; River OC560.</p>
-
-      <!-- Hat grid — selected pair, no background cards, just drop shadow on images -->
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 620px;">
-
-        <div>
-          <img src="Hat_Birmingham_2x.png" alt="Lucky Stranger, Birmingham AL" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Lucky Stranger, Birmingham AL</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
-          </ul>
-        </div>
-
-        <div>
-          <img src="Hat_2x.png" alt="Getting Lucky in Avondale" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Getting Lucky in Avondale</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / camo bill</li>
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery · Fuku cat mark front</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Side panel detail -->
-      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; margin-top: 32px; background: var(--bg-2); padding: 24px; max-width: 620px;">
-        <img src="Hat_Side_2x.png" alt="Lucky Stranger side logo detail" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 12px rgba(24,60,69,0.12));">
-        <div>
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Side panel — both hats</div>
-          <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0;">Lucky Stranger script logo embroidered on the left side panel in dark green. Applies to both hat options regardless of front design or bill color.</p>
-        </div>
-      </div>
-
-      <!-- ── PREVIOUS ROUND: HAT CONCEPTS — COLLAPSED DRAWER ── -->
-      <div style="margin-top: 40px; border-top: 1px solid var(--rule);">
-        <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.sign-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
-          Previous round — hat concepts
-          <span class="sign-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
-        </button>
-        <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="sign-prev-panel">
-          <div style="padding-bottom: 16px;">
-            <p style="font-family: var(--fb); font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 32px 0;">Three directions explored in the previous round, all sharing the same side-panel logo treatment.</p>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
-              <div>
-                <img src="Hat_Old_FrequentStranger_2x.png" alt="The Frequent Stranger Society" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">The Frequent Stranger Society</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
-                </ul>
-              </div>
-              <div>
-                <img src="Hat_2_2x.png" alt="We're Getting Lucky Tonight" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">We're Getting Lucky Tonight</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / dark green bill</li>
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery</li>
-                </ul>
-              </div>
-              <div>
-                <img src="Hat_1_2x.png" alt="Getting Lucky in Avondale — original version" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 6px 18px rgba(24,60,69,0.18)); margin-bottom: 16px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 6px;">Getting Lucky in Avondale (original)</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cream / camo bill</li>
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Puff embroidery · Fuku cat mark front</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── T-SHIRTS ──────────────────────────────────────────── -->
-    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
-      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 02</div>
-      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
-        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">T-Shirts</div>
-        <a href="https://www.bellacanvas.com/product/3413/Unisex-Triblend-SS-Tee.html" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
-      </div>
-      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 20px;">Bella + Canvas 3413 tri-blend. Small Lucky Stranger logo on left chest front. Larger graphic on back. Two colorways, each with its own print color and back design.</p>
-
-      <!-- Screenprint vs DTG note -->
-      <div style="margin-bottom: 32px; border-left: 3px solid var(--cherry); padding: 16px 20px; background: var(--bg-2); max-width: 620px;">
-        <span style="font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text);">Print note:</span>
-        <span style="font-size: 13px; color: var(--text-mid); line-height: 1.65;"> If the ink should feel like it's sitting on top of the fabric rather than part of it, that's screen printing — not DTG. Flag this with the printer before ordering.</span>
-      </div>
-
-      <!-- Cream colorway -->
-      <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px;">Building Tee</div>
-      <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 14px;">Cream · Midnight print</div>
-      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 40px;">
-        <div>
-          <img src="Tee_Cream_Front_2x.png" alt="Cream tee front with Lucky Stranger logo" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
-        </div>
-        <div>
-          <img src="Tee_Cream_Back_2x.png" alt="Cream tee back — Talk to Strangers with building illustration" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
-        </div>
-      </div>
-      <ul style="list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 4px;">
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger logo, midnight print</li>
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "Talk to Strangers" + building illustration + address</li>
-      </ul>
-
-      <!-- Building illustration — standalone reference -->
-      <div style="display: flex; align-items: flex-start; gap: 20px; background: var(--bg-2); padding: 20px; margin-bottom: 40px; max-width: 480px;">
-        <a href="Tee_Cream_BuildingArt_Reference_2x.png" target="_blank" rel="noopener" style="flex-shrink: 0; display: block;">
-          <img src="Tee_Cream_BuildingArt_Reference_2x.png" alt="Building illustration — standalone reference" style="height: 200px; width: auto; object-fit: contain; display: block; cursor: zoom-in;">
-        </a>
-        <div>
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Reference — building illustration detail</div>
-          <p style="font-size: 13px; color: var(--text-mid); line-height: 1.6; margin: 0 0 10px;">A closer look at the looser, hand-drawn illustration style with more linework detail than reads at tee-back scale.</p>
-          <a href="Tee_Cream_BuildingArt_Reference_2x.png" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px;">Click to enlarge ↗</a>
-        </div>
-      </div>
-
-      <a href="https://drive.google.com/drive/folders/1u5pTvrKFHyzyAAnvVuc_0WlBEU-mIilB?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin-bottom: 12px;">
-        Download print-ready files ↗
-      </a>
-      <ul style="list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 4px;">
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Print-ready PDF + Adobe Illustrator (.ai)</li>
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Building illustration (.bmp) — standalone file, if the printer needs it separately</li>
-      </ul>
-
-      <!-- Black colorway -->
-      <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px;">B-A-R Tee</div>
-      <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 14px;">Black · Cherry print</div>
-      <div style="display: flex; align-items: flex-end; gap: 24px; margin-bottom: 24px;">
-        <div>
-          <img src="Tee_Black_Front_cherry_2x.jpg" alt="Black tee front with Lucky Stranger logo in cherry print" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Front</div>
-        </div>
-        <div>
-          <img src="Tee_Black_Back_cherry_2x.jpg" alt="Black tee back — Lucky Stranger BAR lockup and address in cherry print" style="height: 320px; width: auto; object-fit: contain; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim);">Back</div>
-        </div>
-      </div>
-      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger logo, cherry print</li>
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: Lucky Stranger BAR lockup + address — same mark as the koozie</li>
-      </ul>
-
-      <a href="https://drive.google.com/drive/folders/1iGKUXPa4ZXC78XUiCrBBOUtXrOtx2dae?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin: 20px 0 12px;">
-        Download print-ready files ↗
-      </a>
-      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-        <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Print-ready PDF + Adobe Illustrator (.ai)</li>
-      </ul>
-
-      <!-- ── PREVIOUS ROUND: T-SHIRT COLORWAYS — COLLAPSED DRAWER ── -->
-      <div style="margin-top: 40px; border-top: 1px solid var(--rule);">
-        <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.sign-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
-          Previous round — t-shirt colorways
-          <span class="sign-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
-        </button>
-        <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="sign-prev-panel">
-          <div style="padding-bottom: 16px;">
-            <p style="font-family: var(--fb); font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 32px 0;">Three colorways explored in the previous round before narrowing to the cream and black combination above.</p>
-
-            <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;">Front</div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
-              <div>
-                <img src="Blue_T_front_2x.png" alt="Dusty blue tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Dusty Blue</div>
-              </div>
-              <div>
-                <img src="MaroonT_front_2x.png" alt="Maroon tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Maroon</div>
-              </div>
-              <div>
-                <img src="OrangeT_front_2x.png" alt="Clay tee front" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text);">Clay</div>
-              </div>
-            </div>
-
-            <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;">Back Options</div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px;">
-
-              <div>
-                <img src="Blue_T_back_2x.png" alt="Dusty blue tee back" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>"Talk to Strangers" + building</li>
-                </ul>
-              </div>
-              <div>
-                <img src="maroonT_back_drinks_2x.png" alt="Maroon tee back" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Bar sign · AC / Cable TV / Ice Cold Drinks</li>
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>ESTD 2026 · 1-color print</li>
-                </ul>
-              </div>
-              <div>
-                <img src="OrangeT_back_building_2x.png" alt="Clay tee back option A" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>"Bet on a Good Time" arch + building</li>
-                </ul>
-              </div>
-              <div>
-                <img src="OrangeT_back_text_2x.png" alt="Clay tee back option B" style="width: 100%; height: auto; object-fit: cover; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); margin-bottom: 10px;">
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-                  <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Avondale's Lucky Stranger type lockup</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── KOOZIES ──────────────────────────────────────────── -->
-    <div style="margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 40px;">
-      <div style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Category 03</div>
-      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
-        <div style="font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text);">Koozies</div>
-        <span style="font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: #183C45; color: #EEE6D2; padding: 3px 10px; border-radius: 2px;">Approved</span>
-        <a href="https://imprint.com/shop/products/blank-high-quality-collapsible-coolies" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a>
-      </div>
-      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 8px;">Two front designs, two back designs — mix and match, or run one combo on both sides. Navy is the recommended color; burgundy also works.</p>
-      <p style="font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 620px; margin-bottom: 20px;">Stock: <a href="https://imprint.com/shop/products/blank-high-quality-collapsible-coolies" target="_blank" rel="noopener" style="color: var(--red); text-decoration: underline; text-underline-offset: 3px;">collapsible neoprene</a> — confirmed direction.</p>
-
-      <a href="https://drive.google.com/drive/folders/187y4wqtNihoLjJx7iPoVd2MbBnQRo-8q?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px; margin-bottom: 32px;">
-        Download print-ready files ↗
-      </a>
-
-      <!-- Two combos side by side — cream card bg, product photos on white -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-
-        <div style="background: var(--bg-2); padding: 24px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Combo A</div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
-            <div>
-              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Front</div>
-              <img src="Koozie_front_bar_2x.png" alt="Koozie front — Lucky Stranger BAR" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
-            </div>
-            <div>
-              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Back</div>
-              <img src="Koozie_back_talk_2x.png" alt="Koozie back — Talk to Strangers" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
-            </div>
-          </div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger BAR lockup + address</li>
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "Talk to Strangers" with Fuku</li>
-          </ul>
-        </div>
-
-        <div style="background: var(--bg-2); padding: 24px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 14px;">Combo B</div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
-            <div>
-              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Front</div>
-              <img src="Koozie_front_2x.png" alt="Koozie front — Lucky Stranger ESTD 2026" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
-            </div>
-            <div>
-              <div style="font-family: var(--fh); font-weight: 700; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;">Back</div>
-              <img src="Koozie_back_2x.png" alt="Koozie back — High Spirits Low Expectations" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 3px 10px rgba(24,60,69,0.18));">
-            </div>
-          </div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Front: Lucky Stranger ESTD 2026 + address</li>
-            <li style="font-size: 12px; color: var(--text-mid); padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Back: "High Spirits, Low Expectations" with Fuku</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Mix and match note -->
-      <div style="margin-top: 20px; border-left: 3px solid var(--cherry); padding: 16px 20px; background: var(--bg-2);">
-        <span style="font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text);">Mix &amp; match note:</span>
-        <span style="font-size: 13px; color: var(--text-mid); line-height: 1.65;"> Front and back designs are independent — any front pairs with any back. Confirm preferred combo(s) before production.</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+</div><!-- /collateral -->
 
 <!-- ─── FOOTER ────────────────────────────────────────────────── -->
 <footer>
@@ -2456,16 +2645,28 @@
     btn.setAttribute('aria-expanded', String(panel.classList.contains('open')));
   }
 
-  // Active nav highlight on scroll
+  function toggleDrawer(btn) {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    const open = panel.classList.toggle('open');
+    btn.querySelector('.fm-caret').classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+
+  // Active nav highlight on scroll (collateral sections all light up "Collateral" in the top nav
+  // and their own link in the collateral band)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav .nav-links a');
+  const bandLinks = document.querySelectorAll('.collat-links a');
+  const collatIds = ['merch', 'menu', 'signage', 'cups'];
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
-        if (a) a.classList.add('active');
-      }
+      if (!e.isIntersecting) return;
+      const id = e.target.id;
+      const isCollat = collatIds.includes(id);
+      navLinks.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`nav .nav-links a[href="#${isCollat ? 'collateral' : id}"]`);
+      if (a) a.classList.add('active');
+      bandLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
     });
   }, { rootMargin: '-30% 0px -65% 0px' });
   sections.forEach(s => io.observe(s));
