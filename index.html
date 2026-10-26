@@ -6,8 +6,8 @@
   <title>Lucky Stranger — Brand Identity Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Barlow = Gill Sans proxy. Dancing Script = Gibson Script proxy. -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Cabin:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Web set: Open Sans Extrabold = headlines (Gill Sans proxy). Bebas Neue = subheads. Open Sans Regular = body. Style Script = go-to accent script; Great Vibes = alternative. -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Style+Script&display=swap" rel="stylesheet">
   <style>
     /* ─── LUCKY STRANGER TOKENS ──────────────────────────────── */
     :root {
@@ -30,9 +30,12 @@
 
       --max: 1200px;
       --gap: 96px;
-      --fh: 'Cabin', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
-      --fb: 'Barlow', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
-      --fs: 'Dancing Script', cursive;
+      --fh: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --fsub: 'Bebas Neue', 'Gill Sans', Arial, sans-serif;
+      --fb: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Arial, sans-serif;
+      --font-sans: 'Open Sans', 'Gill Sans', Arial, sans-serif;
+      --fs: 'Style Script', cursive;
+      --fs2: 'Great Vibes', cursive;
     }
 
     /* ─── LIGHTBOX ───────────────────────────────────────────── */
@@ -109,8 +112,8 @@
       letter-spacing: .16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px;
     }
     .sec-h2 {
-      font-family: var(--fh); font-weight: 700; font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.05; color: var(--text); margin-bottom: 20px;
+      font-family: var(--fh); font-weight: 800; text-transform: uppercase; letter-spacing: .03em; font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.07; color: var(--text); margin-bottom: 20px;
     }
     .body-copy {
       font-size: 17px; line-height: 1.75; color: var(--text-mid); max-width: 680px;
@@ -400,7 +403,7 @@
 
     /* ─── DOWNLOADS ─────────────────────────────────────────── */
     .dl-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px;
     }
     @media (max-width: 800px) { .dl-grid { grid-template-columns: 1fr; } }
     .dl-card {
@@ -628,11 +631,12 @@
     }
     .social-tile { display: flex; flex-direction: column; align-items: center; }
     .social-preview {
-      width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
+      width: 110px; height: 110px; max-width: 110px; max-height: 110px;
+      flex: 0 0 110px; border-radius: 50%; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
       background: var(--bg-3);
     }
-    .social-preview img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+    .social-preview img { width: 110px; height: 110px; object-fit: cover; display: block; border-radius: 50%; image-rendering: -webkit-optimize-contrast; }
     .social-meta { text-align: center; margin-top: 12px; }
     .social-name { font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text); }
     .social-use { font-size: 11px; color: var(--text-dim); margin-top: 3px; max-width: 140px; line-height: 1.4; }
@@ -657,6 +661,169 @@
       nav { height: 50px; }
       .nav-links a { height: 50px; padding: 0 14px; }
     }
+  /* ── MENU CONCEPTS ─────────────────────────────── */
+
+.concepts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.concept-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--color-smoke, #EEE6D2);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(24, 60, 69, 0.10), 0 1px 3px rgba(24, 60, 69, 0.07);
+}
+
+.concept-label {
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-midnight, #183C45);
+  opacity: 0.5;
+}
+
+.concept-hero {
+  width: 100%;
+  background: var(--color-smoke, #EEE6D2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.concept-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.scroll-hint {
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-midnight, #183C45);
+  opacity: 0.45;
+  margin: 0;
+}
+
+.concept-scroll-track {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.concept-scroll-track::-webkit-scrollbar {
+  height: 3px;
+}
+
+.concept-scroll-track::-webkit-scrollbar-thumb {
+  background: var(--color-midnight, #183C45);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.concept-scroll-img {
+  flex: 0 0 80%;
+  max-width: 80%;
+  height: auto;
+  scroll-snap-align: start;
+  display: block;
+  border-radius: 2px;
+}
+
+.concept-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.concept-bullets li {
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-midnight, #183C45);
+}
+
+.considerations-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-midnight, #183C45);
+  opacity: 0.9;
+}
+
+.considerations-block h3 {
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .concepts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    /* === Typography section (robust build) === */
+    .ty-sub { font-family: var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size: clamp(24px,3.2vw,34px); color:var(--text); margin:60px 0 4px; }
+    .ty-subnote { font-family: var(--fb); font-size:14px; color:var(--text-mid); margin-bottom:22px; max-width:620px; }
+    .ty-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:38px 22px; margin-top:24px; align-items:start; }
+    .ty-card { background:#fff; display:flex; flex-direction:column; overflow:hidden; }
+    .ty-spec { width:100%; height:auto; display:block; }
+    .ty-card-body { padding:18px 20px 20px; display:flex; flex-direction:column; gap:5px; flex:1; }
+    .ty-role { font-family:var(--fb); font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
+    .ty-name { font-family:var(--fh); font-weight:700; font-size:17px; color:var(--text); line-height:1.2; }
+    .ty-foundry { font-family:var(--fb); font-size:13px; color:var(--text-mid); line-height:1.6; flex:1; }
+    .ty-btn { display:inline-block; margin-top:14px; align-self:flex-start; font-family:var(--fb); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text); text-decoration:none; border:1px solid var(--text); padding:9px 15px; transition:background .2s,color .2s; }
+    .ty-btn:hover { background:var(--text); color:#fff; }
+    .ty-web { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:38px 22px; margin-top:24px; align-items:start; }
+    .ty-webcard { background:#fff; padding:26px 24px; display:flex; flex-direction:column; }
+    .ty-samp { color:var(--text); line-height:1.05; margin-bottom:16px; }
+    .ty-weblabel { font-family:var(--fb); font-size:13px; color:var(--text-mid); line-height:1.6; margin-top:auto; }
+    .ty-weblabel b { color:var(--text); font-weight:700; }
+    .ty-caps { font-family:var(--fh); font-weight:700; text-transform:uppercase; letter-spacing:.02em; }
+    .ty-ss { font-family:'Style Script', cursive; }
+    .ty-gv { font-family:'Great Vibes', cursive; }
+    .ty-formula { background:var(--bg-dark); padding:34px 32px; margin-top:36px; }
+    .ty-formula .ty-fh { font-family:var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size:clamp(22px,3vw,30px); color:var(--text-inv); margin-bottom:8px; }
+    .ty-formula .ty-lead { font-family:var(--fb); font-size:15px; color:var(--text-inv-mid); line-height:1.7; margin-bottom:16px; max-width:680px; }
+    .ty-list { list-style:none; padding:0; margin:0; }
+    .ty-list li { font-family:var(--fb); font-size:14px; line-height:1.7; padding:6px 0 6px 22px; position:relative; }
+    .ty-formula .ty-list li { color:var(--text-inv-mid); }
+    .ty-list li::before { content:'\2192'; position:absolute; left:0; color:var(--red); font-weight:700; }
+    .ty-list li b { color:var(--text); }
+    .ty-formula .ty-list li b { color:var(--text-inv); }
+    .ty-rules { margin-top:36px; }
+    .ty-note { background:var(--bg-2); padding:26px 28px; margin-top:32px; }
+    .ty-note .ty-fh { font-family:var(--fsub); font-weight:400; text-transform:uppercase; letter-spacing:.04em; font-size:24px; color:var(--text); margin-bottom:10px; }
+    /* restructured type entries (v5) */
+    .ty-font { display:flex; flex-direction:column; }
+    .ty-plate { background:#fff; overflow:hidden; }
+    .ty-meta { display:flex; flex-direction:column; gap:2px; padding-top:14px; }
+    .ty-label { font-family:var(--fb); font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--red); }
+    .ty-desc { font-family:var(--fb); font-size:13.5px; color:var(--text-mid); line-height:1.6; margin:4px 0 0; }
+    .ty-lic { font-family:var(--fb); font-size:12.5px; color:var(--text-mid); line-height:1.6; margin:9px 0 0; }
+    .ty-desc a, .ty-lic a { color:var(--text); text-decoration:underline; text-underline-offset:2px; }
+    .ty-desc a:hover, .ty-lic a:hover { color:var(--red); }
+    .ty-font-web { display:flex; flex-direction:column; }
+    .ty-websamp { color:var(--text); line-height:1.1; min-height:54px; display:flex; align-items:flex-end; margin-bottom:2px; overflow-wrap:anywhere; }
+
+  
+    h3 { font-family: var(--fsub); text-transform: uppercase; letter-spacing: .06em; }
   </style>
 </head>
 <body>
@@ -673,7 +840,7 @@
       <a href="#voice">Voice &amp; Tone</a>
       <a href="#backgrounds">Backgrounds</a>
       <a href="#social">Social</a>
-      <a href="#coming-soon">Coming Soon</a>
+      <a href="#collateral" class="nav-collat">Collateral</a>
     </div>
   </div>
 </nav>
@@ -694,7 +861,7 @@
       </div>
       <div class="hero-meta-item">
         <strong>Hub updated</strong>
-        June 4, 2026
+        October 6, 2026
       </div>
       <div class="hero-meta-item">
         <strong>Prepared by</strong>
@@ -728,6 +895,11 @@
         <div class="dl-card-name">Brand Guidelines PDF</div>
         <div class="dl-card-desc">A downloadable version, serving as a source of truth for anyone touching the Lucky Stranger brand.</div>
         <span class="dl-btn soon">Coming soon</span>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-name">Collateral</div>
+        <div class="dl-card-desc">Cups, merch, signage, and other applied materials in their final, approved versions.</div>
+        <a class="dl-btn" href="https://drive.google.com/drive/folders/1ymmcn8XabF4EugAsL2SXy77ZLfZHj-_l?usp=sharing" target="_blank" rel="noopener">Go to downloads ↗</a>
       </div>
     </div>
 
@@ -859,6 +1031,7 @@
   <div class="wrap">
     <h2 class="sec-h2">Fuku, the cat</h2>
     <p class="body-copy">There are three peeking cat variations with multiple colorways, formats and eye treatments. They can be used as part of the wordmark lockup, or as an isolated mark when the context calls for it: favicons, social avatars, merch stamps, sticker applications, etc.</p>
+    <p class="body-copy" style="margin-top: 16px; padding: 16px 20px; border-left: 3px solid var(--color-midnight, #183C45); background: var(--bg-3, #DED8C8);">→ <strong>Fuku is always Midnight.</strong> Regardless of the colorway or background, the cat mark renders in Midnight (#183C45) or knocked out as a near-black silhouette. He never appears in Lucky Strike red, Cherry, Tobacco, or Cigarette Smoke. The cat reads as a black cat — always.</p>
     <div class="logo-grid logo-grid-3 cat-grid" style="margin-top: 32px;">
       <div class="logo-tile logo-tile-cat cat-tile">
         <img src="LS_Cat_curve_eyes.svg" alt="Lucky Stranger peek cat — variation 1" />
@@ -892,6 +1065,7 @@
           <div class="color-val">RGB <span>231, 29, 49</span></div>
           <div class="color-val">HSB <span>354°  87%  91%</span></div>
           <div class="color-val">CMYK <span>3  99  88  0</span></div>
+          <div class="color-val">PMS <span>1788 C</span></div>
           <p class="color-usage">The lead. Signage, logo, dominant accents, hero applications.</p>
         </div>
       </div>
@@ -903,6 +1077,7 @@
           <div class="color-val">RGB <span>24, 60, 69</span></div>
           <div class="color-val">HSB <span>192°  65%  27%</span></div>
           <div class="color-val">CMYK <span>89  62  55  46</span></div>
+          <div class="color-val">PMS <span>309 C</span></div>
           <p class="color-usage">Primary dark ground. Dark backgrounds, footers, cat mark applications.</p>
         </div>
       </div>
@@ -918,6 +1093,7 @@
           <div class="color-val">RGB <span>159, 28, 50</span></div>
           <div class="color-val">HSB <span>350°  82%  62%</span></div>
           <div class="color-val">CMYK <span>25  100  79  20</span></div>
+          <div class="color-val">PMS <span>201 C</span></div>
           <p class="color-usage">Depth and richness. Extended logo lockups, accents alongside Lucky Strike.</p>
         </div>
       </div>
@@ -929,7 +1105,9 @@
           <div class="color-val">RGB <span>238, 230, 210</span></div>
           <div class="color-val">HSB <span>43°  12%  93%</span></div>
           <div class="color-val">CMYK <span>6  7  17  0</span></div>
+          <div class="color-val">PMS <span>7527 C @ 80%</span></div>
           <p class="color-usage">Light ground. Paper, body backgrounds, reversed text on dark.</p>
+          <p class="color-usage">→ No exact PMS match exists for this tone. 7527 C at 80% is the closest estimate, not a locked value. Confirm against a physical swatch/tint book before this goes into production.</p>
         </div>
       </div>
       <div class="color-card">
@@ -940,7 +1118,9 @@
           <div class="color-val">RGB <span>255, 255, 255</span></div>
           <div class="color-val">HSB <span>0°  0%  100%</span></div>
           <div class="color-val">CMYK <span>0  0  0  0</span></div>
+          <div class="color-val">PMS <span>N/A</span></div>
           <p class="color-usage">Utility white. Contrast moments, reversed text, clean space.</p>
+          <p class="color-usage">→ True white has no meaningful PMS equivalent. Spec as blank/uncoated stock or unprinted substrate, not a spot color.</p>
         </div>
       </div>
     </div>
@@ -953,51 +1133,152 @@
     <div class="sec-bar" aria-hidden="true"></div>
     <div class="sec-label">Fonts</div>
     <h2 class="sec-h2">Typography</h2>
-    <p class="body-copy">From headlines and signage, down to menu copy and utility text, each of the four brand typefaces does a specific job.</p>
+    <p class="body-copy">Two halves. The paid fonts that build everything off the website, and the free web fonts that carry the brand online. Use the font set for print, signage, merch, and ads. Use the web set for anything on a screen.</p>
 
-    <div class="font-proxy-note">
-      <div class="font-proxy-dot"></div>
-      <div class="font-proxy-text">
-        <strong>Web rendering note:</strong> Gill Sans and Gibson Script are licensed desktop fonts. This document uses web approximations — <strong>Barlow</strong> in place of Gill Sans, and <strong>Dancing Script</strong> in place of Gibson Script. Web font implementation will be reviewed at digital production stage.
+    <h3 class="ty-sub">Font set</h3>
+    <p class="ty-subnote">Print, signage, merch, and ads (print and digital). Everything but the website. These are paid fonts, shown here as reference images since they can't be served live on the web.</p>
+    <div class="ty-grid">
+
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="GILL_Sans_Bold.png" alt="Gill Sans Bold specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Gill Sans Bold</span>
+          <p class="ty-desc">Headlines, taglines, big statements, short, punchy or dead-pan lines.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription (as Gill Sans Nova) or through <a href="https://www.myfonts.com/products/pro-bold-gill-sans-mt-342888" target="_blank" rel="noopener">myfonts.com</a>.</p>
+        </div>
       </div>
+
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="GillSans_reg.png" alt="Gill Sans Regular specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Gill Sans Regular</span>
+          <p class="ty-desc">Body copy, captions, the fine print. Italic where a line needs emphasis.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription (as Gill Sans Nova).</p>
+        </div>
+      </div>
+
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="Obviously.png" alt="Obviously Narrow Semibold specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Obviously Narrow Semibold</span>
+          <p class="ty-desc">Subheads, ESTD 2026, and detail type.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription or directly from <a href="https://ohnotype.co/fonts/obviously" target="_blank" rel="noopener">OH no Type Co</a> (select the Narrow Semibold style).</p>
+        </div>
+      </div>
+
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="Fabiola.png" alt="Fabiola Script specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Fabiola Script</span>
+          <p class="ty-desc">The everyday accent script. Friendly, and does most of the accent work.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription or through <a href="https://www.myfonts.com/products/script-fabiola-419197" target="_blank" rel="noopener">myfonts.com</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font">
+        <div class="ty-plate"><img class="ty-spec" src="delfina.png" alt="Delfina Script specimen"></div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Delfina Script</span>
+          <p class="ty-desc">The rare drop. A red lip at the end of the bar. Use sparingly, for maximum effect.</p>
+          <p class="ty-lic">License available through an <a href="https://www.adobe.com/creativecloud/plans.html" target="_blank" rel="noopener">Adobe CC</a> subscription.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="font-roles">
-      <!-- No accent class on first card — red line removed per feedback -->
-      <div class="font-role-card">
-        <div class="font-role-eyebrow">Signage / headlines</div>
-        <div class="font-role-name">Gill Sans Bold</div>
-        <div class="font-role-proxy">Web proxy: Barlow 700</div>
-        <div class="font-role-desc">The workhorse. Utilitarian with real weight — the kind of type you'd see stenciled above a bar or hand-painted on a roadside sign. Pulls off the tongue-in-cheek hotel signage register without trying too hard.</div>
-      </div>
-      <div class="font-role-card">
-        <div class="font-role-eyebrow">Script accent</div>
-        <div class="font-role-name script">Gibson Script</div>
-        <div class="font-role-proxy">Web proxy: Dancing Script 700</div>
-        <div class="font-role-desc">The handshake. A simple hand-drawn script for accent words — the kind that shows up next to the bold in vintage type pairings. Friendly without being precious. A word, a phrase, never a paragraph.</div>
-      </div>
-      <div class="font-role-card">
-        <div class="font-role-eyebrow">Body copy</div>
-        <div class="font-role-name">Gill Sans Semibold &amp; Regular</div>
-        <div class="font-role-proxy">Web proxy: Barlow 600 / 400</div>
-        <div class="font-role-desc">Matches the sans in the signage DNA. Readable at menu scale, legible in low light. Semibold for labels and callouts; Regular for descriptions and longer reads.</div>
-      </div>
-      <div class="font-role-card">
-        <div class="font-role-eyebrow">Emphasis / accent</div>
-        <div class="font-role-name">GIN</div>
-        <div class="font-role-proxy">No web proxy — logo and print use only</div>
-        <div class="font-role-desc">The same face used for "Stranger" in the logo lockup. Used sparingly — a word that needs visual punch, a label that earns a second look. Not for running text. Not for signage. Just the moments that need it.</div>
-      </div>
+    <div class="ty-note">
+      <div class="ty-fh">Licensing, the short version</div>
+      <ul class="ty-list">
+        <li>Everything Big Sis designs and hands you is yours. Logo, menus, signage, merch. Covered under our license.</li>
+        <li>The font files don't transfer. A license is tied to us. That's every foundry, not a Big Sis rule.</li>
+        <li>If you want to set new type in these fonts yourself, you (or whoever you hire) buy your own license. The links are with each font above.</li>
+        <li>The web set is free. Pull it from Google Fonts, no license, no cost.</li>
+      </ul>
     </div>
 
-    <div class="font-images">
-      <div>
-        <img class="img-fill" src="Font_lockups.jpg" alt="Font system and tagline lockups" />
-      </div>
-      <div>
-        <img class="img-fill" src="Font_lockups2.jpg" alt="Font detail and extended applications" />
-      </div>
+    <div class="ty-formula">
+      <div class="ty-fh">How to mix them</div>
+      <p class="ty-lead">The drink and the garnish. The block font is the drink. The script is the garnish. Nobody orders a glass of garnish.</p>
+      <ul class="ty-list">
+        <li>One script moment per line. One word, or one small aside. Never two.</li>
+        <li><b>Script the wink, not the work.</b> The fun word gets the script. Prices, names, and anything people read fast stay in block.</li>
+        <li>Two ways in: the payoff word in Title Case, or a lowercase aside dropped into block caps, like it got scrawled in by hand.</li>
+      </ul>
     </div>
+
+    <div class="ty-rules">
+      <h3 class="ty-sub" style="margin-top:0;">Don't look like a lightweight</h3>
+      <p class="ty-subnote">Script fonts come with a few unspoken rules. Break them and you risk looking like a Temu "live laugh love" pillow.</p>
+      <ul class="ty-list">
+        <li><b>Don't stretch a script.</b> The letters are holding hands. Add spacing and the connectors float, attached to nothing. Leave it default or slightly tight.</li>
+        <li><b>Don't set a script in all caps.</b> Lowercase or Title Case only.</li>
+        <li><b>Don't put two scripts together.</b> A script plays against the block font, never another script.</li>
+        <li><b>Don't use a script for body copy.</b> Accent words only.</li>
+        <li><b>Go easy on the fancy one.</b> Style Script (web) and Fabiola (print) are the everyday. Delfina is the rare sass. Great Vibes is pinkies-up only.</li>
+      </ul>
+    </div>
+
+    <h3 class="ty-sub">Web set</h3>
+    <p class="ty-subnote">The website alternatives. Free, open-source, and rendering live on this page straight from Google Fonts. Use these for the website only.</p>
+    <div class="ty-web">
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Open Sans',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.02em; font-size:30px;">Headlines</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Open Sans Extrabold</span>
+          <p class="ty-desc">All caps. The web stand-in for Gill Sans Bold.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Bebas Neue',sans-serif; text-transform:uppercase; letter-spacing:.03em; font-size:42px;">Subheads</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Bebas Neue</span>
+          <p class="ty-desc">All caps. Subheads and section labels. The web stand-in for Obviously.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Bebas+Neue" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp" style="font-family:'Open Sans',sans-serif; font-weight:400; font-size:25px;">Body</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Open Sans Regular</span>
+          <p class="ty-desc">Body copy and captions. Italic and bold where needed, never all caps. The web stand-in for Gill Sans Regular.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp ty-ss" style="font-size:40px;">Script Accents</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Style Script</span>
+          <p class="ty-desc">The go-to accent script. The web stand-in for Fabiola.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Style+Script" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+      <div class="ty-font-web">
+        <div class="ty-websamp ty-gv" style="font-size:38px;">Script Accent Alt</div>
+        <div class="ty-meta">
+          <span class="ty-label">Font:</span>
+          <span class="ty-name">Great Vibes</span>
+          <p class="ty-desc">The alternative, for fancier moments. Same script rules apply.</p>
+          <p class="ty-lic">Available via <a href="https://fonts.google.com/specimen/Great+Vibes" target="_blank" rel="noopener">Google Fonts</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -1127,177 +1408,138 @@
 <section id="social" style="background: var(--bg-3);">
   <div class="wrap">
     <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Social</div>
+    <div class="sec-label">In Progress</div>
     <h2 class="sec-h2">Social profiles</h2>
     <p class="body-copy">Use these approved profile images for social platforms. They can be accessed through the downloads link.</p>
 
-    <p class="body-copy" style="margin-top: 28px; font-size: 15px; font-weight: 600; color: var(--text);">Primary — Solo Cat</p>
-    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">Shows better as an avatar at smaller sizes and offers more personality for the page. Use on Instagram, TikTok, Facebook.</p>
+    <p class="body-copy" style="margin-top: 28px; font-size: 15px; font-weight: 600; color: var(--text);">Primary — Wordmark</p>
+    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">Default profile image across platforms. Clear and legible even at small avatar sizes.</p>
 
-    <p class="body-copy" style="margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text);">Secondary — Wordmark Square</p>
-    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">For platforms that support rectangular or larger profile formats. Do not crop the full wordmark yourself.</p>
+    <p class="body-copy" style="margin-top: 20px; font-size: 15px; font-weight: 600; color: var(--text);">Secondary — Cat Eyes</p>
+    <p class="body-copy" style="font-size: 14px; margin-top: 4px;">For Fuk U / alternate accounts, or seasonal swaps where a little more personality fits.</p>
 
     <div class="social-profile-grid">
       <div class="social-tile">
         <div class="social-preview">
-          <img src="LS_Social_SoloCat.png" alt="Lucky Stranger social profile — solo cat" />
+          <img src="LS_Social_Wordmark.jpg" alt="Lucky Stranger social profile — wordmark" />
         </div>
         <div class="social-meta">
-          <div class="social-name">Solo Cat</div>
+          <div class="social-name">Wordmark</div>
         </div>
       </div>
       <div class="social-tile">
         <div class="social-preview">
-          <img src="LS_Social.png" alt="Lucky Stranger social profile — wordmark square" />
+          <img src="LS_Social_CatEyes.jpg" alt="Lucky Stranger social profile — cat eyes" />
         </div>
         <div class="social-meta">
-          <div class="social-name">Wordmark Square</div>
+          <div class="social-name">Cat Eyes</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── MENU ──────────────────────────────────────────────────── -->
-<section id="menu" style="background: var(--bg-2);">
-  <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Coming Soon</div>
-    <h2 class="sec-h2">Menu</h2>
-    <p class="body-copy">The full Lucky Stranger menu — drinks, food, and specials — will live here once finalized.</p>
-    <div class="logo-placeholder-row" style="margin-top: 32px;">
-      <div class="asset-placeholder soon-chip">
-        <span class="coming-chip">IN PROGRESS</span>
-        <div class="asset-placeholder-label">Menu content</div>
-        <div class="asset-placeholder-sub">Menu items and details will populate here as they're locked</div>
+
+<style>
+  /* ─── COLLATERAL BAND ─────────────────────────────────────── */
+  .collat { scroll-margin-top: 56px; }
+  .collat > section { scroll-margin-top: 112px; }
+  .collat-band {
+    position: sticky; top: 56px; z-index: 90;
+    background: var(--bg-dark); border-top: 3px solid var(--red);
+  }
+  .collat-band-inner {
+    max-width: var(--max); margin: 0 auto; padding: 0 32px; min-height: 52px;
+    display: flex; align-items: center; gap: 32px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .collat-band-inner::-webkit-scrollbar { display: none; }
+  .collat-title {
+    font-family: var(--fh); font-weight: 800; font-size: 20px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--text-inv); white-space: nowrap; flex-shrink: 0;
+    padding-right: 32px; border-right: 1px solid var(--rule-inv); line-height: 52px;
+  }
+  .collat-links { display: flex; align-items: center; }
+  .collat-links a {
+    font-family: var(--fh); font-size: 11px; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: rgba(238,230,210,0.84); white-space: nowrap;
+    height: 52px; padding: 0 18px; display: flex; align-items: center; gap: 8px;
+    transition: color .2s;
+  }
+  .collat-links a::before { content: '\2192'; color: var(--red); font-size: 13px; }
+  .collat-links a:hover, .collat-links a.active { color: var(--text-inv); }
+  .collat-links a:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .nav-links a.nav-collat { color: var(--text); font-weight: 800; border-left: 1px solid var(--rule); }
+  .nav-links a.nav-collat:hover, .nav-links a.nav-collat.active { color: var(--red); }
+
+  /* ─── MERCH: SEASONS ──────────────────────────────────────── */
+  .fm-season-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 56px; }
+  .fm-kicker { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--cherry); margin-bottom: 4px; }
+  .fm-season-title { font-family: var(--fsub); font-weight: 400; font-size: clamp(36px, 5vw, 52px); letter-spacing: .04em; line-height: 1; color: var(--text); }
+  .fm-chip { font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--text-dim); color: var(--text-mid); padding: 3px 10px; border-radius: 2px; align-self: flex-end; margin-bottom: 4px; }
+  .fm-cat { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 36px; }
+  .fm-cat-label { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--cherry); margin-bottom: 8px; }
+  .fm-cat-title { font-family: var(--fh); font-weight: 700; font-size: 22px; color: var(--text); margin-bottom: 10px; }
+  .fm-cat-copy { font-size: 14px; color: var(--text-mid); line-height: 1.65; max-width: 640px; margin-bottom: 32px; }
+  .fm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .fm-opt-label { font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); margin: 16px 0 4px; }
+  .fm-opt-title { font-family: var(--fh); font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 10px; }
+  .fm-shot { width: 100%; height: auto; display: block; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07); }
+  .fm-shot + .fm-shot { margin-top: 16px; }
+  .fm-opt-label.fm-top { margin-top: 0; }
+  .fm-list.fm-list-after { margin-top: 18px; }
+  .fm-shot[src*="Flannel"] { aspect-ratio: 1 / 1; object-fit: cover; }
+  .fm-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+  .fm-list li { font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative; }
+  .fm-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--red); }
+  .fm-note { font-size: 12px; color: var(--text-mid); margin-top: 20px; }
+  .fm-callout { margin-top: 32px; max-width: 720px; border-left: 3px solid var(--cherry); background: var(--bg-2); padding: 18px 22px; }
+  .fm-callout-title { font-family: var(--fh); font-weight: 700; font-size: 13px; color: var(--text); margin-bottom: 6px; }
+  .fm-callout p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+  .fm-small-note { font-size: 12.5px; font-style: italic; color: var(--text-mid); line-height: 1.55; margin-top: 14px; }
+  .fm-more { margin-top: 56px; border: 1px dashed var(--text-mid); padding: 28px 24px; text-align: center; font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mid); }
+
+  /* ─── MERCH: SUMMER DRAWER ────────────────────────────────── */
+  .fm-drawer { margin-top: 72px; border-top: 3px solid var(--red); background: var(--bg-2); }
+  .fm-drawer-btn { width: 100%; background: none; border: none; cursor: pointer; padding: 26px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; color: var(--text); font-family: var(--fh); }
+  .fm-drawer-btn:hover { background: var(--bg-3); }
+  .fm-drawer-btn:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .fm-drawer-left { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .fm-drawer-chip { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: var(--bg-dark); color: var(--text-inv); padding: 3px 10px; border-radius: 2px; align-self: center; }
+  .fm-drawer-title { font-weight: 800; font-size: 20px; letter-spacing: .05em; text-transform: uppercase; }
+  .fm-drawer-sub { font-size: 12px; color: var(--text-mid); letter-spacing: .04em; }
+  .fm-caret { font-size: 20px; color: var(--text-mid); transition: transform .35s ease; flex-shrink: 0; }
+  .fm-caret.open { transform: rotate(180deg); }
+  .fm-drawer-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s ease; }
+  .fm-drawer-panel.open { grid-template-rows: 1fr; }
+  .fm-drawer-inner { min-height: 0; overflow: hidden; visibility: hidden; padding: 0 24px; transition: visibility 0s .5s; }
+  .fm-drawer-panel.open .fm-drawer-inner { visibility: visible; transition-delay: 0s; padding-bottom: 40px; }
+  .fm-drawer-inner > div:first-child { margin-top: 8px !important; }
+
+  @media (max-width: 760px) {
+    .collat-band-inner { padding: 0 12px; gap: 8px; }
+    .collat-title { font-size: 14px; letter-spacing: .04em; padding-right: 10px; }
+    .collat-links a { padding: 0 7px; font-size: 10px; letter-spacing: .08em; }
+    .collat-links a::before { display: none; }
+    .fm-grid { grid-template-columns: 1fr; }
+    .fm-drawer-btn { padding: 22px 16px; }
+    .fm-drawer-inner { padding: 0 16px; }
+    .fm-drawer-sub { display: none; }
+  }
+</style>
+<!-- ═══════════════ COLLATERAL ═══════════════ -->
+<div class="collat" id="collateral">
+  <div class="collat-band">
+    <div class="collat-band-inner">
+      <h2 class="collat-title">Collateral</h2>
+      <div class="collat-links" role="navigation" aria-label="Collateral sections">
+        <a href="#merch">Merch</a>
+        <a href="#menu">Menu</a>
+        <a href="#signage">Signage</a>
+        <a href="#cups">Cups</a>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ─── CUPS ──────────────────────────────────────────────────── -->
-<section id="cups" style="background: var(--bg-2);">
-  <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Coming Soon</div>
-    <h2 class="sec-h2">Cups</h2>
-    <p class="body-copy">Five different colorway options, each with their own personality. The goal: design a cup people want to steal.</p>
-
-    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 48px;">
-
-      <div>
-        <div style="background: var(--bg-3); padding: 24px 16px; display: flex; align-items: center; justify-content: center; height: 280px;">
-          <img src="cup-01.png" alt="The Local" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-        <div style="padding-top: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px;">The Local</div>
-          <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 12px;">Lucky Strike red · Cigarette Smoke print</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Full wordmark with address and curved tagline eyebrow</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Feels like something that's been on the bar for years</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>The address detail rewards a closer look</li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <div style="background: var(--bg-3); padding: 24px 16px; display: flex; align-items: center; justify-content: center; height: 280px;">
-          <img src="cup-02.png" alt="The Tag" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-        <div style="padding-top: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px;">The Tag</div>
-          <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 12px;">Lucky Strike red · Cigarette Smoke print</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Tagline-forward with badge logo anchoring the bottom</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Leads with brand voice instead of brand mark</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Type hierarchy is fun and works well at cup scale</li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <div style="background: var(--bg-3); padding: 24px 16px; display: flex; align-items: center; justify-content: center; height: 280px;">
-          <img src="cup-03.png" alt="The Cat" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-        <div style="padding-top: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px;">The Cat</div>
-          <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 12px;">Navy · Cigarette Smoke print</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Cat mark front and center, logo nested inside the badge</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>The most unique of the five. Feels like merch, not just a cup</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Dark colorway lets the Cigarette Smoke badge pop with real contrast</li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <div style="background: var(--bg-3); padding: 24px 16px; display: flex; align-items: center; justify-content: center; height: 280px;">
-          <img src="cup-04.png" alt="The Badge" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-        <div style="padding-top: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px;">The Badge</div>
-          <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 12px;">Navy · Cigarette Smoke print</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Distressed wood-texture badge with wordmark and tagline below</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Grain and texture add warmth. The grit reads well at this scale</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Clean and balanced. Strong option if The Cat feels like too much</li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <div style="background: var(--bg-3); padding: 24px 16px; display: flex; align-items: center; justify-content: center; height: 280px;">
-          <img src="cup-05.png" alt="The Clarity" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
-        </div>
-        <div style="padding-top: 16px;">
-          <div style="font-family: var(--fh); font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px;">The Clarity</div>
-          <div style="font-size: 12px; color: var(--text-dim); margin-bottom: 12px;">Translucent · Midnight and Cherry print</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Year lockup with cat mark. The most refined of the five</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Translucent cup is a different feel. Lighter, a little unexpected</li>
-            <li style="font-size: 13px; color: var(--text-mid); line-height: 1.55; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Clear is the only recommended option for using the cat as a standalone element</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CONSIDERATIONS -->
-    <div style="margin-top: 64px; border-top: 1px solid var(--rule); padding-top: 40px;">
-      <div class="sec-label">Considerations</div>
-      <ul class="rules-list rules-list--single" style="margin-top: 16px;">
-        <li>Not every design works in every colorway. The cat mark needs a dark cup to land correctly. The tagline design is more flexible.</li>
-        <li>Some designs can work across different color combinations. If you want to see a specific option in a different colorway, just ask.</li>
-        <li>The maroon cup was explored but didn't feel as strong as red. Lucky Strike is the right home for these designs.</li>
-        <li>The navy cup color is close to Midnight, which makes it a natural fit for designs using the Cigarette Smoke palette.</li>
-        <li>White and translucent cups were both tested. Translucent showed the most promise as a secondary option.</li>
-        <li>The distressed and grain textures work better in print than they look on screen. Don't judge those options solely from mockups.</li>
-        <li>Printing on one side only. Decided and locked.</li>
-        <li>If ordering multiple SKUs, red + navy is the strongest two-cup combination.</li>
-        <li>Worth considering a rotating program. New designs or colorways each month or season gives people a reason to come back for the next one. Limited editions could work well here too.</li>
-        <li>Sharpies tied to the bar so people can write their names on their cups. Simple, on-brand, and very Lucky Stranger.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
-<section id="coming-soon" style="background: var(--bg-3);">
-  <div class="wrap">
-    <div class="sec-bar" aria-hidden="true"></div>
-    <div class="sec-label">Coming Soon</div>
-    <h2 class="sec-h2">Signage</h2>
-    <p class="body-copy">Interior and exterior signage specifications and mockups. Developed in collaboration with Hannah on interior design. Files and approved proofs will live here as they're finalized.</p>
-    <div class="logo-placeholder-row" style="margin-top: 32px;">
-      <div class="asset-placeholder soon-chip">
-        <span class="coming-chip">IN DEVELOPMENT</span>
-        <div class="asset-placeholder-label">Signage applications</div>
-        <div class="asset-placeholder-sub">Signage files and mockups → will populate here as proofs are approved</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── MERCH ─────────────────────────────────────────────────── -->
 <section id="merch" style="background: var(--bg);">
@@ -1453,6 +1695,451 @@
 
   </div>
 </section>
+
+
+<!-- ─── MENU ──────────────────────────────────────────────────── -->
+<section id="menu" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar" aria-hidden="true"></div>
+    <div class="sec-label">Final</div>
+    <h2 class="sec-h2">Menu</h2>
+    <p class="body-copy">Final selected direction, with two changes from the last round: "Fortune Favors the Thirsty" moved to sit between Wine and Dry Goods, and the AC / Cable TV / Ice Cold Drinks line swapped for a simple note to order at the bar.</p>
+    <p class="body-copy" style="margin-top: 16px;">Sized at <strong>8.5" × 11"</strong> to fit these sleeves: <a href="https://www.webstaurantstore.com/choice-8-1-2-x-11-burgundy-2-view-one-pocket-menu-cover/1761PK8511BU.html" target="_blank" rel="noopener" style="font-family: var(--fh); font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;">View stock ↗</a></p>
+
+    <!-- FINAL MENU -->
+    <div style="max-width: 640px; margin-top: 48px;">
+      <img src="LS_Menu_FINAL-01.png" alt="Lucky Stranger final menu" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 4px 16px rgba(24,60,69,0.16), 0 1px 4px rgba(24,60,69,0.08);" />
+      <a href="https://new.express.adobe.com/publishedV2/urn:aaid:sc:US:9c276bd0-eab6-5677-9b98-6dc8c8f95265?promoid=Y69SGM5H&amp;sdid=C12Y2KPK&amp;mv=other" target="_blank" rel="noopener" style="margin-top: 16px; display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px;">
+        Open editable template in Adobe Express ↗
+      </a>
+      <div style="margin-top: 20px; border-left: 3px solid var(--cherry); padding: 14px 20px; background: var(--bg-3);">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 13px; color: var(--text-mid); line-height: 1.6; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Edit the open fields — prices, items, sections — in a free Adobe Express account. No paid plan needed.</li>
+          <li style="font-size: 13px; color: var(--text-mid); line-height: 1.6; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>The background is blank on purpose. That warm tone comes from the paper stock, not printed ink — print on your chosen stock and the color comes through. Don't add a printed background.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PREVIOUS ROUND: OPTION A/B DRAWER -->
+    <div style="margin-top: 48px; border-top: 1px solid var(--rule);">
+      <button onclick="this.classList.toggle('menu-prevround-open'); this.nextElementSibling.classList.toggle('open'); this.querySelector('.menu-prevround-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+        <span>Previous round — Option A / Option B</span>
+        <span class="menu-prevround-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+      </button>
+      <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="menu-prevround-panel">
+        <p class="body-copy" style="padding-top: 8px; margin-bottom: 40px;">Two revised directions explored before landing on the final layout above.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px;">
+
+          <!-- REVISION 01 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option A</div>
+            <img src="LS_MenuRevisions-01.png" alt="Menu Revision Option A" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Pour Decision as featured header block with two-drink split</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Fuku Freeze as permanent anchor; seasonal slot rotates</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour box holds its own section, top right</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Red type flourishes throughout; Fuku cat bottom center</li>
+            </ul>
+          </div>
+
+          <!-- REVISION 03 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Option B</div>
+            <img src="LS_MenuRevisions-03.png" alt="Menu Revision Option B" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ "Ice Cold Drinks / Now Flowing" illustration leads the featured block</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Just Visiting / Always On framing for seasonal vs. permanent</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Happy Hour integrates mid-menu; Fuku cat peeks top center</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Cleaner grid, slightly less visual density</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PREVIOUS CONCEPTS DRAWER -->
+    <div style="margin-top: 16px; border-top: 1px solid var(--rule);">
+      <button onclick="this.classList.toggle('menu-prev-open'); this.nextElementSibling.classList.toggle('open'); this.querySelector('.menu-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+        <span>Previous Concepts</span>
+        <span class="menu-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+      </button>
+      <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="menu-prev-panel">
+        <p class="body-copy" style="padding-top: 8px; margin-bottom: 40px;">Original four directions for reference.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px;">
+
+          <!-- CONCEPT 1 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 1</div>
+            <img src="LS_MenuConcepts_p01.png" alt="Concept 1" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ 4 × 6" card, single-color print</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Blank backside reserved for Closer's food menu</li>
+            </ul>
+          </div>
+
+          <!-- CONCEPT 2 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 2</div>
+            <img src="LS_MenuConcepts_p02.png" alt="Concept 2" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ 4 × 6" card, two-pass printing</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Red ink pre-printed; dark ink on-demand for updates</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Blank backside reserved for Closer's food menu</li>
+            </ul>
+          </div>
+
+          <!-- CONCEPT 3 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 3</div>
+            <img id="c3img" src="LS_MenuConcepts_p03.png" alt="Concept 3" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ 4 × 6" card, two-pass printing</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Red ink pre-printed; dark ink on-demand for updates</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Blank backside reserved for Closer's food menu</li>
+            </ul>
+          </div>
+
+          <!-- CONCEPT 4 -->
+          <div>
+            <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 12px;">Concept 4</div>
+            <div style="position: relative;">
+              <div id="c4wrap" style="width: 100%; display: flex; align-items: flex-start; justify-content: center; overflow: hidden;">
+                <img id="c4img" src="LS_MenuConcepts_p04.png" alt="Concept 4" style="max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);" />
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <button onclick="c4prev()" style="background: none; border: 1px solid var(--rule); color: var(--text); font-size: 16px; padding: 4px 12px; cursor: pointer; border-radius: 2px;">←</button>
+                <span id="c4counter" style="font-size: 12px; color: var(--text-dim);">1 / 6</span>
+                <button onclick="c4next()" style="background: none; border: 1px solid var(--rule); color: var(--text); font-size: 16px; padding: 4px 12px; cursor: pointer; border-radius: 2px;">→</button>
+              </div>
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Layered card stack bound with binder rings</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ 2 × 6" cover card pre-printed; inserts swap as needed</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ All interior cards print in-house, single color</li>
+              <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Closer's food menu: dedicated 4 × 6.5" card at the back</li>
+            </ul>
+          </div>
+
+        </div>
+        <div style="height: 40px;"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+  .menu-prev-panel.open { max-height: 4000px !important; }
+  .menu-prev-caret.open { transform: rotate(180deg); }
+  .menu-prevround-panel.open { max-height: 4000px !important; }
+  .menu-prevround-caret.open { transform: rotate(180deg); }
+</style>
+<script>
+  var c4imgs = [
+    'LS_MenuConcepts_p04.png',
+    'LS_MenuConcepts_p05.png',
+    'LS_MenuConcepts_p06.png',
+    'LS_MenuConcepts_p07.png',
+    'LS_MenuConcepts_p08.png',
+    'LS_MenuConcepts_p09.png'
+  ];
+  var c4idx = 0;
+
+  function setC4Height() {
+    var c3 = document.getElementById('c3img');
+    var c4wrap = document.getElementById('c4wrap');
+    if (c3 && c4wrap) {
+      c4wrap.style.height = c3.offsetHeight + 'px';
+    }
+  }
+
+  window.addEventListener('load', setC4Height);
+  window.addEventListener('resize', setC4Height);
+
+  function c4next() {
+    c4idx = (c4idx + 1) % c4imgs.length;
+    document.getElementById('c4img').src = c4imgs[c4idx];
+    document.getElementById('c4counter').textContent = (c4idx + 1) + ' / ' + c4imgs.length;
+  }
+  function c4prev() {
+    c4idx = (c4idx - 1 + c4imgs.length) % c4imgs.length;
+    document.getElementById('c4img').src = c4imgs[c4idx];
+    document.getElementById('c4counter').textContent = (c4idx + 1) + ' / ' + c4imgs.length;
+  }
+</script>
+
+<!-- ─── SIGNAGE ───────────────────────────────────────────────── -->
+<section id="signage" style="background: var(--bg-3);">
+  <a id="coming-soon" aria-hidden="true"></a>
+  <div class="wrap">
+    <div class="sec-bar" aria-hidden="true"></div>
+    <div class="sec-label">Signage</div>
+    <h2 class="sec-h2">Front window &amp; door</h2>
+    <p class="body-copy">The front window is approved and heading to print. Three door concepts are in review — all gold vinyl with black outline, designed to work alongside the large window sign and the address above.</p>
+
+    <!-- ── APPROVED: FRONT WINDOW ── -->
+    <div style="margin-top: 48px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text);">Front window</div>
+        <span style="font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: #183C45; color: #EEE6D2; padding: 3px 10px; border-radius: 2px;">Approved — Going to Print</span>
+      </div>
+      <div style="width: 100%; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+        <img src="WindowSolo.png" alt="Lucky Stranger front window sign — approved" style="width: 100%; height: auto; display: block;" />
+      </div>
+    </div>
+
+    <!-- ── DOOR CONCEPTS ── -->
+    <div style="margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--rule);">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text);">Door vinyl</div>
+        <span style="font-family: var(--fb); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: var(--bg-4); color: var(--text-mid); padding: 3px 10px; border-radius: 2px;">In Review</span>
+      </div>
+      <p class="body-copy" style="margin-top: 8px; margin-bottom: 40px;">All three concepts are gold vinyl with black outline — same finish and production method as the large window sign. Hours are intentionally omitted for now; easy to add once a schedule is locked.</p>
+
+      <!-- CONCEPT A -->
+      <div style="margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--rule);">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 6px;">Concept A</div>
+        <p style="font-family: var(--fb); font-size: 13px; color: var(--text-mid); line-height: 1.5; margin: 0 0 24px 0;">Welcome to [logo] + tagline "Bet on a Good Time"</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Design</div>
+            <div style="width: 100%; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="Welcome_logo_Goodtime.png" alt="Concept A — Welcome to Lucky Stranger with tagline, design flat" style="width: 100%; height: auto; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Door mockup</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="Welcome_logo_tag_doormock.png" alt="Concept A — door mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Full entrance</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="Welcome_logo_tag_fullentrance.png" alt="Concept A — full entrance mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCEPT B -->
+      <div style="margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--rule);">
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 6px;">Concept B</div>
+        <p style="font-family: var(--fb); font-size: 13px; color: var(--text-mid); line-height: 1.5; margin: 0 0 24px 0;">Welcome [logo] + "Come on in" and "Cold Drinks" on arrows</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Design</div>
+            <div style="width: 100%; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="LuckyStranger_arrows.png" alt="Concept B — Welcome Lucky Stranger with arrow details, design flat" style="width: 100%; height: auto; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Door mockup</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="LuckyStranger_arrow_doormock.png" alt="Concept B — door mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Full entrance</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="LuckyStranger_arrow_fullentrance.png" alt="Concept B — full entrance mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCEPT C -->
+      <div>
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 21px; color: var(--text); margin-bottom: 6px;">Concept C</div>
+        <p style="font-family: var(--fb); font-size: 13px; color: var(--text-mid); line-height: 1.5; margin: 0 0 24px 0;">Strangers Welcome — cat mark above, no logo wordmark</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Design</div>
+            <div style="width: 100%; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="StrangersWelcome_door.png" alt="Concept C — Strangers Welcome with cat mark, design flat" style="width: 100%; height: auto; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Door mockup</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="StrangersWelcome_doormock.png" alt="Concept C — door mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+          <div>
+            <div style="font-family: var(--fb); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">Full entrance</div>
+            <div style="width: 100%; aspect-ratio: 2/3; border-radius: 2px; overflow: hidden; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+              <img src="StrangersWelcome_fullentrance.png" alt="Concept C — full entrance mockup" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PREVIOUS ROUND: WINDOW CONCEPTS — COLLAPSED DRAWER ── -->
+    <div style="margin-top: 56px; border-top: 1px solid var(--rule);">
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.sign-prev-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+        Previous round — window concepts
+        <span class="sign-prev-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+      </button>
+      <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="sign-prev-panel">
+        <div style="padding-bottom: 40px;">
+          <p style="font-family: var(--fb); font-size: 14px; color: var(--text-mid); line-height: 1.65; margin: 0 0 32px 0;">Four directions for the front window explored in the previous round. Each took a different position on cost, permanence, and personality.</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px 32px;">
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 12px;">Concept 1</div>
+              <div style="width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+                <img src="Fuk_u_BIG.jpg" alt="Fuk U large LED neon cat in front window" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Fuk U — large-format LED neon cat</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ High visual impact from the street; works day and night</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Highest cost of the four options; permanent installation</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 12px;">Concept 2</div>
+              <div style="width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+                <img src="Fuk_u_bud.png" alt="Fuk U cat with vintage Budweiser neon signage" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Fuk U cat paired with vintage Budweiser neon</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Leans into the dive bar register; familiar and a little irreverent</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Cost depends on sourcing — vintage find vs. reproduction</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 12px;">Concept 3</div>
+              <div style="width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+                <img src="LS_frontwindow_mediumlogo.jpg" alt="Lucky Stranger vinyl or gilded gold window lettering" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Lucky Stranger wordmark in gilded gold applied to window glass</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Option A: vinyl sticker — cost-effective, removable, easy to update</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Option B: gold leaf — premium finish, traditional craft, permanent</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-family: var(--fh); font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 12px;">Concept 4</div>
+              <div style="width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 2px; box-shadow: 0 2px 10px rgba(24,60,69,0.12), 0 1px 3px rgba(24,60,69,0.07);">
+                <img src="LS_frontwindow_mediumlogo_smoke.jpg" alt="Lucky Stranger vinyl or hand-painted smoke colorway window lettering" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <ul style="list-style: none; padding: 0; margin: 14px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Lucky Stranger wordmark in Cigarette Smoke — quieter read, lets the space do the talking</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Option A: vinyl sticker — same low-cost, easy swap as Concept 3</li>
+                <li style="font-family: var(--fb); font-size: 12px; line-height: 1.5; color: var(--text-mid);">→ Option B: hand-painted — highest craft feel; suits the bar's aesthetic</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Big Sis recommendation preserved -->
+          <div style="margin-top: 40px; padding: 28px 32px; background: #E71D31; border-radius: 4px;">
+            <div style="font-family: var(--fb); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 12px;">Big Sis Recommendation</div>
+            <p style="font-family: var(--fb); font-size: 16px; line-height: 1.6; color: white; margin: 0;">
+              → <strong style="color: white;">Large Fuk U neon in the window. Lucky Stranger wordmark on the door.</strong> The neon does the emotional work — it stops people on the sidewalk, reads at night, and gives Lucky Stranger a landmark. The door logo handles the utility: legible, brand-consistent, and there every time someone reaches for the handle. Together they split the job cleanly. One piece of art. One piece of information. Neither competing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+  .sign-prev-panel.open { max-height: 9999px !important; }
+  .sign-prev-caret.open { transform: rotate(180deg); }
+</style>
+
+<!-- ─── CUPS ──────────────────────────────────────────────────── -->
+<section id="cups" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-bar" aria-hidden="true"></div>
+    <h2 class="sec-h2">Cups</h2>
+    <p class="body-copy">Five different colorway options, each with their own personality. The goal: design a cup people want to steal.</p>
+
+    <!-- SELECTED DESIGN -->
+    <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; margin-top: 48px;">
+      <div>
+        <img src="cup-01.png" alt="The Local — selected cup design" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 8px 24px rgba(24,60,69,0.16)) drop-shadow(0 2px 6px rgba(24,60,69,0.10));" />
+      </div>
+      <div>
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 10px;">Selected design</div>
+        <div style="font-family: var(--fh); font-weight: 700; font-size: 24px; color: var(--text); margin-bottom: 6px;">The Local</div>
+        <div style="font-size: 13px; color: var(--text-dim); margin-bottom: 20px;">Lucky Strike red · Cigarette Smoke print</div>
+        <ul style="list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 14px; color: var(--text-mid); line-height: 1.55; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Full wordmark with address and curved tagline eyebrow</li>
+          <li style="font-size: 14px; color: var(--text-mid); line-height: 1.55; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>Feels like something that's been on the bar for years</li>
+          <li style="font-size: 14px; color: var(--text-mid); line-height: 1.55; padding-left: 18px; position: relative;"><span style="position: absolute; left: 0; color: var(--red);">→</span>The address detail rewards a closer look</li>
+        </ul>
+        <a href="https://drive.google.com/file/d/11nWHyArVY4tPz2U2Vmx2DtuFDlnfJw8B/view?usp=sharing" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--text-inv); font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-decoration: none; padding: 14px 24px; border-radius: 2px;">
+          Download print-ready PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- OTHER OPTIONS + CONSIDERATIONS — combined drawer -->
+    <div style="margin-top: 56px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.cups-considerations-caret').classList.toggle('open')" style="width: 100%; background: none; border: none; padding: 22px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--fh); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); text-align: left;">
+        <span>Other options explored</span>
+        <span class="cups-considerations-caret" style="transition: transform .35s ease; font-size: 18px;">▾</span>
+      </button>
+      <div style="max-height: 0; overflow: hidden; transition: max-height .6s ease;" class="cups-considerations-panel">
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-bottom: 32px;">
+
+          <a href="cup-02.png" target="_blank" style="display: block;">
+            <img src="cup-02.png" alt="The Tag — open full size" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 14px rgba(24,60,69,0.12)) drop-shadow(0 1px 3px rgba(24,60,69,0.07));" />
+          </a>
+
+          <a href="cup-03.png" target="_blank" style="display: block;">
+            <img src="cup-03.png" alt="The Cat — open full size" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 14px rgba(24,60,69,0.12)) drop-shadow(0 1px 3px rgba(24,60,69,0.07));" />
+          </a>
+
+          <a href="cup-04.png" target="_blank" style="display: block;">
+            <img src="cup-04.png" alt="The Badge — open full size" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 14px rgba(24,60,69,0.12)) drop-shadow(0 1px 3px rgba(24,60,69,0.07));" />
+          </a>
+
+          <a href="cup-05.png" target="_blank" style="display: block;">
+            <img src="cup-05.png" alt="The Clarity — open full size" style="width: 100%; height: auto; object-fit: contain; display: block; filter: drop-shadow(0 4px 14px rgba(24,60,69,0.12)) drop-shadow(0 1px 3px rgba(24,60,69,0.07));" />
+          </a>
+
+        </div>
+
+        <div style="border-top: 1px solid var(--rule); padding-top: 24px; padding-bottom: 32px;">
+          <div class="sec-label" style="margin-bottom: 16px;">Considerations</div>
+          <ul class="rules-list rules-list--single" style="margin: 0;">
+            <li>Not every design works in every colorway. The cat mark needs a dark cup to land correctly. The tagline design is more flexible.</li>
+            <li>Some designs can work across different color combinations. If you want to see a specific option in a different colorway, just ask.</li>
+            <li>The maroon cup was explored but didn't feel as strong as red. Lucky Strike is the right home for these designs.</li>
+            <li>The navy cup color is close to Midnight, which makes it a natural fit for designs using the Cigarette Smoke palette.</li>
+            <li>White and translucent cups were both tested. Translucent showed the most promise as a secondary option.</li>
+            <li>The distressed and grain textures work better in print than they look on screen. Don't judge those options solely from mockups.</li>
+            <li>Printing on one side only. Decided and locked.</li>
+            <li>If ordering multiple SKUs, red + navy is the strongest two-cup combination.</li>
+            <li>Worth considering a rotating program. New designs or colorways each month or season gives people a reason to come back for the next one. Limited editions could work well here too.</li>
+            <li>Sharpies tied to the bar so people can write their names on their cups. Simple, on-brand, and very Lucky Stranger.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .cups-considerations-panel.open { max-height: 4000px !important; }
+  .cups-considerations-caret.open { transform: rotate(180deg); }
+  @media (max-width: 860px) {
+    #cups .wrap > div[style*="grid-template-columns: 1.1fr 1fr"] { grid-template-columns: 1fr !important; }
+    #cups .wrap > div[style*="repeat(4, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+</style>
+
+
+</div><!-- /collateral -->
 
 <!-- ─── FOOTER ────────────────────────────────────────────────── -->
 <footer>
@@ -1752,22 +2439,33 @@
     btn.setAttribute('aria-expanded', String(panel.classList.contains('open')));
   }
 
-  // Active nav highlight on scroll
+  function toggleDrawer(btn) {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    const open = panel.classList.toggle('open');
+    btn.querySelector('.fm-caret').classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+
+  // Active nav highlight on scroll (collateral sections all light up "Collateral" in the top nav
+  // and their own link in the collateral band)
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav .nav-links a');
+  const bandLinks = document.querySelectorAll('.collat-links a');
+  const collatIds = ['merch', 'menu', 'signage', 'cups'];
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
-        if (a) a.classList.add('active');
-      }
+      if (!e.isIntersecting) return;
+      const id = e.target.id;
+      const isCollat = collatIds.includes(id);
+      navLinks.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`nav .nav-links a[href="#${isCollat ? 'collateral' : id}"]`);
+      if (a) a.classList.add('active');
+      bandLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
     });
   }, { rootMargin: '-30% 0px -65% 0px' });
   sections.forEach(s => io.observe(s));
 </script>
 
-<!-- ── LIGHTBOX ─────────────────────────────────────────────── -->
 <div class="lb-overlay" id="lb" onclick="closeLB()">
   <span class="lb-close" onclick="closeLB()">×</span>
   <img id="lb-img" src="" alt="" onclick="event.stopPropagation()" />
@@ -1789,6 +2487,5 @@
     el.addEventListener('click', () => openLB(el.dataset.lb, el.dataset.lbAlt));
   });
 </script>
-
 </body>
 </html>
